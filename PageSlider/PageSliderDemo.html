@@ -148,11 +148,11 @@ PageSlide.prototype.random = function() {
 PageSlide.prototype.touchstart = function(e) {
     var touches = e.touches[0]
 
-    //touch start initializing
+    //触控开始
     this.flag = null
     this.move = 0
 
-    //record coordinates
+    //记录落点
     this.pageX = touches.pageX
     this.pageY = touches.pageY
 }
@@ -165,8 +165,7 @@ PageSlide.prototype.touchmove = function(e) {
     var next = current.nextElementSibling
     var prev = current.previousElementSibling
 
-    //add moving styled
-
+    //添加移动样式
     if (!this.flag) {
         this.flag = Math.abs(X) > Math.abs(Y) ? 'X' : 'Y'
 
@@ -299,8 +298,10 @@ PageSlide.prototype.finish = function(curr, target) {
     }, 3e2)
 }
 
-/*direct to a page */ 
-//直达某一页面的方法, 因为有个项目的需要,写了这个方法,要从任意页面开始滑动依然能保持正常的滑动体验,就需要将直达页面的前面所有页面的translate3d参数都设置为(0,-height,0)  
+//直达任意页面的方法
+//直达某一页面的方法, 因为有个项目的需要
+//写了这个方法,要从任意页面开始滑动依然能保持正常的滑动体验
+//就需要将直达页面的前面所有页面的translate3d参数都设置为(0,-height,0)  
 PageSlide.prototype.direct = function(i){
     if(i&&typeof(i)==='number') 
        { 
@@ -313,7 +314,7 @@ PageSlide.prototype.direct = function(i){
         
     
     }
-  /* 传参 */
+  // 传参 
 document.addEventListener('touchmove', function(e) {
   e.preventDefault()
 })
