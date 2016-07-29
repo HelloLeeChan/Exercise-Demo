@@ -42,7 +42,7 @@ html,body{
 #codescroll {
     position: absolute;
     width: 20%;
-    height: 58%;
+    height: 57%;
     overflow: hidden;
     margin-left: 730px;
     margin-top: -70%;
@@ -86,7 +86,8 @@ html,body{
     padding-left: 8px;
     line-height: 29px;
     border-radius:2px;
-    float:left; margin-left: 2px;
+    float:left;
+    margin-left: 2px;
     margin-bottom:2px;
     cursor: pointer;
     transition: box-shadow 0.7s ease;
@@ -102,7 +103,7 @@ html,body{
 
 }
 
-.section-a{width:650px;height:260px;float:left;margin-left: 80px;margin-top: 30px;}
+.section-a{width:650px;height:260px;float:left;margin-left: 80px;margin-top: 33px;}
 .section-b{width:150px; height:260px; float:left;}
 
 .function{font-size: 12px; width:30px; height:30px; margin-bottom:15px;}
