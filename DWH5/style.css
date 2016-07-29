@@ -52,9 +52,16 @@ html,body{
 #code1 {
     margin-top: 1000px;
     animation: moveUp 7s linear infinite;
+    -webkit-animation:moveUp 7s linear infinite;
 }
 
 @keyframes moveUp {
+    100% {
+        transform: translate3d(0,-5000px,0);
+        -webkit-transform: translate3d(0,-5000px,0);
+    }
+}
+@-webkit-keyframes   moveUp {
     100% {
         transform: translate3d(0,-5000px,0);
         -webkit-transform: translate3d(0,-5000px,0);
