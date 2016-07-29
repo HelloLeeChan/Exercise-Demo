@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ::selection{background-color:none; color:inherit;}
+
+        body{
+            background-color: #14B524;
+        }
+
+        .cable{height:100px; width:10px; background-color:#000; margin:0 60%;}
+        .keyboard{
+            width:800px; height: 320px;
+            background-color: #111;
+            margin: 0px auto;
+            border-radius: 9px;
+            padding: 30px;
+            color: #eee;
+        }
+
+        .logo{
+            width:40px; height:40px;
+            background-color:#CCC;
+            color: #222;
+            font-weight:300;
+            font-style: oblique;
+            font-size:30px;
+            line-height:40px;
+            text-align:center;
+            margin: -20px auto 10px auto;
+            border-radius:40px;
+        }
+
+
+        .lights{
+            float:right;
+            position:relative;
+            top:-45px;
+            right:8px;
+            padding:0;
+            margni:0;
+        }
+        .lights span{margin:0 20px 0 20px; padding:0; text-align: center;}
+        .lights span:after{
+            content:"";
+            width:11px; height:8px;
+            top: 22px; margin-left:-9px;
+            background-color:#DBB921;
+            position:absolute;
+            border-radius: 3px;
+        }
+
+        .key{
+            width: 40px; height:40px;
+            display:block;
+            background-color:grey;
+            text-align: left;
+            padding-left: 8px;
+            line-height: 29px;
+            border-radius:2px;
+            float:left; margin-left: 2px;
+            margin-bottom:2px;
+            cursor: pointer;
+            transition: box-shadow 0.7s ease;
+        }
+
+        .section-a{width:650px; height:260px; float:left;}
+        .section-b{width:150px; height:260px; float:left;}
+
+        .function{font-size: 12px; width:30px; height:30px; margin-bottom:15px;}
+        .small{font-size:10px; line-height:13px; text-align: center; padding:0 5px; padding-top:2px; height:28px !important;}
+        .space1{margin-right: 43px !important;}
+        .space2{margin-right: 25px !important;}
+        .dual {font-size: 14px; line-height: 20px; width:30px; }
+        .backspace {width:84px; font-size: 12px;}
+        .tab {width: 50px; line-height: 40px; font-size:13px;}
+        .letter{width:30px;}
+        .slash{width:64px;}
+        .caps{width:70px; font-size:12px; line-height:18px;}
+        .enter{width:92px; line-height:40px; text-align: center; padding-left:0;}
+        .shift.left{width: 90px;line-height: 40px; font-size:13px;}
+        .shift.right{width: 104px;line-height: 40px; font-size:13px;}
+        .ctrl{width: 50px; line-height: 40px; font-size:13px;}
+        .space{width:234px;}
+        .arrows{position:relative; top:42px;}
+        .sec-func .key{width: 32px; font-size:10px; text-align:left; line-height:40px; float:left;}
+        .sec-func div.dual{line-height:20px;}
+        .arrows .key{text-align: center; padding-left: 7px; margin-left:2px;}
+        .hidden{visibility: hidden;}
+
+        .key:hover{box-shadow:0px 0px 10px #14B524; z-index:1000;}
+        </style>
+</head>
+<body>
+<div class="cable">
+</div>
+<div class="keyboard">
+    <div class="logo">
+        hp
+    </div>
+
+    <div class="lights">
+        <span>1</span>
+        <span>A</span>
+        <span>V</span>
+    </div>
+
+
+    <div class="section-a">
+        <div class="key function space1">
+            Esc
+        </div>
+
+        <div class="key function">
+            F1
+        </div>
+        <div class="key function">
+            F2
+        </div>
+        <div class="key function">
+            F3
+        </div>
+
+        <div class="key function space2">
+            F4
+        </div>
+        <div class="key function">
+            F5
+        </div>
+        <div class="key function">
+            F6
+        </div>
+        <div class="key function">
+            F7
+        </div>
+        <div class="key function space2">
+            F8
+        </div>
+
+        <div class="key function">
+            F9
+        </div>
+        <div class="key function">
+            F10
+        </div>
+        <div class="key function">
+            F11
+        </div>
+        <div class="key function">
+            F12
+        </div>
+        <!--END FUNCTION KEYS -->
+
+        <div class="key num dual">
+            ~<br>`
+        </div>
+
+        <div class="key num dual">
+            !<br>1
+        </div>
+        <div class="key num dual">
+            @<br>2
+        </div>
+        <div class="key num dual">
+            #<br>3
+        </div>
+        <div class="key num dual">
+            $<br>4
+        </div>
+        <div class="key num dual">
+            %<br>5
+        </div>
+        <div class="key num dual">
+            ^<br>6
+        </div>
+        <div class="key num dual">
+            &<br>7
+        </div>
+        <div class="key num dual">
+            *<br>8
+        </div>
+        <div class="key num dual">
+            (<br>9
+        </div>
+        <div class="key num dual">
+            )<br>0
+        </div>
+        <div class="key num dual">
+            _<br>-
+        </div>
+        <div class="key num dual">
+            +<br>=
+        </div>
+        <div class="key backspace">
+            Backspace
+        </div>
+        <!--END NUMBER KEYS -->
+
+        <div class="key tab">
+            Tab
+        </div>
+
+        <div class="key letter">
+            Q
+        </div>
+        <div class="key letter">
+            W
+        </div>
+        <div class="key letter">
+            E
+        </div>
+        <div class="key letter">
+            R
+        </div>
+        <div class="key letter">
+            T
+        </div>
+        <div class="key letter">
+            Y
+        </div>
+        <div class="key letter">
+            U
+        </div>
+        <div class="key letter">
+            I
+        </div>
+        <div class="key letter">
+            O
+        </div>
+        <div class="key letter">
+            P
+        </div>
+        <div class="key dual">
+            {<Br>[
+        </div>
+        <div class="key dual">
+            }<br>]
+        </div>
+        <div class="key letter dual slash">
+            |<br>\
+        </div>
+        <div class="key caps">
+            Caps<br>Lock
+        </div>
+        <div class="key letter">
+            A
+        </div>
+        <div class="key letter">
+            S
+        </div>
+        <div class="key letter">
+            D
+        </div>
+        <div class="key letter">
+            F
+        </div>
+        <div class="key letter">
+            G
+        </div>
+        <div class="key letter">
+            H
+        </div>
+        <div class="key letter">
+            J
+        </div>
+        <div class="key letter">
+            K
+        </div>
+        <div class="key letter">
+            L
+        </div>
+        <div class="key dual">
+            :<br>;
+        </div>
+        <div class="key dual">
+            "<br>'
+        </div>
+        <div class="key enter">
+            Enter
+        </div>
+
+        <div class="key shift left">
+            Shift
+        </div>
+        <div class="key letter">
+            Z
+        </div>
+        <div class="key letter">
+            X
+        </div>
+        <div class="key letter">
+            C
+        </div>
+        <div class="key letter">
+            V
+        </div><div class="key letter">
+        B
+    </div><div class="key letter">
+        N
+    </div><div class="key letter">
+        M
+    </div>
+        <div class="key dual">
+            < <br>,
+        </div>
+        <div class="key dual">
+            ><br>.
+        </div>
+        <div class="key dual">
+            ?<br>/
+        </div>
+        <div class="key shift right">
+            Shift
+        </div>
+        <div class="key ctrl">
+            Ctrl
+        </div>
+        <div class="key">
+            &hearts;
+        </div>
+        <div class="key">
+            Alt
+        </div>
+        <div class="key space">
+
+
+
+        </div>
+        <div class="key">
+            Alt
+        </div>
+        <div class="key">
+            &hearts;
+        </div>
+        <div class="key">
+            Prnt
+        </div>
+        <div class="key ctrl">
+            Ctrl
+        </div>
+    </div><!-- end section-a-->
+
+
+
+</div>
+
+</body>
+</html>

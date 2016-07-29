@@ -1,0 +1,129 @@
+html,body{
+    width:100%;
+    height:100%;
+    margin:0 ;
+    padding:0 ;
+    overflow:hidden;
+    background: url(imgs/bg.jpg) no-repeat;
+    background-size:cover;
+
+}
+.container {
+    width: 100%;
+    height: 100%;
+
+}
+.gif-frame {
+    width: 595px;
+    height: 426px;
+    margin-top: 52%;
+    margin-left: 80px;
+    background: url("imgs/gif-frame.png") no-repeat;
+    background-size:cover;
+
+}
+.gif {
+    margin-left: 45px;
+    margin-top: 40px;
+    width: 500px;
+    height: 400px;
+    background: url("imgs/6666.gif") no-repeat;
+    background-size: cover;
+
+}
+#out{
+    margin-left: 75px;
+    width: 595px;
+    height: 220px;
+    margin-top: 30px;
+    font-size: 45px;
+    color: #6bcdf1;
+}
+#codescroll {
+    position: absolute;
+    width: 20%;
+    height: 57%;
+    overflow: hidden;
+    margin-left: 730px;
+    margin-top: -70%;
+    color: #6bcdf1;
+
+    word-wrap: break-word;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.keyboard{
+    width:800px; height: 320px;
+    background-color: #111;
+    margin: 0px auto;
+    border-radius: 9px;
+    padding: 30px;
+    color: #eee;
+}
+
+
+
+
+.key{
+    width: 40px; height:40px;
+    display:block;
+    background-color:transparent;
+    text-align: left;
+    padding-left: 8px;
+    line-height: 29px;
+    border-radius:2px;
+    float:left; margin-left: 2px;
+    margin-bottom:2px;
+    cursor: pointer;
+    transition: box-shadow 0.7s ease;
+    color: #6bcdf1;
+    border: #6bcdf1 .5px solid;
+}
+.key-down {
+    /*
+    background-color: rgba(107,205,241,0.3);
+    */
+    background-color: rgba(107,205,241,0.3);
+
+
+}
+
+.section-a{width:650px;height:260px;float:left;margin-left: 80px;margin-top: 30px;}
+.section-b{width:150px; height:260px; float:left;}
+
+.function{font-size: 12px; width:30px; height:30px; margin-bottom:15px;}
+.small{font-size:10px; line-height:13px; text-align: center; padding:0 5px; padding-top:2px; height:28px !important;}
+.space1{margin-right: 43px !important;}
+.space2{margin-right: 25px !important;}
+.dual {font-size: 14px; line-height: 20px; width:30px; }
+.backspace {width:84px; font-size: 12px;}
+.tab {width: 50px; line-height: 40px; font-size:13px;}
+.letter{width:30px;}
+.slash{width:64px;}
+.caps{width:70px; font-size:12px; line-height:18px;}
+.enter{width:92px; line-height:40px; text-align: center; padding-left:0;}
+.shift.left{width: 90px;line-height: 40px; font-size:13px;}
+.shift.right{width: 104px;line-height: 40px; font-size:13px;}
+.ctrl{width: 50px; line-height: 40px; font-size:13px;}
+.space{width:242px;}
+.arrows{position:relative; top:42px;}
+.sec-func .key{width: 32px; font-size:10px; text-align:left; line-height:40px; float:left;}
+.sec-func div.dual{line-height:20px;}
+.arrows .key{text-align: center; padding-left: 7px; margin-left:2px;}
+.hidden{visibility: hidden;}
+
+
