@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
+    <meta charset="utf-8">
     <title>决战里约 智能播报</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width= 980">
@@ -19,7 +19,7 @@
 
 
 
-    <div id="out">d
+    <div id="out">
         <div id="word" style="display: none">
             北京时间7月19日，2016年里约奥运会女子10米气步枪决赛落下帷幕。
             奥运会“四朝元老”杜丽以总成绩
@@ -398,11 +398,7 @@
 window.onload = function(){
 
 
-
-
-
-
-    var typeAni = ranKey()
+     var typeAni = ranKey()
     var typing = new Typing({
         source: document.getElementById('word'),
         output: document.getElementById('output'),
