@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="GBK">
-    <title>¾öÕ½ÀïÔ¼ ÖÇÄÜ²¥±¨</title>
+    
+    <title>å†³æˆ˜é‡Œçº¦ æ™ºèƒ½æ’­æŠ¥</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width= 980">
 
@@ -19,10 +19,10 @@
 
 
 
-    <div id="out">
+    <div id="out">d
         <div id="word" style="display: none">
-            ±±¾©Ê±¼ä7ÔÂ19ÈÕ£¬2016ÄêÀïÔ¼°ÂÔË»áÅ®×Ó10Ã×Æø²½Ç¹¾öÈüÂäÏÂá¡Ä»¡£
-            °ÂÔË»á¡°ËÄ³¯ÔªÀÏ¡±¶ÅÀöÒÔ×Ü³É¼¨
+            åŒ—äº¬æ—¶é—´7æœˆ19æ—¥ï¼Œ2016å¹´é‡Œçº¦å¥¥è¿ä¼šå¥³å­10ç±³æ°”æ­¥æªå†³èµ›è½ä¸‹å¸·å¹•ã€‚
+            å¥¥è¿ä¼šâ€œå››æœå…ƒè€â€æœä¸½ä»¥æ€»æˆç»©
         </div>
         <span id="output"></span>
         <span class="typing-cursor-white">|</span>
@@ -334,10 +334,10 @@
         var ratio = ((sum / sumPV) * 100).toFixed(2) + "%"
         }
 
-        // console.log("Çø¿éµã»÷Á¿:"+sum+"  Õ¼±È:"+ratio )
+        // console.log("åŒºå—ç‚¹å‡»é‡:"+sum+"  å æ¯”:"+ratio )
         var textBox = document.createElement('div')
 
-        var noteText = document.createTextNode(allModule[module]+"µã»÷Á¿:" + sum + "  Õ¼±È:" + ratio)
+        var noteText = document.createTextNode(allModule[module]+"ç‚¹å‡»é‡:" + sum + "  å æ¯”:" + ratio)
         textBox.appendChild(noteText)
         textBox.style.cssText = "position:absolute; margin:auto;" +
         "width:50% ; height:50%;" +
@@ -407,7 +407,7 @@ window.onload = function(){
         source: document.getElementById('word'),
         output: document.getElementById('output'),
         delay: 80,
-        done: function() {clearInterval(typeAni)} //Íê³É´òÓ¡ºóµÄ»Øµ÷ÊÂ¼ş
+        done: function() {clearInterval(typeAni)} //å®Œæˆæ‰“å°åçš„å›è°ƒäº‹ä»¶
     });
     typing.start();
 
