@@ -35,7 +35,7 @@ html,body{
     margin-left: 75px;
     width: 595px;
     height: 220px;
-    margin-top: 30px;
+    margin-top: 20px;
     font-size: 45px;
     color: #6bcdf1;
 }
@@ -112,7 +112,7 @@ html,body{
 
 }
 
-.section-a{width:650px;height:260px;float:left;margin-left: 80px;margin-top: 33px;}
+.section-a{width:650px;height:260px;float:left;margin-left: 80px;margin-top: 37px;}
 .section-b{width:150px; height:260px; float:left;}
 
 .function{font-size: 12px; width:30px; height:30px; margin-bottom:15px;}
