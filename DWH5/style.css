@@ -47,10 +47,19 @@ html,body{
     margin-left: 730px;
     margin-top: -70%;
     color: #6bcdf1;
-
     word-wrap: break-word;
 }
+#code1 {
+    margin-top: 1000px;
+    animation: moveUp 6s linear infinite;
+}
 
+@keyframes moveUp {
+    100% {
+        transform: translate3d(0,-3000px,0);
+        -webkit-transform: translate3d(0,-3000px,0);
+    }
+}
 
 
 
