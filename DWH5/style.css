@@ -51,13 +51,13 @@ html,body{
 }
 #code1 {
     margin-top: 1000px;
-    animation: moveUp 6s linear infinite;
+    animation: moveUp 7s linear infinite;
 }
 
 @keyframes moveUp {
     100% {
-        transform: translate3d(0,-3000px,0);
-        -webkit-transform: translate3d(0,-3000px,0);
+        transform: translate3d(0,-5000px,0);
+        -webkit-transform: translate3d(0,-5000px,0);
     }
 }
 
