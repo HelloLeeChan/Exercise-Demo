@@ -12,6 +12,7 @@
     <script src="js/typing.min.js"></script>
 </head>
 <body>
+<div class="wrap">
 <div class="container">
         <div class="gif-frame">
             <div class="gif"></div>>
@@ -639,6 +640,7 @@
 
 
 </div>
+</div>
 </body>
 <script>
   /*  var speed=14
@@ -684,6 +686,11 @@ window.onload = function(){
         return typeAni
 
     }
+    setTimeout(function(){
+        var con = document.getElementsByClassName('container')[0]
+        con.classList.add('flip')
+        console.log(con)
+    },2000)
 
 }
 
