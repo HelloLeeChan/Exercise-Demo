@@ -34,26 +34,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style1.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/style1.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chart.css" pinned="false" current-in-tab="false">
-        <entry file="file:///Applications/MAMP/htdocs/boao 3/chart.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="692" column="51" selection-start-line="691" selection-start-column="8" selection-end-line="692" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -73,6 +53,7 @@
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/style1.css" />
+        <option value="$PROJECT_DIR$/style2.css" />
         <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
@@ -343,14 +324,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Applications/MAMP/htdocs/boao 3/chart.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="692" column="51" selection-start-line="691" selection-start-column="8" selection-end-line="692" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Applications/MAMP/htdocs/boao 3/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -359,10 +332,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style1.css">
+    <entry file="file:///Applications/MAMP/htdocs/boao 3/chart.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <caret line="692" column="51" selection-start-line="691" selection-start-column="8" selection-end-line="692" selection-end-column="51" />
           <folding />
         </state>
       </provider>
