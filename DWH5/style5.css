@@ -4,7 +4,7 @@ html,body{
     margin:0 ;
     padding:0 ;
     overflow:hidden;
-    background: url(imgs/bg2.jpg) no-repeat;
+    background: url(imgs/bg.jpg) no-repeat;
     background-size:contain;
 
 }
