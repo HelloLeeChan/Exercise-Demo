@@ -11,12 +11,13 @@ html,body{
 .container {
     width: 100%;
     height: 100%;
+    overflow: hidden;
 
 }
 .gif-frame {
     width: 595px;
     height: 426px;
-    margin-top: 52%;
+    margin-top: 30%;
     margin-left: 80px;
     background: url("imgs/gif-frame.png") no-repeat;
     background-size:cover;
@@ -42,10 +43,10 @@ html,body{
 #codescroll {
     position: absolute;
     width: 20%;
-    height: 57%;
+    height: 63%;
     overflow: hidden;
     margin-left: 730px;
-    margin-top: -70%;
+    margin-top: -68%;
     color: #6bcdf1;
     word-wrap: break-word;
 }
