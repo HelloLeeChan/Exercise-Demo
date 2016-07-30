@@ -5,7 +5,7 @@ html,body{
     padding:0 ;
     overflow:hidden;
     background: url(imgs/bg.jpg) no-repeat;
-    background-size:cover;
+    background-size:contain;
 
 }
 .container {
