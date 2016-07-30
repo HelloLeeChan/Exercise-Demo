@@ -21,7 +21,7 @@ html,body{
     background: url("imgs/screen.png") no-repeat;
     background-size: cover;
     transform-style: preserve-3d;
-    transition: transform 2s;
+    transition: transform 1.5s;
 
 }
 .flip{
