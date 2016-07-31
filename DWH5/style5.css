@@ -52,20 +52,24 @@ html,body{
     font-size: 45px;
     color: #6bcdf1;
 }
-#codescroll {
+.codescroll {
     position: absolute;
     width: 20%;
-    height: 63%;
+    height: 0;
     overflow: hidden;
     margin-left: 70%;
     margin-top: -68%;
     color: #6bcdf1;
     word-wrap: break-word;
+    transition: height 2s linear;
 }
-#code1 {
-    margin-top: 1000px;
-    animation: moveUp 7s linear 2;
-    -webkit-animation:moveUp 7s linear 2;
+
+.showCode {
+    height: 63%;
+}
+.codeRun {
+     animation: moveUp 7s linear 2;
+     -webkit-animation:moveUp 7s linear 2;
 }
 
 @keyframes moveUp {
@@ -78,6 +82,13 @@ html,body{
     100% {
         transform: translate3d(0,-5000px,0);
         -webkit-transform: translate3d(0,-5000px,0);
+    }
+}
+
+@keyframes moveDown {
+    100%{
+        transform: translate3d(0,1000px,0);
+        -webkit-transform: translate3d(0,1000px,0);
     }
 }
 

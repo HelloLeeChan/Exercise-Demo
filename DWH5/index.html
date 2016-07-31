@@ -264,7 +264,9 @@
                 Ctrl
             </div>
         </div><!-- end keyboard-->
-    <div id="codescroll" >
+
+    <div class="codescroll" >
+
         <div id="code1">
         count(allModule,getAllSum(document.body.getElementsByTagName('sup')))
 
@@ -686,11 +688,18 @@ window.onload = function(){
         return typeAni
 
     }
+    setTimeout(function(){
+        var mask = document.getElementsByClassName('codescroll')[0]
+        mask.classList.add('showCode')
+        mask.addEventListener('transitionend',function(e){
+            code1.classList.add('codeRun')
+        })
+    },2000)
     setInterval(function(){
         var con = document.getElementsByClassName('container')[0]
         con.classList.toggle('flip')
         console.log(con)
-    },3000)
+    },100000)
 
 }
 
