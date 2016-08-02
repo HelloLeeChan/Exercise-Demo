@@ -23,7 +23,7 @@ Page.prototype.start = function(){
         done: function(){
             console.log(that.handle)
             clearInterval(that.handle)
-            //contain.style.transform = 'rotateY('+String(Number((/\d+/.exec(contain.style.transform))[0]) +180)+'deg)'
+           // contain.style.transform = 'rotateY('+String(Number((/\d+/.exec(contain.style.transform))[0]) +180)+'deg)'
         } //完成打印后的回调事件
     });
 
@@ -46,6 +46,9 @@ Page.prototype.clear =function(){
 }
 Page.prototype.show = function(){
     this.self.style.display = 'block'
+}
+Page.prototype.pageChange =function(){
+    this.contain.dispatchEvent(new Event('pagechange',{"bubbles":false, "cancelable":false}))
 }
 
 Page.prototype.randomKey =    function(letters){
@@ -81,7 +84,8 @@ function PageSwap(pages){
         var  container = document.getElementsByClassName('container')[0],
              j = 1
 
-                /* container.addEventListener('transitionend',function(e){
+                 container.addEventListener('transitionend',function(e){
+                     console.log(e)
                      if(j < pagesObj.length ){
                          console.log(j)
                          console.log(e)
@@ -96,7 +100,7 @@ function PageSwap(pages){
 
                      }
 
-                 })*/
+                 })
 }
 
 var pages = new PageSwap(document.getElementsByClassName('page'))
