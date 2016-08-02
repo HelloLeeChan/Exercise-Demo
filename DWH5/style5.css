@@ -49,6 +49,15 @@ html,body{
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
+.page3{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("imgs/screen.png")no-repeat;
+    background-size: cover;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
 
 /*.flip{
     transform: rotateY( 180deg );
@@ -62,22 +71,25 @@ html,body{
     background-size:cover;
     overflow: hidden;
 }
-.gif1{
+.gif {
     margin-left: 45px;
     margin-top: 6px;
     width: 500px;
     height: 400px;
+}
+.gif1{
     background: url("imgs/SH.gif") no-repeat;
     background-size: cover;
 }
 .gif2{
-    margin-left: 45px;
-    margin-top: 6px;
-    width: 500px;
-    height: 400px;
-    background: url("imgs/GA.gif") no-repeat;
+     background: url("imgs/GA.gif") no-repeat;
+     background-size: cover;
+ }
+.gif3{
+    background: url("imgs/PD.gif") no-repeat;
     background-size: cover;
 }
+
 .word {
     display: none;
 }

@@ -40,6 +40,7 @@ function Page(ele){
                 delay: 40,
                 done: function() {
                     clearInterval(keyAni)
+
                     contain.style.transform = 'rotateY('+String(Number((/\d+/.exec(contain.style.transform))[0]) +180)+'deg)'
                 } //完成打印后的回调事件
             });
@@ -62,6 +63,9 @@ Page.prototype.start = function(){
 Page.prototype.clear =function(){
     this.self.style.display = 'none'
 }
+Page.prototype.show = function(){
+    this.self.style.display = 'block'
+}
 
 
 
@@ -79,13 +83,21 @@ function PageSwap(pages){
         var  container = document.getElementsByClassName('container')[0],
              j = 1
 
-                 container.addEventListener('transitionend',function(){
-                     if(j < pagesObj.length){
+                 container.addEventListener('transitionend',function(e){
+                     if(j < pagesObj.length ){
+                         console.log(j)
+                         console.log(e)
                          pagesObj[j].start()
+                         if(j < pagesObj.length -1){
+                             pagesObj[j+1].show()
+                         }
+
                          pagesObj[j-1].clear()
+
                          j++
+
                      }
-                     console.log(j)
+
                  })
 }
 
