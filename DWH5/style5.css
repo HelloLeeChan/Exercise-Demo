@@ -93,8 +93,8 @@ html,body{
     width: 20%;
     height: 0;
     overflow: hidden;
-    margin-left: 75%;
-    margin-top: -68%;
+    margin-left: 73%;
+    margin-top: -70%;
     color: #6bcdf1;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
@@ -106,8 +106,12 @@ html,body{
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
+.code2{
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
 .showCode {
-    height: 63%;
+    height: 68%;
 }
 .codeRun {
     animation: moveUp 3s linear 2;
