@@ -30,7 +30,16 @@ html,body{
     -webkit-transform-style: preserve-3d;
     /*background: url("imgs/screen.png") no-repeat;*/
     background-size: cover;
+    animation: screen 2.2s ease-in-out infinite alternate;
 
+}
+@keyframes screen {
+    0%{
+        transform: rotateY( 8deg );
+    }
+    100%{
+        transform: rotateY(-3deg);
+    }
 }
 
 
