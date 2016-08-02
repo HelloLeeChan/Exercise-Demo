@@ -6,13 +6,54 @@
 function Page(ele){
         var input = ele.getElementsByClassName('word')[0]
             output = ele.getElementsByClassName('output')[0]
-            letters =  ele.getElementsByClassName('keyboard')[0].getElementsByClassName('key')
+            this.letters =  ele.getElementsByClassName('keyboard')[0].getElementsByClassName('key')
             contain =  document.getElementsByClassName('container')[0]
             this.self = ele
             this.codeScroll = ele.getElementsByClassName('codescroll')[0]
+            this.handle
 
 
-    function ranKey(letters){
+
+
+
+
+
+
+        var    typing = new Typing({
+                source: input,
+                output: output,
+                delay: 40,
+                done: function() {
+                    clearInterval(this.handle)
+
+                    contain.style.transform = 'rotateY('+String(Number((/\d+/.exec(contain.style.transform))[0]) +180)+'deg)'
+                } //完成打印后的回调事件
+            });
+
+        this.typing = typing
+
+}
+
+Page.prototype.start = function(){
+    this.typing.start()
+    var that = this
+    codeScroll= this.codeScroll
+    codeScroll.addEventListener('transitionend',function(e){
+        e.stopPropagation()
+    })
+
+    setTimeout(function(){
+        codeScroll.classList.add('showCode')
+        that.handle = that.randomKey(that.letters)
+    },70)
+}
+Page.prototype.clear =function(){
+    this.self.style.display = 'none'
+}
+Page.prototype.show = function(){
+    this.self.style.display = 'block'
+}
+Page.prototype.randomKey =    function(letters){
         function toggleKey(key){
             key.classList.add('key-down')
             setTimeout(function(){
@@ -27,44 +68,6 @@ function Page(ele){
         },200)
         return typeAni
 
-    }
-
-        var keyAni = ranKey(letters)
-
-
-
-
-        var    typing = new Typing({
-                source: input,
-                output: output,
-                delay: 40,
-                done: function() {
-                    clearInterval(keyAni)
-
-                    contain.style.transform = 'rotateY('+String(Number((/\d+/.exec(contain.style.transform))[0]) +180)+'deg)'
-                } //完成打印后的回调事件
-            });
-
-        this.typing = typing
-
-}
-
-Page.prototype.start = function(){
-    this.typing.start()
-    that = this.codeScroll
-    that.addEventListener('transitionend',function(e){
-        e.stopPropagation()
-    })
-
-    setTimeout(function(){
-        that.classList.add('showCode')
-    },70)
-}
-Page.prototype.clear =function(){
-    this.self.style.display = 'none'
-}
-Page.prototype.show = function(){
-    this.self.style.display = 'block'
 }
 
 
