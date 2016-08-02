@@ -10,12 +10,12 @@
   100% { opacity: 1; }
 }
 
-.typing-cursor, .typing-cursor-black, .typing-cursor-white {
+/*.typing-cursor, .typing-cursor-black, .typing-cursor-white {
   opacity: 1;
   font-weight: bold;
   -webkit-animation: blink 0.7s infinite;
   animation: blink 0.7s infinite;
-}
+}*/
 
 .typing-cursor, .typing-cursor-black {
   color: #000;
@@ -23,5 +23,6 @@
 
 .typing-cursor-white {
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   color: #6bcdf1;
 }

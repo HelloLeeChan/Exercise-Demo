@@ -14,7 +14,6 @@ function Page(ele){
 
     function ranKey(letters){
         function toggleKey(key){
-            console.log(key)
             key.classList.add('key-down')
             setTimeout(function(){
                 key.classList.remove('key-down')
@@ -38,7 +37,7 @@ function Page(ele){
         var    typing = new Typing({
                 source: input,
                 output: output,
-                delay: 80,
+                delay: 40,
                 done: function() {
                     clearInterval(keyAni)
                     contain.style.transform = 'rotateY('+String(Number((/\d+/.exec(contain.style.transform))[0]) +180)+'deg)'
@@ -51,7 +50,14 @@ function Page(ele){
 
 Page.prototype.start = function(){
     this.typing.start()
-    this.codeScroll.classList.add('showCode')
+    that = this.codeScroll
+    that.addEventListener('transitionend',function(e){
+        e.stopPropagation()
+    })
+
+    setTimeout(function(){
+        that.classList.add('showCode')
+    },70)
 }
 Page.prototype.clear =function(){
     this.self.style.display = 'none'
@@ -69,7 +75,6 @@ function PageSwap(pages){
         }
         console.log(pagesObj)
         pagesObj[0].start()
-
 
         var  container = document.getElementsByClassName('container')[0],
              j = 1
