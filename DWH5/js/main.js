@@ -7,14 +7,15 @@ function Page(ele){
             this.input = ele.getElementsByClassName('word')[0]
             this.output = ele.getElementsByClassName('output')[0]
             this.letters =  ele.getElementsByClassName('keyboard')[0].getElementsByClassName('key')
-            contain =  document.getElementsByClassName('container')[0]
+            this.contain =  document.getElementsByClassName('container')[0]
             this.self = ele
             this.codeScroll = ele.getElementsByClassName('codescroll')[0]
 
 }
 
 Page.prototype.start = function(){
-    var that = this
+    var that = this,
+        contain = this.contain
     var    typing = new Typing({
         source: that.input,
         output: that.output,
@@ -31,14 +32,14 @@ Page.prototype.start = function(){
     codeScroll.addEventListener('transitionend',function(e){
         e.stopPropagation()
     })
-    this.handle = this.randomKey(this.letters)
+    //this.handle = this.randomKey(this.letters)
 
 
-    /*setTimeout(function(){
+    setTimeout(function(){
         codeScroll.classList.add('showCode')
         that.handle = that.randomKey(that.letters)
-        console.log(that.handle)
-    },70)*/
+        //console.log(that.handle)
+    },70)
 }
 Page.prototype.clear =function(){
     this.self.style.display = 'none'
