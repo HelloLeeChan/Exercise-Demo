@@ -6,10 +6,10 @@
 function Page(ele){
         var input = ele.getElementsByClassName('word')[0]
             output = ele.getElementsByClassName('output')[0]
-            codeScroll =  ele.getElementsByClassName('codescroll')[0]
             letters =  ele.getElementsByClassName('keyboard')[0].getElementsByClassName('key')
             contain =  document.getElementsByClassName('container')[0]
             this.self = ele
+            this.codeScroll = ele.getElementsByClassName('codescroll')[0]
 
 
     function ranKey(letters){
@@ -31,7 +31,7 @@ function Page(ele){
     }
 
         var keyAni = ranKey(letters)
-        codeScroll.classList.add('showCode')
+
 
 
 
@@ -51,6 +51,7 @@ function Page(ele){
 
 Page.prototype.start = function(){
     this.typing.start()
+    this.codeScroll.classList.add('showCode')
 }
 Page.prototype.clear =function(){
     this.self.style.display = 'none'
