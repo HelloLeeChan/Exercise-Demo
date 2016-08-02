@@ -19,6 +19,10 @@ html,body{
     margin: 5% auto;
     width: 95%;
     height: 91%;
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
     /*overflow: hidden;*/
     transition: transform 1.5s ;
     -webkit-transition:transform 1.5s ;
