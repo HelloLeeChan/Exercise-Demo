@@ -21,7 +21,9 @@ html,body{
     height: 91%;
     /*overflow: hidden;*/
     transition: transform 1.5s ;
+    -webkit-transition:transform 1.5s ;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
     /*background: url("imgs/screen.png") no-repeat;*/
     background-size: cover;
 
@@ -35,6 +37,7 @@ html,body{
     background: url("imgs/screen.png")no-repeat;
     background-size: cover;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 .page2 {
     position: absolute;
@@ -44,6 +47,7 @@ html,body{
     background-size: cover;
     transform: rotateY( 180deg );
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 /*.flip{
@@ -93,11 +97,14 @@ html,body{
     margin-top: -68%;
     color: #6bcdf1;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     word-wrap: break-word;
     transition: height 1s linear 1s;
+    -webkit-transition: height 1s linear 1s;
 }
 .code1{
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 .showCode {
     height: 63%;
@@ -165,7 +172,7 @@ html,body{
     margin-left: 2px;
     margin-bottom:2px;
     cursor: pointer;
-    transition: box-shadow 0.7s ease;
+    /*transition: box-shadow 0.7s ease;*/
     color: #6bcdf1;
     border: #6bcdf1 .5px solid;
 }
