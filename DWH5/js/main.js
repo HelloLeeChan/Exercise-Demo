@@ -4,48 +4,41 @@
 
 
 function Page(ele){
-        var input = ele.getElementsByClassName('word')[0]
-            output = ele.getElementsByClassName('output')[0]
+            this.input = ele.getElementsByClassName('word')[0]
+            this.output = ele.getElementsByClassName('output')[0]
             this.letters =  ele.getElementsByClassName('keyboard')[0].getElementsByClassName('key')
             contain =  document.getElementsByClassName('container')[0]
             this.self = ele
             this.codeScroll = ele.getElementsByClassName('codescroll')[0]
-            this.handle
-
-
-
-
-
-
-
-
-        var    typing = new Typing({
-                source: input,
-                output: output,
-                delay: 40,
-                done: function() {
-                    clearInterval(this.handle)
-
-                    contain.style.transform = 'rotateY('+String(Number((/\d+/.exec(contain.style.transform))[0]) +180)+'deg)'
-                } //完成打印后的回调事件
-            });
-
-        this.typing = typing
 
 }
 
 Page.prototype.start = function(){
-    this.typing.start()
     var that = this
+    var    typing = new Typing({
+        source: that.input,
+        output: that.output,
+        delay: 40,
+        done: function(){
+            console.log(that.handle)
+            clearInterval(that.handle)
+            contain.style.transform = 'rotateY('+String(Number((/\d+/.exec(contain.style.transform))[0]) +180)+'deg)'
+        } //完成打印后的回调事件
+    });
+
+    typing.start()
     codeScroll= this.codeScroll
     codeScroll.addEventListener('transitionend',function(e){
         e.stopPropagation()
     })
+    this.handle = this.randomKey(this.letters)
 
-    setTimeout(function(){
+
+    /*setTimeout(function(){
         codeScroll.classList.add('showCode')
         that.handle = that.randomKey(that.letters)
-    },70)
+        console.log(that.handle)
+    },70)*/
 }
 Page.prototype.clear =function(){
     this.self.style.display = 'none'
@@ -53,6 +46,7 @@ Page.prototype.clear =function(){
 Page.prototype.show = function(){
     this.self.style.display = 'block'
 }
+
 Page.prototype.randomKey =    function(letters){
         function toggleKey(key){
             key.classList.add('key-down')
@@ -60,13 +54,13 @@ Page.prototype.randomKey =    function(letters){
                 key.classList.remove('key-down')
             },300)
         }
-        var typeAni= setInterval(function(){
+        return setInterval(function(){
             toggleKey(letters[parseInt(Math.random()*74,10)+1])
             toggleKey(letters[parseInt(Math.random()*74,10)+1])
             toggleKey(letters[parseInt(Math.random()*74,10)+1])
 
         },200)
-        return typeAni
+
 
 }
 
