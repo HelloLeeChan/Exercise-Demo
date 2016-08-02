@@ -9,24 +9,46 @@ html,body{
 
 }
 .wrap {
+    position: relative;
     width: 100%;
     height: 100%;
     perspective: 2000px;
 }
 .container {
+    position: absolute;
     margin: 5% auto;
     width: 95%;
     height: 91%;
-    overflow: hidden;
-    background: url("imgs/screen.png") no-repeat;
-    background-size: cover;
+    /*overflow: hidden;*/
+    transition: transform 1.5s ;
     transform-style: preserve-3d;
-    transition: transform 1.5s;
+    /*background: url("imgs/screen.png") no-repeat;*/
+    background-size: cover;
 
 }
-.flip{
-    transform: rotateY( 180deg );
+
+
+.page1{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("imgs/screen.png")no-repeat;
+    background-size: cover;
+    backface-visibility: hidden;
 }
+.page2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("imgs/screen.png")no-repeat;
+    background-size: cover;
+    transform: rotateY( 180deg );
+    backface-visibility: hidden;
+}
+
+/*.flip{
+    transform: rotateY( 180deg );
+}*/
 .gif-frame {
     width: 595px;
     height: 426px;
@@ -34,17 +56,28 @@ html,body{
     margin-left: 3%;
     background: url("imgs/gif-frame.png") no-repeat;
     background-size:cover;
+    overflow: hidden;
 }
-.gif {
+.gif1{
     margin-left: 45px;
-    margin-top: 40px;
+    margin-top: 6px;
     width: 500px;
     height: 400px;
-    background: url("imgs/6666.gif") no-repeat;
+    background: url("imgs/SH.gif") no-repeat;
     background-size: cover;
-
 }
-#out{
+.gif2{
+    margin-left: 45px;
+    margin-top: 6px;
+    width: 500px;
+    height: 400px;
+    background: url("imgs/GA.gif") no-repeat;
+    background-size: cover;
+}
+.word {
+    display: none;
+}
+.out{
     margin-left: 3%;
     width: 595px;
     height: 220px;
@@ -53,23 +86,25 @@ html,body{
     color: #6bcdf1;
 }
 .codescroll {
-    position: absolute;
     width: 20%;
     height: 0;
     overflow: hidden;
-    margin-left: 70%;
+    margin-left: 75%;
     margin-top: -68%;
     color: #6bcdf1;
+    backface-visibility: hidden;
     word-wrap: break-word;
-    transition: height 2s linear;
+    transition: height 1s linear 1s;
 }
-
+.code1{
+    backface-visibility: hidden;
+}
 .showCode {
     height: 63%;
 }
 .codeRun {
-     animation: moveUp 7s linear 2;
-     -webkit-animation:moveUp 7s linear 2;
+    animation: moveUp 3s linear 2;
+    -webkit-animation:moveUp 3s linear 2;
 }
 
 @keyframes moveUp {
@@ -106,14 +141,14 @@ html,body{
 
 
 
-.keyboard{
+/*.keyboard{
     width:800px; height: 320px;
     background-color: #111;
     margin: 0px auto;
     border-radius: 9px;
     padding: 30px;
     color: #eee;
-}
+}*/
 
 
 
@@ -143,8 +178,7 @@ html,body{
 
 }
 
-.section-a{width:650px;height:260px;float:left;margin-left: 3%;margin-top: 37px;}
-.section-b{width:150px; height:260px; float:left;}
+.keyboard{width:650px;height:260px;float:left;margin-left: 3%;margin-top: 37px;}
 
 .function{font-size: 12px; width:30px; height:30px; margin-bottom:15px;}
 .small{font-size:10px; line-height:13px; text-align: center; padding:0 5px; padding-top:2px; height:28px !important;}

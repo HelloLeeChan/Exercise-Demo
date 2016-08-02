@@ -22,5 +22,6 @@
 }
 
 .typing-cursor-white {
+  backface-visibility: hidden;
   color: #6bcdf1;
 }
