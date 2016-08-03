@@ -3,27 +3,32 @@
  */
 
 
-function Page(ele){
+function Page(ele,codeHeight,nextEle){
             this.input = ele.getElementsByClassName('word')[0]
             this.output = ele.getElementsByClassName('output')[0]
             this.letters =  ele.getElementsByClassName('keyboard')[0].getElementsByClassName('key')
-            this.contain =  document.getElementsByClassName('container')[0]
+            //this.contain =  document.getElementById('container')
             this.self = ele
-            this.isshow = false
             this.codeScroll = ele.getElementsByClassName('codescroll')[0]
+            this.transpng = document.getElementsByClassName('trans1')[0].getElementsByTagName('img')
+            //this.codeRun = ele.getElementsByClassName('CodeRun')[0]
+            this.codeHeight = codeHeight
+            this.next = nextEle ? new Page(nextEle,'49%') : null
             this.self.addEventListener('transitionend',function(e){
                 e.stopPropagation()
             })
-            this.transpng = document.getElementsByClassName('trans1')[0].getElementsByTagName('img')
 
 
 }
 
 Page.prototype.start = function(){
+
     var that = this,
         contain = this.contain
+
     this.codeScroll.addEventListener('transitionend',function(e){
-        codeRun.classList.add('codeRun')
+
+        // this.codeRun.classList.add('codeRun')
     })
 
 
@@ -34,8 +39,6 @@ Page.prototype.start = function(){
         output: that.output,
         delay: 40,
         done: function(){
-            //that.self.classList.remove('screenfloat')
-            //that.pageChange()
             clearInterval(that.handle)
             that.pageChange()
             that.self.style.display = 'block'
@@ -52,7 +55,8 @@ Page.prototype.start = function(){
 
 
     setTimeout(function(){
-        codeScroll.classList.add('showCode')
+        codeScroll.style.height = that.codeHeight
+        console.log(that)
         that.handle = that.randomKey(that.letters)
         //console.log(that.handle)
     },70)
@@ -65,7 +69,13 @@ Page.prototype.show = function(){
 
 }
 Page.prototype.pageChange =function(){
-        var  pngs = this.transpng, i = 0,fps =50,len = pngs.length,self = this.self
+        var  pngs = this.transpng, i = 0,fps =50,len = pngs.length,self = this.self,next
+
+             if(this.next !== null){
+                 next = this.next
+             }else{
+                 next = null
+             }
         //console.log(pngs)
         pngs[i].style.display = 'block'
         setTimeout(function transLoop(){
@@ -79,6 +89,10 @@ Page.prototype.pageChange =function(){
             }else{
                 pngs[i-1].style.display = 'none'
                 self.style.display = 'none'
+                if(next !== null){
+                        next.show()
+                        next.start()
+                }
             }
         },fps)
 }
@@ -102,24 +116,20 @@ Page.prototype.randomKey =    function(letters){
 }
 
 
+var  sw = new Page(document.getElementsByClassName('sw')[0],'68%',document.getElementsByClassName('sh')[0])
+var sh = new Page(document.getElementsByClassName('sh')[0],'49%',null)
+sw.start()
 
 
+/*function PageSwap(pagesObj){
 
-function PageSwap(pages){
 
-        var pagesObj = [], len = pages.length
-        for(var i = 0 ; i < len ; i++){
-            pagesObj.push(new Page(pages[i]))
-        }
-        console.log(pagesObj)
-        pagesObj[0].start()
-        //pagesObj[1].show()
 
 
         var  container = document.getElementsByClassName('container')[0],
              j = 1
 
-                 container.addEventListener('transitionend',function(e){
+                 container.addEventListener('pagechange',function(e){
                      console.log(e.target)
                      if(j < pagesObj.length ){
                          console.log(j)
@@ -143,7 +153,7 @@ function PageSwap(pages){
 
 }
 
-var pages = new PageSwap(document.getElementsByClassName('page'))
+var pages = new PageSwap(document.getElementsByClassName('page'))*/
 
 
 
