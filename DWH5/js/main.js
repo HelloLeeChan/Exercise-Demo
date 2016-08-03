@@ -3,21 +3,21 @@
  */
 
 
-function Page(ele,codeHeight,nextObj){
+function Page(ele,codeHeight,transPng){
             this.input = ele.getElementsByClassName('word')[0]
             this.output = ele.getElementsByClassName('output')[0]
             this.letters =  ele.getElementsByClassName('keyboard')[0].getElementsByClassName('key')
             //this.contain =  document.getElementById('container')
             this.self = ele
             this.codeScroll = ele.getElementsByClassName('codescroll')[0]
-            this.transpng = document.getElementsByClassName('trans1')[0].getElementsByTagName('img')
+            this.transpng = transPng?transPng:document.getElementsByClassName('trans1')[0].getElementsByTagName('img')
             //this.codeRun = ele.getElementsByClassName('CodeRun')[0]
             this.codeHeight = codeHeight
-            this.next = nextObj ? new nextObj : null
+            //this.next = nextObj ? nextObj : null
             this.self.addEventListener('transitionend',function(e){
                 e.stopPropagation()
             })
-
+            console.log(transPng)
 
 }
 
@@ -72,7 +72,7 @@ Page.prototype.pageChange =function(){
         var  pngs = this.transpng, i = 0,fps =50,len = pngs.length,self = this.self,next = this.next
 
 
-        //console.log(pngs)
+        console.log(pngs)
         pngs[i].style.display = 'block'
         setTimeout(function transLoop(){
             i++
@@ -80,7 +80,7 @@ Page.prototype.pageChange =function(){
             if(i < len){
                 pngs[i-1].style.display = 'none'
                 pngs[i].style.display = 'block'
-                console.log(pngs[i])
+                //console.log(pngs[i])
                 setTimeout(transLoop,fps)
             }else{
                 pngs[i-1].style.display = 'none'
@@ -110,10 +110,12 @@ Page.prototype.randomKey =    function(letters){
 
 
 }
+var sh2wl = document.getElementsByClassName('sh2wl')[0].getElementsByTagName('img')
 
 
 var  sw = new Page(document.getElementsByClassName('sw')[0],'68%')
-var sh = new Page(document.getElementsByClassName('sh')[0],'49%')
+var sh = new Page(document.getElementsByClassName('sh')[0],'49%',sh2wl)
+console.log(sh)
 var wl = new Page(document.getElementsByClassName('wl')[0],'38%')
 sw.next = sh
 sh.next = wl
