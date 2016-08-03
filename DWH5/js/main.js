@@ -14,6 +14,8 @@ function Page(ele){
             this.self.addEventListener('transitionend',function(e){
                 e.stopPropagation()
             })
+            this.transpng = document.getElementsByClassName('trans1')[0].getElementsByTagName('img')
+
 
 }
 
@@ -35,6 +37,8 @@ Page.prototype.start = function(){
             //that.self.classList.remove('screenfloat')
             //that.pageChange()
             clearInterval(that.handle)
+            that.pageChange()
+            that.self.style.display = 'block'
             //contain.style.transform = 'rotateY('+String(Number((/\d+/.exec(contain.style.transform))[0]) +180)+'deg)'
         } //完成打印后的回调事件
     });
@@ -61,7 +65,22 @@ Page.prototype.show = function(){
 
 }
 Page.prototype.pageChange =function(){
-    this.contain.dispatchEvent(new Event('pagechange',{"bubbles":false, "cancelable":true}))
+        var  pngs = this.transpng, i = 0,fps =50,len = pngs.length,self = this.self
+        //console.log(pngs)
+        pngs[i].style.display = 'block'
+        setTimeout(function transLoop(){
+            i++
+
+            if(i < len){
+                pngs[i-1].style.display = 'none'
+                pngs[i].style.display = 'block'
+                console.log(pngs[i])
+                setTimeout(transLoop,fps)
+            }else{
+                pngs[i-1].style.display = 'none'
+                self.style.display = 'none'
+            }
+        },fps)
 }
 
 
