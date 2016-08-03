@@ -3,7 +3,7 @@
  */
 
 
-function Page(ele,codeHeight,nextEle){
+function Page(ele,codeHeight,nextObj){
             this.input = ele.getElementsByClassName('word')[0]
             this.output = ele.getElementsByClassName('output')[0]
             this.letters =  ele.getElementsByClassName('keyboard')[0].getElementsByClassName('key')
@@ -13,7 +13,7 @@ function Page(ele,codeHeight,nextEle){
             this.transpng = document.getElementsByClassName('trans1')[0].getElementsByTagName('img')
             //this.codeRun = ele.getElementsByClassName('CodeRun')[0]
             this.codeHeight = codeHeight
-            this.next = nextEle ? new Page(nextEle,'49%') : null
+            this.next = nextObj ? new nextObj : null
             this.self.addEventListener('transitionend',function(e){
                 e.stopPropagation()
             })
@@ -69,13 +69,9 @@ Page.prototype.show = function(){
 
 }
 Page.prototype.pageChange =function(){
-        var  pngs = this.transpng, i = 0,fps =50,len = pngs.length,self = this.self,next
+        var  pngs = this.transpng, i = 0,fps =50,len = pngs.length,self = this.self,next = this.next
 
-             if(this.next !== null){
-                 next = this.next
-             }else{
-                 next = null
-             }
+
         //console.log(pngs)
         pngs[i].style.display = 'block'
         setTimeout(function transLoop(){
@@ -116,9 +112,14 @@ Page.prototype.randomKey =    function(letters){
 }
 
 
-var  sw = new Page(document.getElementsByClassName('sw')[0],'68%',document.getElementsByClassName('sh')[0])
-var sh = new Page(document.getElementsByClassName('sh')[0],'49%',null)
+var  sw = new Page(document.getElementsByClassName('sw')[0],'68%')
+var sh = new Page(document.getElementsByClassName('sh')[0],'49%')
+var wl = new Page(document.getElementsByClassName('wl')[0],'38%')
+sw.next = sh
+sh.next = wl
+//wl.start()
 sw.start()
+
 
 
 /*function PageSwap(pagesObj){

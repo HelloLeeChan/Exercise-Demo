@@ -1279,6 +1279,632 @@
 
         </div>
 
+        <div class="wl page" style="display:none;">
+
+            <div class="gif-frame">
+                <div class="gif3 gif"></div>
+            </div>
+
+            <div class="codescroll" >
+                <div class="codeRun">
+                    count(allModule,getAllSum(document.body.getElementsByTagName('sup')))
+
+                    function count(obj,sum){
+
+                    for(var x in obj){
+                    getSup(x,sum)
+                    }
+                    }
+
+                    function getSup(module, sumPV) {
+                    var modObj
+
+                    if (module === 'NewsFocus') {
+                    var allDivs = document.getElementsByTagName('div')
+                    for (var i = 0; i < allDivs.length; i++) {
+                    if (allDivs[i].getAttribute('bosszone') === 'NewsFocus1') {
+                    modObj = allDivs[i].parentElement.parentElement.parentElement
+                    var maskBox = document.createElement('div')
+                    maskBox.style.cssText = "position:absolute;top:0;left0;" +
+                    "border:3px solid #25dedc;" +
+                    "width:100% ;height:100%;background:white;opacity:0.4;z-index:2"
+                    //modObj = allDivs[i]
+                    modObj.style.position = 'relative'
+                    modObj.appendChild(maskBox)
+                    }
+                    }
+
+
+                    } else {
+                    var allDivs = document.getElementsByTagName('div')
+                    for (var i = 0; i < allDivs.length; i++) {
+                    if (allDivs[i].getAttribute('bosszone') === module) {
+                    var maskBox = document.createElement('div')
+                    //console.log(maskBox)
+                    maskBox.style.cssText = "position:absolute;top:0;left0;" +
+                    "border:3px solid #25dedc;" +
+                    "width:100% ;height:100%;background:white;opacity:0.4;z-index:2"
+                    modObj = allDivs[i]
+                    modObj.style.position = 'relative'
+                    modObj.appendChild(maskBox)
+                    }
+                    }
+                    }
+                    var allSups = modObj.getElementsByTagName('sup')
+
+                    function getSum(obj) {
+                    var sum = 0
+                    var hash = {}
+                    for (var i = 0; i < obj.length; i++) {
+                    if (!hash[obj[i].textContent]) {
+                    hash[obj[i].textContent] = obj[i].previousElementSibling.children[0].href
+                    } else if (hash[obj[i].textContent] === obj[i].previousElementSibling.children[0].href) {
+                    obj[i].textContent = ''
+                    }
+                    /* if(!!obj[i+1] && obj[i].textContent === obj[i+1].textContent && obj[i].previousElementSibling.children[0].href ===
+                    obj[i+1].previousElementSibling.children[0].href){
+                    obj[i].textContent  = ''
+                    }*/
+
+                    sum = sum + Number(obj[i].textContent)
+                    }
+                    return sum
+                    }
+
+
+                    var sum = getSum(allSups)
+                    if (typeof  sumPV === "number") {
+                    var ratio = ((sum / sumPV) * 100).toFixed(2) + "%"
+                    }
+
+                    // console.log("区块点击量:"+sum+"  占比:"+ratio )
+                    var textBox = document.createElement('div')
+
+                    var noteText = document.createTextNode(allModule[module]+"点击量:" + sum + "  占比:" + ratio)
+                    textBox.appendChild(noteText)
+                    textBox.style.cssText = "position:absolute; margin:auto;" +
+                    "width:50% ; height:50%;" +
+                    "top:0;right:0;bottom:0;left:0;" +
+                    "font-size:30px;font-weight:bolder;color:black;opacity:1;z-index:2;line-height:1.3;"
+
+                    modObj.appendChild(textBox)
+                    }
+
+
+                    function getAllSum(obj) {
+                    var sum = 0
+                    var hash = {}
+                    for (var i = 0; i < obj.length; i++) {
+                    if (!hash[obj[i].textContent]) {
+                    hash[obj[i].textContent] = obj[i].previousElementSibling.children[0].href
+                    } else if (hash[obj[i].textContent] === obj[i].previousElementSibling.children[0].href) {
+                    obj[i].textContent = ''
+                    }
+                    /* if(!!obj[i+1] && obj[i].textContent === obj[i+1].textContent && obj[i].previousElementSibling.children[0].href ===
+                    obj[i+1].previousElementSibling.children[0].href){
+                    obj[i].textContent  = ''
+                    }*/
+                    // console.log('clickNum:' + obj[i].textContent + '  ' + obj[i].previousElementSibling.children[0].href)
+                    sum = sum + Number(obj[i].textContent)
+                    }
+                    console.log(sum)
+                    var sumx = 0
+                    for (x in hash) {
+                    sumx = sumx + Number(x)
+
+                    }
+                    console.log(sumx)
+                    return sum
+                    }
+                    function getSup(module, sumPV) {
+                    var modObj
+
+                    if (module === 'NewsFocus') {
+                    var allDivs = document.getElementsByTagName('div')
+                    for (var i = 0; i < allDivs.length; i++) {
+                    if (allDivs[i].getAttribute('bosszone') === 'NewsFocus1') {
+                    modObj = allDivs[i].parentElement.parentElement.parentElement
+                    var maskBox = document.createElement('div')
+                    maskBox.style.cssText = "position:absolute;top:0;left0;" +
+                    "border:3px solid #25dedc;" +
+                    "width:100% ;height:100%;background:white;opacity:0.4;z-index:2"
+                    //modObj = allDivs[i]
+                    modObj.style.position = 'relative'
+                    modObj.appendChild(maskBox)
+                    }
+                    }
+
+
+                    } else {
+                    var allDivs = document.getElementsByTagName('div')
+                    for (var i = 0; i < allDivs.length; i++) {
+                    if (allDivs[i].getAttribute('bosszone') === module) {
+                    var maskBox = document.createElement('div')
+                    //console.log(maskBox)
+                    maskBox.style.cssText = "position:absolute;top:0;left0;" +
+                    "border:3px solid #25dedc;" +
+                    "width:100% ;height:100%;background:white;opacity:0.4;z-index:2"
+                    modObj = allDivs[i]
+                    modObj.style.position = 'relative'
+                    modObj.appendChild(maskBox)
+                    }
+                    }
+                    }
+                    var allSups = modObj.getElementsByTagName('sup')
+
+                    function getSum(obj) {
+                    var sum = 0
+                    var hash = {}
+                    for (var i = 0; i < obj.length; i++) {
+                    if (!hash[obj[i].textContent]) {
+                    hash[obj[i].textContent] = obj[i].previousElementSibling.children[0].href
+                    } else if (hash[obj[i].textContent] === obj[i].previousElementSibling.children[0].href) {
+                    obj[i].textContent = ''
+                    }
+                    /* if(!!obj[i+1] && obj[i].textContent === obj[i+1].textContent && obj[i].previousElementSibling.children[0].href ===
+                    obj[i+1].previousElementSibling.children[0].href){
+                    obj[i].textContent  = ''
+                    }*/
+
+                    sum = sum + Number(obj[i].textContent)
+                    }
+                    return sum
+                    }
+
+
+                    var sum = getSum(allSups)
+                    if (typeof  sumPV === "number") {
+                    var ratio = ((sum / sumPV) * 100).toFixed(2) + "%"
+                    }
+
+                    // console.log("区块点击量:"+sum+"  占比:"+ratio )
+                    var textBox = document.createElement('div')
+
+                    var noteText = document.createTextNode(allModule[module]+"点击量:" + sum + "  占比:" + ratio)
+                    textBox.appendChild(noteText)
+                    textBox.style.cssText = "position:absolute; margin:auto;" +
+                    "width:50% ; height:50%;" +
+                    "top:0;right:0;bottom:0;left:0;" +
+                    "font-size:30px;font-weight:bolder;color:black;opacity:1;z-index:2;line-height:1.3;"
+
+                    modObj.appendChild(textBox)
+                    }
+                    function getSup(module, sumPV) {
+                    var modObj
+
+                    if (module === 'NewsFocus') {
+                    var allDivs = document.getElementsByTagName('div')
+                    for (var i = 0; i < allDivs.length; i++) {
+                    if (allDivs[i].getAttribute('bosszone') === 'NewsFocus1') {
+                    modObj = allDivs[i].parentElement.parentElement.parentElement
+                    var maskBox = document.createElement('div')
+                    maskBox.style.cssText = "position:absolute;top:0;left0;" +
+                    "border:3px solid #25dedc;" +
+                    "width:100% ;height:100%;background:white;opacity:0.4;z-index:2"
+                    //modObj = allDivs[i]
+                    modObj.style.position = 'relative'
+                    modObj.appendChild(maskBox)
+                    }
+                    }
+
+
+                    } else {
+                    var allDivs = document.getElementsByTagName('div')
+                    for (var i = 0; i < allDivs.length; i++) {
+                    if (allDivs[i].getAttribute('bosszone') === module) {
+                    var maskBox = document.createElement('div')
+                    //console.log(maskBox)
+                    maskBox.style.cssText = "position:absolute;top:0;left0;" +
+                    "border:3px solid #25dedc;" +
+                    "width:100% ;height:100%;background:white;opacity:0.4;z-index:2"
+                    modObj = allDivs[i]
+                    modObj.style.position = 'relative'
+                    modObj.appendChild(maskBox)
+                    }
+                    }
+                    }
+                    var allSups = modObj.getElementsByTagName('sup')
+
+                    function getSum(obj) {
+                    var sum = 0
+                    var hash = {}
+                    for (var i = 0; i < obj.length; i++) {
+                    if (!hash[obj[i].textContent]) {
+                    hash[obj[i].textContent] = obj[i].previousElementSibling.children[0].href
+                    } else if (hash[obj[i].textContent] === obj[i].previousElementSibling.children[0].href) {
+                    obj[i].textContent = ''
+                    }
+                    /* if(!!obj[i+1] && obj[i].textContent === obj[i+1].textContent && obj[i].previousElementSibling.children[0].href ===
+                    obj[i+1].previousElementSibling.children[0].href){
+                    obj[i].textContent  = ''
+                    }*/
+
+                    sum = sum + Number(obj[i].textContent)
+                    }
+                    return sum
+                    }
+
+
+                    var sum = getSum(allSups)
+                    if (typeof  sumPV === "number") {
+                    var ratio = ((sum / sumPV) * 100).toFixed(2) + "%"
+                    }
+
+                    // console.log("区块点击量:"+sum+"  占比:"+ratio )
+                    var textBox = document.createElement('div')
+
+                    var noteText = document.createTextNode(allModule[module]+"点击量:" + sum + "  占比:" + ratio)
+                    textBox.appendChild(noteText)
+                    textBox.style.cssText = "position:absolute; margin:auto;" +
+                    "width:50% ; height:50%;" +
+                    "top:0;right:0;bottom:0;left:0;" +
+                    "font-size:30px;font-weight:bolder;color:black;opacity:1;z-index:2;line-height:1.3;"
+
+                    modObj.appendChild(textBox)
+                    }
+                    function getSup(module, sumPV) {
+                    var modObj
+
+                    if (module === 'NewsFocus') {
+                    var allDivs = document.getElementsByTagName('div')
+                    for (var i = 0; i < allDivs.length; i++) {
+                    if (allDivs[i].getAttribute('bosszone') === 'NewsFocus1') {
+                    modObj = allDivs[i].parentElement.parentElement.parentElement
+                    var maskBox = document.createElement('div')
+                    maskBox.style.cssText = "position:absolute;top:0;left0;" +
+                    "border:3px solid #25dedc;" +
+                    "width:100% ;height:100%;background:white;opacity:0.4;z-index:2"
+                    //modObj = allDivs[i]
+                    modObj.style.position = 'relative'
+                    modObj.appendChild(maskBox)
+                    }
+                    }
+
+
+                    } else {
+                    var allDivs = document.getElementsByTagName('div')
+                    for (var i = 0; i < allDivs.length; i++) {
+                    if (allDivs[i].getAttribute('bosszone') === module) {
+                    var maskBox = document.createElement('div')
+                    //console.log(maskBox)
+                    maskBox.style.cssText = "position:absolute;top:0;left0;" +
+                    "border:3px solid #25dedc;" +
+                    "width:100% ;height:100%;background:white;opacity:0.4;z-index:2"
+                    modObj = allDivs[i]
+                    modObj.style.position = 'relative'
+                    modObj.appendChild(maskBox)
+                    }
+                    }
+                    }
+                    var allSups = modObj.getElementsByTagName('sup')
+
+                    function getSum(obj) {
+                    var sum = 0
+                    var hash = {}
+                    for (var i = 0; i < obj.length; i++) {
+                    if (!hash[obj[i].textContent]) {
+                    hash[obj[i].textContent] = obj[i].previousElementSibling.children[0].href
+                    } else if (hash[obj[i].textContent] === obj[i].previousElementSibling.children[0].href) {
+                    obj[i].textContent = ''
+                    }
+                    /* if(!!obj[i+1] && obj[i].textContent === obj[i+1].textContent && obj[i].previousElementSibling.children[0].href ===
+                    obj[i+1].previousElementSibling.children[0].href){
+                    obj[i].textContent  = ''
+                    }*/
+
+                    sum = sum + Number(obj[i].textContent)
+                    }
+                    return sum
+                    }
+
+
+                    var sum = getSum(allSups)
+                    if (typeof  sumPV === "number") {
+                    var ratio = ((sum / sumPV) * 100).toFixed(2) + "%"
+                    }
+
+                    // console.log("区块点击量:"+sum+"  占比:"+ratio )
+                    var textBox = document.createElement('div')
+
+                    var noteText = document.createTextNode(allModule[module]+"点击量:" + sum + "  占比:" + ratio)
+                    textBox.appendChild(noteText)
+                    textBox.style.cssText = "position:absolute; margin:auto;" +
+                    "width:50% ; height:50%;" +
+                    "top:0;right:0;bottom:0;left:0;" +
+                    "font-size:30px;font-weight:bolder;color:black;opacity:1;z-index:2;line-height:1.3;"
+
+                    modObj.appendChild(textBox)
+                    }
+                    var allSups = modObj.getElementsByTagName('sup')
+
+                    function getSum(obj) {
+                    var sum = 0
+                    var hash = {}
+                    for (var i = 0; i < obj.length; i++) {
+                    if (!hash[obj[i].textContent]) {
+                    hash[obj[i].textContent] = obj[i].previousElementSibling.children[0].href
+                    } else if (hash[obj[i].textContent] === obj[i].previousElementSibling.children[0].href) {
+                    obj[i].textContent = ''
+                    }
+                    /* if(!!obj[i+1] && obj[i].textContent === obj[i+1].textContent && obj[i].previousElementSibling.children[0].href ===
+                    obj[i+1].previousElementSibling.children[0].href){
+                    obj[i].textContent  = ''
+                    }*/
+
+                    sum = sum + Number(obj[i].textContent)
+                    }
+                    return sum
+                    }
+
+
+                    var sum = getSum(allSups)
+                    if (typeof  sumPV === "number") {
+                    var ratio = ((sum / sumPV) * 100).toFixed(2) + "%"
+                    }
+
+                    // console.log("区块点击量:"+sum+"  占比:"+ratio )
+                    var textBox = document.createElement('div')
+
+                    var noteText = document.createTextNode(allModule[module]+"点击量:" + sum + "  占比:" + ratio)
+                    textBox.appendChild(noteText)
+                    textBox.style.cssText = "position:absolute; margin:auto;" +
+                    "width:50% ; height:50%;" +
+                    "top:0;right:0;bottom:0;left:0;" +
+                    "font-size:30px;font-weight:bolder;color:black;opacity:1;z-index:2;line-height:1.3;"
+
+                    modObj.appendChild(textBox)
+                    }
+                </div>
+            </div>
+
+            <div class="out" >
+                <div class="word">
+                    北京时间7月19日，2016年里约奥运会女子10米气步枪决赛落下帷幕。
+                    奥运会“四朝元老”杜丽以总成绩
+                </div>
+                <span class="output"></span>
+                <span class="typing-cursor-white">|</span>
+            </div>
+
+            <div class="keyboard" ><!--keyboard-->
+                <div class="key function space1">
+                    Esc
+                </div>
+
+                <div class="key function">
+                    F1
+                </div>
+                <div class="key function">
+                    F2
+                </div>
+                <div class="key function">
+                    F3
+                </div>
+
+                <div class="key function space2">
+                    F4
+                </div>
+                <div class="key function">
+                    F5
+                </div>
+                <div class="key function">
+                    F6
+                </div>
+                <div class="key function">
+                    F7
+                </div>
+                <div class="key function space2">
+                    F8
+                </div>
+
+                <div class="key function">
+                    F9
+                </div>
+                <div class="key function">
+                    F10
+                </div>
+                <div class="key function">
+                    F11
+                </div>
+                <div class="key function">
+                    F12
+                </div>
+                <!--END FUNCTION KEYS -->
+
+                <div class="key num dual">
+                    ~<br>`
+                </div>
+
+                <div class="key num dual">
+                    !<br>1
+                </div>
+                <div class="key num dual">
+                    @<br>2
+                </div>
+                <div class="key num dual">
+                    #<br>3
+                </div>
+                <div class="key num dual">
+                    $<br>4
+                </div>
+                <div class="key num dual">
+                    %<br>5
+                </div>
+                <div class="key num dual">
+                    ^<br>6
+                </div>
+                <div class="key num dual">
+                    &<br>7
+                </div>
+                <div class="key num dual">
+                    *<br>8
+                </div>
+                <div class="key num dual">
+                    (<br>9
+                </div>
+                <div class="key num dual">
+                    )<br>0
+                </div>
+                <div class="key num dual">
+                    _<br>-
+                </div>
+                <div class="key num dual">
+                    +<br>=
+                </div>
+                <div class="key backspace">
+                    Backspace
+                </div>
+                <!--END NUMBER KEYS -->
+
+                <div class="key tab">
+                    Tab
+                </div>
+
+                <div class="key letter ">
+                    Q
+                </div>
+                <div class="key letter">
+                    W
+                </div>
+                <div class="key letter">
+                    E
+                </div>
+                <div class="key letter">
+                    R
+                </div>
+                <div class="key letter">
+                    T
+                </div>
+                <div class="key letter">
+                    Y
+                </div>
+                <div class="key letter">
+                    U
+                </div>
+                <div class="key letter">
+                    I
+                </div>
+                <div class="key letter">
+                    O
+                </div>
+                <div class="key letter">
+                    P
+                </div>
+                <div class="key dual">
+                    {<Br>[
+                </div>
+                <div class="key dual">
+                    }<br>]
+                </div>
+                <div class="key letter dual slash">
+                    |<br>\
+                </div>
+                <div class="key caps">
+                    Caps<br>Lock
+                </div>
+                <div class="key letter">
+                    A
+                </div>
+                <div class="key letter">
+                    S
+                </div>
+                <div class="key letter">
+                    D
+                </div>
+                <div class="key letter">
+                    F
+                </div>
+                <div class="key letter">
+                    G
+                </div>
+                <div class="key letter">
+                    H
+                </div>
+                <div class="key letter">
+                    J
+                </div>
+                <div class="key letter">
+                    K
+                </div>
+                <div class="key letter">
+                    L
+                </div>
+                <div class="key dual">
+                    :<br>;
+                </div>
+                <div class="key dual">
+                    "<br>'
+                </div>
+                <div class="key enter">
+                    Enter
+                </div>
+
+                <div class="key shift left">
+                    Shift
+                </div>
+                <div class="key letter">
+                    Z
+                </div>
+                <div class="key letter">
+                    X
+                </div>
+                <div class="key letter">
+                    C
+                </div>
+                <div class="key letter">
+                    V
+                </div><div class="key letter">
+                    B
+                </div><div class="key letter">
+                    N
+                </div><div class="key letter">
+                    M
+                </div>
+                <div class="key dual">
+                    < <br>,
+                </div>
+                <div class="key dual">
+                    ><br>.
+                </div>
+                <div class="key dual">
+                    ?<br>/
+                </div>
+                <div class="key shift right">
+                    Shift
+                </div>
+                <div class="key ctrl">
+                    Ctrl
+                </div>
+                <div class="key">
+                    &hearts;
+                </div>
+                <div class="key">
+                    Alt
+                </div>
+                <div class="key space">
+
+
+
+                </div>
+                <div class="key">
+                    Alt
+                </div>
+                <div class="key">
+                    &hearts;
+                </div>
+                <div class="key">
+                    Prnt
+                </div>
+                <div class="key ctrl">
+                    Ctrl
+                </div>
+            </div>
+
+
+
+
+        </div>
+
       <!--  <div class="page2 page" >
 
             <div class="gif-frame">

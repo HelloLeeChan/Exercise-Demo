@@ -133,6 +133,7 @@ html, body {
     margin-top: 5px;
 }
 
+
 /*.screenfloat {
     animation: screen 2s ease-in-out infinite alternate;
     -webkit-animation: screen 2s ease-in-out infinite alternate;
@@ -162,7 +163,19 @@ html, body {
     overflow: hidden;
 }
 
-.gif {
+.wl .gif {
+    margin-left: 45px;
+    margin-top: 8px;
+    width: 89%;
+    height: 94%;
+}
+.sw .gif {
+    margin-left: 45px;
+    margin-top: 6px;
+    width: 500px;
+    height: 400px;
+}
+.sh .gif {
     margin-left: 45px;
     margin-top: 6px;
     width: 500px;
@@ -180,7 +193,7 @@ html, body {
 }
 
 .gif3 {
-    background: url("imgs/PD.gif") no-repeat;
+    background: url("imgs/WL.gif") no-repeat;
     background-size: cover;
 }
 
@@ -251,6 +264,50 @@ html, body {
     }
 }
 
+
+/*wl*/
+.wl .codescroll {
+    position: absolute;
+    width: 20%;
+    float: left;
+    /*height: 38%;*/
+    margin-top: 80%;
+    overflow: hidden;
+    margin-left: 3%;
+    color: #6bcdf1;
+    word-wrap: break-word;
+    transition: height 1s linear 1s;
+    -webkit-transition: height 1s linear 1s;
+}
+
+.wl .out {
+    float: left;
+    /* margin-left: 3%; */
+    margin-left: 28%;
+    width: 67%;
+    height: 280px;
+    margin-top: 5px;
+    font-size: 45px;
+    color: #6bcdf1;
+}
+
+.wl .gif-frame {
+    width: 90%;
+    height: 32%;
+    float: left;
+    margin-top: 30%;
+    margin-left: 3%;
+    background: url("imgs/gif-frame-wl.png") no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+.wl .keyboard {
+    width: 650px;
+    height: 260px;
+    float: left;
+    margin-left: 26%;
+    margin-top: 5px;
+}
 /*.keyboard{
     width:800px; height: 320px;
     background-color: #111;
