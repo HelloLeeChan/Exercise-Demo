@@ -9,29 +9,41 @@ function Page(ele){
             this.letters =  ele.getElementsByClassName('keyboard')[0].getElementsByClassName('key')
             this.contain =  document.getElementsByClassName('container')[0]
             this.self = ele
+            this.isshow = false
             this.codeScroll = ele.getElementsByClassName('codescroll')[0]
+            this.self.addEventListener('transitionend',function(e){
+                e.stopPropagation()
+            })
 
 }
 
 Page.prototype.start = function(){
     var that = this,
         contain = this.contain
+    this.codeScroll.addEventListener('transitionend',function(e){
+        codeRun.classList.add('codeRun')
+    })
+
+
+    //this.self.classList.add('screenfloat')
+
     var    typing = new Typing({
         source: that.input,
         output: that.output,
         delay: 40,
         done: function(){
-            console.log(that.handle)
+            //that.self.classList.remove('screenfloat')
+            //that.pageChange()
             clearInterval(that.handle)
-           // contain.style.transform = 'rotateY('+String(Number((/\d+/.exec(contain.style.transform))[0]) +180)+'deg)'
+            //contain.style.transform = 'rotateY('+String(Number((/\d+/.exec(contain.style.transform))[0]) +180)+'deg)'
         } //完成打印后的回调事件
     });
 
     typing.start()
     codeScroll= this.codeScroll
-    codeScroll.addEventListener('transitionend',function(e){
+   /* codeScroll.addEventListener('transitionend',function(e){
         e.stopPropagation()
-    })
+    })*/
     //this.handle = this.randomKey(this.letters)
 
 
@@ -46,10 +58,12 @@ Page.prototype.clear =function(){
 }
 Page.prototype.show = function(){
     this.self.style.display = 'block'
+
 }
 Page.prototype.pageChange =function(){
-    this.contain.dispatchEvent(new Event('pagechange',{"bubbles":false, "cancelable":false}))
+    this.contain.dispatchEvent(new Event('pagechange',{"bubbles":false, "cancelable":true}))
 }
+
 
 Page.prototype.randomKey =    function(letters){
         function toggleKey(key){
@@ -80,27 +94,34 @@ function PageSwap(pages){
         }
         console.log(pagesObj)
         pagesObj[0].start()
+        //pagesObj[1].show()
+
 
         var  container = document.getElementsByClassName('container')[0],
              j = 1
 
                  container.addEventListener('transitionend',function(e){
-                     console.log(e)
+                     console.log(e.target)
                      if(j < pagesObj.length ){
                          console.log(j)
                          console.log(e)
                          pagesObj[j].start()
+
                          if(j < pagesObj.length -1){
                              pagesObj[j+1].show()
                          }
 
-                         pagesObj[j-1].clear()
+                             pagesObj[j-1].clear()
+
+
 
                          j++
 
                      }
 
                  })
+               // container.dispatchEvent(new Event('pagechange'))
+
 }
 
 var pages = new PageSwap(document.getElementsByClassName('page'))

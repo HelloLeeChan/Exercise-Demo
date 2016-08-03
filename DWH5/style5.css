@@ -13,6 +13,7 @@ html,body{
     width: 100%;
     height: 100%;
     perspective: 2000px;
+
 }
 .container {
     position: absolute;
@@ -30,16 +31,15 @@ html,body{
     -webkit-transform-style: preserve-3d;
     /*background: url("imgs/screen.png") no-repeat;*/
     background-size: cover;
-    animation: screen 2.2s ease-in-out infinite alternate;
-    -webkit-animation: screen 2.2s ease-in-out infinite alternate;
+
 
 }
 @keyframes screen {
     0%{
-        transform: rotateY( 3deg );
+        transform: rotateY( 2.5deg );
     }
     100%{
-        transform: rotateY(-2deg);
+        transform: rotateY(-1.5deg);
     }
 }
 @-webkit-keyframes screen {
@@ -60,6 +60,15 @@ html,body{
     background-size: cover;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    animation: screen 2s ease-in-out infinite alternate;
+    -webkit-animation: screen 2s ease-in-out infinite alternate;
+
+
+}
+
+.screenfloat {
+    animation: screen 2s ease-in-out infinite alternate;
+    -webkit-animation: screen 2s ease-in-out infinite alternate;
 }
 .page2 {
     position: absolute;
@@ -70,6 +79,7 @@ html,body{
     transform: rotateY( 180deg );
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+
 }
 .page3{
     position: absolute;
@@ -79,6 +89,8 @@ html,body{
     background-size: cover;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+
+
 }
 
 /*.flip{
@@ -148,8 +160,8 @@ html,body{
     height: 68%;
 }
 .codeRun {
-    animation: moveUp 3s linear 2;
-    -webkit-animation:moveUp 3s linear 2;
+    animation: moveUp 7s linear 2;
+    -webkit-animation:moveUp 7s linear 2;
 }
 
 @keyframes moveUp {
