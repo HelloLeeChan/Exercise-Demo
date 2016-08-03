@@ -10,7 +10,7 @@ function Page(ele,codeHeight,transPng){
             //this.contain =  document.getElementById('container')
             this.self = ele
             this.codeScroll = ele.getElementsByClassName('codescroll')[0]
-            this.transpng = transPng?transPng:document.getElementsByClassName('trans1')[0].getElementsByTagName('img')
+            this.transpng = transPng?transPng:document.getElementsByClassName('sh2wl')[0].getElementsByTagName('img')
             //this.codeRun = ele.getElementsByClassName('CodeRun')[0]
             this.codeHeight = codeHeight
             //this.next = nextObj ? nextObj : null
@@ -111,16 +111,18 @@ Page.prototype.randomKey =    function(letters){
 
 }
 var sh2wl = document.getElementsByClassName('sh2wl')[0].getElementsByTagName('img')
+var wl2sw = document.getElementsByClassName('wl2sw')[0].getElementsByTagName('img')
 
 
 var  sw = new Page(document.getElementsByClassName('sw')[0],'68%')
 var sh = new Page(document.getElementsByClassName('sh')[0],'49%',sh2wl)
 console.log(sh)
 var wl = new Page(document.getElementsByClassName('wl')[0],'38%')
-sw.next = sh
+
 sh.next = wl
-//wl.start()
-sw.start()
+wl.next = sw
+sh.start()
+
 
 
 
