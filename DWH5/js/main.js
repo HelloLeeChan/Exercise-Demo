@@ -3,21 +3,29 @@
  */
 
 
-function Page(ele,codeHeight,transPng){
+function Page(codeStr,codeHeight,imgs,template){
+            this.pass = false
+            this.imgLoaded = 0
+            this.ready = false
+            var pageDom = template.cloneNode(true)
+            pageDom.classList.add(codeStr)
+            this.self =  pageDom
+            var ele = this.self
             this.input = ele.getElementsByClassName('word')[0]
             this.output = ele.getElementsByClassName('output')[0]
             this.letters =  ele.getElementsByClassName('keyboard')[0].getElementsByClassName('key')
             this.contain =  document.getElementById('container')
-            this.self = ele
+            this.imgs = imgs
             this.codeScroll = ele.getElementsByClassName('codescroll')[0]
-            this.transpng = transPng?transPng:document.getElementsByClassName('sh2wl')[0].getElementsByTagName('img')
+            //this.transpng = transPng?transPng:document.getElementsByClassName('sh2wl')[0].getElementsByTagName('img')
             //this.codeRun = ele.getElementsByClassName('CodeRun')[0]
+            this.transpng = null
             this.codeHeight = codeHeight
             //this.next = nextObj ? nextObj : null
+            this.next = null
             this.self.addEventListener('transitionend',function(e){
                 e.stopPropagation()
             })
-            console.log(transPng)
 
 }
 
@@ -25,6 +33,11 @@ Page.prototype.start = function(){
 
     var that = this,
         contain = this.contain
+    if(that.next ){
+
+            that.next.getReady()
+    }
+
 
     this.codeScroll.addEventListener('transitionend',function(e){
         // this.codeRun.classList.add('codeRun')
@@ -39,8 +52,15 @@ Page.prototype.start = function(){
         delay: 40,
         done: function(){
             clearInterval(that.handle)
-            that.pageChange()
-            that.self.style.display = 'block'
+            console.log(that.imgLoaded)
+            if(that.imgCount == that.imgLoaded){
+                that.self.style.display = 'none'
+                that.pageChange()
+            }else{
+                that.pass = true
+            }
+
+
             //contain.style.transform = 'rotateY('+String(Number((/\d+/.exec(contain.style.transform))[0]) +180)+'deg)'
         } //完成打印后的回调事件
     });
@@ -110,13 +130,87 @@ Page.prototype.randomKey =    function(letters){
 
 
 }
-var sh2wl = document.getElementsByClassName('sh2wl')[0].getElementsByTagName('img')
+
+
+Page.prototype.getReady = function(){
+        var imgLoaded = this.imgLoaded
+        var page = this
+
+        function _countLoad(){
+            console.log(imgLoaded)
+            console.log(page)
+            page.imgLoaded++
+            if(page.imgLoaded == page.imgCount && page.pass === true){
+                page.pageChange()
+            }
+
+        }
+
+        var pagedom = this.self
+        var imgs = this.imgs
+        var mainGif = new Image()
+                mainGif.src = imgs.main
+                mainGif.onload = _countLoad
+                pagedom.getElementsByClassName('gif-frame')[0].appendChild(mainGif)
+        var pageTrans =[],
+            trans = imgs.trans
+            len = trans.length
+            transBox = document.getElementsByClassName('trans')[0]
+            this.imgCount = len +1
+                for(var i = 0; i < len ; i++){
+                    var temp = new Image()
+                            temp.style.display = 'none'
+                            temp.src = trans[i]
+                            temp.onload = _countLoad
+                            pageTrans.push(temp)
+                            transBox.appendChild(temp)
+
+                }
+        console.log(pageTrans)
+        this.transpng = pageTrans
+        document.getElementById('container').appendChild(pagedom)
+
+}
+
+Page.prototype.checkReady = function(page){
+    var self = page
+    console.log(self)
+    if(self.imgCount == self.imgLoaded){
+        self.self.style.display = 'block'
+        console.log('yes')
+    }
+
+        console.log(self)
+
+}
+
+var template = document.getElementsByClassName('page')[0]
+var shImgs = {main:'imgs/SH.gif',
+    trans:['imgs/d/d1.png','imgs/d/d2.png','imgs/d/d3.png','imgs/d/d4.png','imgs/d/d5.png']}
+var wlImgs = {main:'imgs/WL.gif',
+    trans:['imgs/c/c1.png','imgs/c/c2.png','imgs/c/c3.png','imgs/c/c4.png','imgs/c/c5.png']}
+var swImgs = {main:'imgs/SW.gif',
+    trans:['imgs/b/b1.png','imgs/b/b2.png','imgs/b/b3.png','imgs/b/b4.png','imgs/b/b5.png']}
+
+var sh = new Page('sh','49%',shImgs,template)
+var wl = new Page('wl','38%',wlImgs,template)
+var sw = new  Page('sw','69%',swImgs,template)
+sh.next = wl
+wl.next = sw
+sh.getReady()
+sh.show()
+sh.start()
+console.log(sh)
+
+
+/*var sh2wl = document.getElementsByClassName('sh2wl')[0].getElementsByTagName('img')
 var wl2sw = document.getElementsByClassName('wl2sw')[0].getElementsByTagName('img')
 
 
 //var  sw = new Page(document.getElementsByClassName('sw')[0],'68%')
+
 var sh = new Page(document.getElementsByClassName('sh')[0],'49%',sh2wl)
-console.log(sh)
+
 var wl = new Page(document.getElementsByClassName('wl')[0],'38%')
 
 sh.next = wl
@@ -140,7 +234,7 @@ function lazyloader(page){
             page.next.next = sw
         }
     })
-}
+}*/
 
 
 /*function PageSwap(pagesObj){

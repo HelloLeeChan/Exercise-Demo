@@ -159,25 +159,26 @@ html, body {
     background: url("imgs/gif-frame.png") no-repeat;
     background-size: cover;
     overflow: hidden;
+    position: absolute;
 }
 
-.wl .gif {
+/*.wl .gif {
     margin-left: 45px;
     margin-top: 8px;
     width: 89%;
     height: 94%;
     background: url("imgs/WL.gif") no-repeat;
     background-size: cover;
-}
-.sw .gif {
+}*/
+
+
+.sw img {
     margin-left: 45px;
     margin-top: 6px;
     width: 500px;
     height: 400px;
-    background: url("imgs/SW.gif") no-repeat;
-    background-size: cover;
 }
-.sh .gif {
+/*.sh .gif {
     margin-left: 45px;
     margin-top: 6px;
     width: 500px;
@@ -185,8 +186,13 @@ html, body {
     background: url("imgs/SH.gif") no-repeat;
     background-size: cover;
 
+}*/
+.sh img {
+    margin-left: 45px;
+    margin-top: 6px;
+    width: 500px;
+    height: 400px;
 }
-
 
 
 
@@ -197,11 +203,12 @@ html, body {
     display: none;
 }
 
-.out {
+.sw .out {
+    position: absolute;
     margin-left: 3%;
     width: 595px;
     height: 220px;
-    margin-top: 10px;
+    margin-top: 80%;
     font-size: 45px;
     color: #6bcdf1;
 }
@@ -212,7 +219,7 @@ html, body {
     height: 0;
     overflow: hidden;
     margin-left: 73%;
-    margin-top: -46%;
+    margin-top: 29%;
     color: #6bcdf1;
     -webkit-backface-visibility: hidden;
     word-wrap: break-word;
@@ -277,20 +284,21 @@ html, body {
 }
 
 .wl .out {
-    float: left;
+    position: absolute;
+    /* float: left; */
     /* margin-left: 3%; */
     margin-left: 28%;
     width: 67%;
     height: 280px;
-    margin-top: 5px;
+    margin-top: 80%;
     font-size: 45px;
     color: #6bcdf1;
 }
 
 .wl .gif-frame {
+    position: absolute;
     width: 90%;
     height: 32%;
-    float: left;
     margin-top: 30%;
     margin-left: 3%;
     background: url("imgs/gif-frame-wl.png") no-repeat;
@@ -298,11 +306,18 @@ html, body {
     overflow: hidden;
 }
 .wl .keyboard {
+    position: absolute;
     width: 650px;
     height: 260px;
     float: left;
     margin-left: 26%;
-    margin-top: 5px;
+    margin-top: 105%;
+}
+.wl img {
+    margin-left: 45px;
+    margin-top: 8px;
+    width: 89%;
+    height: 94%;
 }
 /*.keyboard{
     width:800px; height: 320px;
@@ -340,11 +355,12 @@ html, body {
 }
 
 .sw .keyboard {
+    position: absolute;
     width: 650px;
     height: 260px;
     float: left;
     margin-left: 3%;
-    margin-top: 37px;
+    margin-top: 105%;
 }
 
 .function {
