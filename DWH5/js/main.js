@@ -31,8 +31,9 @@ function Page(codeStr,codeHeight,imgs,template){
 
 Page.prototype.start = function(){
 
-    var that = this,
-        contain = this.contain
+    var that = this
+    var contain = this.contain
+    that.show()
     if(that.next ){
 
             that.next.getReady()
@@ -105,7 +106,7 @@ Page.prototype.pageChange =function(){
                 pngs[i-1].style.display = 'none'
                 self.style.display = 'none'
                 if(next !== null){
-                        next.show()
+                       // next.show()
                         next.start()
                 }
             }
@@ -197,11 +198,27 @@ var wl = new Page('wl','38%',wlImgs,template)
 var sw = new  Page('sw','71%',swImgs,template)
 sh.next = wl
 wl.next = sw
-sh.getReady()
-sh.show()
+/*sh.getReady()
 sh.start()
-console.log(sh)
+console.log(sh)*/
 
+function loader(page1){
+    var loader = document.getElementById('loader')
+    var page1 = page1
+    page1.getReady()
+    window.onload = function(){
+        setTimeout(function(){
+            console.log(page1)
+            if(page1.imgLoaded == page1.imgCount){
+                loader.style.display = 'none'
+                page1.start()
+            }else{
+                console.log(loader)
+            }
+        },100)
+    }
+}
+loader(sh)
 
 /*var sh2wl = document.getElementsByClassName('sh2wl')[0].getElementsByTagName('img')
 var wl2sw = document.getElementsByClassName('wl2sw')[0].getElementsByTagName('img')
