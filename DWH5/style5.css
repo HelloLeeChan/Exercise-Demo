@@ -85,9 +85,7 @@ html, body {
     -webkit-animation: screen 2s ease-in-out infinite alternate;
 }
 
-.sw {
 
-}
 
 .sh .codescroll {
     position: absolute;
@@ -168,34 +166,32 @@ html, body {
     margin-top: 8px;
     width: 89%;
     height: 94%;
+    background: url("imgs/WL.gif") no-repeat;
+    background-size: cover;
 }
 .sw .gif {
     margin-left: 45px;
     margin-top: 6px;
     width: 500px;
     height: 400px;
+    background: url("imgs/SW.gif") no-repeat;
+    background-size: cover;
 }
 .sh .gif {
     margin-left: 45px;
     margin-top: 6px;
     width: 500px;
     height: 400px;
-}
-
-.gif1 {
-    background: url("imgs/SW.gif") no-repeat;
-    background-size: cover;
-}
-
-.gif2 {
     background: url("imgs/SH.gif") no-repeat;
     background-size: cover;
+
 }
 
-.gif3 {
-    background: url("imgs/WL.gif") no-repeat;
-    background-size: cover;
-}
+
+
+
+
+
 
 .word {
     display: none;
@@ -211,13 +207,13 @@ html, body {
 }
 
 .sw .codescroll {
+    position: absolute;
     width: 20%;
     height: 0;
     overflow: hidden;
     margin-left: 73%;
-    margin-top: -70%;
+    margin-top: -46%;
     color: #6bcdf1;
-    backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     word-wrap: break-word;
     transition: height 1s linear 1s;

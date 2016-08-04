@@ -7,7 +7,7 @@ function Page(ele,codeHeight,transPng){
             this.input = ele.getElementsByClassName('word')[0]
             this.output = ele.getElementsByClassName('output')[0]
             this.letters =  ele.getElementsByClassName('keyboard')[0].getElementsByClassName('key')
-            //this.contain =  document.getElementById('container')
+            this.contain =  document.getElementById('container')
             this.self = ele
             this.codeScroll = ele.getElementsByClassName('codescroll')[0]
             this.transpng = transPng?transPng:document.getElementsByClassName('sh2wl')[0].getElementsByTagName('img')
@@ -27,10 +27,9 @@ Page.prototype.start = function(){
         contain = this.contain
 
     this.codeScroll.addEventListener('transitionend',function(e){
-
         // this.codeRun.classList.add('codeRun')
     })
-
+    this.contain.dispatchEvent(new Event('pagechange'))
 
     //this.self.classList.add('screenfloat')
 
@@ -91,6 +90,7 @@ Page.prototype.pageChange =function(){
                 }
             }
         },fps)
+
 }
 
 
@@ -114,22 +114,36 @@ var sh2wl = document.getElementsByClassName('sh2wl')[0].getElementsByTagName('im
 var wl2sw = document.getElementsByClassName('wl2sw')[0].getElementsByTagName('img')
 
 
-var  sw = new Page(document.getElementsByClassName('sw')[0],'68%')
+//var  sw = new Page(document.getElementsByClassName('sw')[0],'68%')
 var sh = new Page(document.getElementsByClassName('sh')[0],'49%',sh2wl)
 console.log(sh)
 var wl = new Page(document.getElementsByClassName('wl')[0],'38%')
 
 sh.next = wl
-wl.next = sw
+//wl.next = sw
 sh.start()
+lazyloader(sh)
 
 
+function lazyloader(page){
+    var template = document.getElementsByClassName('wl')[0].cloneNode(true)
+    template.classList.remove('wl')
+    template.classList.add('sw')
+    var sw = new Page(template,'68%')
+    console.log(sw)
+    var changeCount = 0
+    var conatianer = page.contain
+    conatianer.addEventListener('pagechange',function(){
+        changeCount++
+        if (changeCount%2 !== 0){
+            conatianer.appendChild(template)
+            page.next.next = sw
+        }
+    })
+}
 
 
 /*function PageSwap(pagesObj){
-
-
-
 
         var  container = document.getElementsByClassName('container')[0],
              j = 1
@@ -146,8 +160,6 @@ sh.start()
                          }
 
                              pagesObj[j-1].clear()
-
-
 
                          j++
 
