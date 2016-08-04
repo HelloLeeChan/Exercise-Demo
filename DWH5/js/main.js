@@ -194,7 +194,7 @@ var swImgs = {main:'imgs/SW.gif',
 
 var sh = new Page('sh','49%',shImgs,template)
 var wl = new Page('wl','38%',wlImgs,template)
-var sw = new  Page('sw','69%',swImgs,template)
+var sw = new  Page('sw','71%',swImgs,template)
 sh.next = wl
 wl.next = sw
 sh.getReady()
