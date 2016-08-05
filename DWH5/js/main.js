@@ -55,7 +55,7 @@ Page.prototype.start = function(){
     var    typing = new Typing({
         source: that.input,
         output: that.output,
-        delay: 40,
+        delay: 60,
         done: function(){
             clearInterval(that.handle)
             console.log(that.imgLoaded)
