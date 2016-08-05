@@ -101,7 +101,7 @@ Page.prototype.pageChange = function () {
     var self = this.self
     var next = this.next
     var that = this
-
+    this.contain.classList.remove('showPage')
 
     if(next !== null){
         pngs[i].style.display = 'block'
@@ -184,6 +184,24 @@ Page.prototype.getReady = function () {
 
 }
 
+/*
+Page.prototype.ending = function () {
+    var logo = document.getElementById('ending')
+    var ending = document.getElementById('ending-glow')
+    var self = this.self
+    console.log('ending')
+    this.contain.classList.remove('showPage')
+    self.classList.remove('screenRotate')
+    this.contain.style.transform  = 'rotateY(90deg)'
+    this.contain.addEventListener('transitionend',function(){
+        console.log('ending')
+        ending.style.display = 'block'
+        ending.classList.add('flash')
+        this.style.display = 'none'
+        logo.style.opacity = 1
+    })
+}
+*/
 Page.prototype.ending = function () {
     var logo = document.getElementById('ending')
     var ending = document.getElementById('ending-glow')
@@ -196,7 +214,7 @@ Page.prototype.ending = function () {
         ending.style.display = 'block'
         ending.classList.add('flash')
         this.style.display = 'none'
-        logo.style.opacity = 10
+        logo.style.opacity = 1
     })
 }
 
@@ -256,8 +274,10 @@ function loader(page1) {
         setTimeout(function () {
             loader.style.display = 'none'
             wrap.style.display = 'block'
+            page1.contain.classList.add('showPage')
+            page1.contain.style.transform ='rotateY(0deg)'
             page1.start()
-        }, 2000)
+        }, 3000)
 
     }
 }
