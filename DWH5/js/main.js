@@ -12,6 +12,8 @@ function Page(codeStr,codeHeight,imgs,template){
             this.self =  pageDom
             var ele = this.self
             this.input = ele.getElementsByClassName('word')[0]
+            /*this.input = '北京时间7月19日，2016年里约奥运会女子10米气步枪决赛落下帷幕。'+
+                          '奥运会“四朝元老”杜丽以总成绩'*/
             this.output = ele.getElementsByClassName('output')[0]
             this.letters =  ele.getElementsByClassName('keyboard')[0].getElementsByClassName('key')
             this.contain =  document.getElementById('container')
@@ -138,8 +140,8 @@ Page.prototype.getReady = function(){
         var page = this
 
         function _countLoad(){
-            console.log(imgLoaded)
-            console.log(page)
+           // console.log(imgLoaded)
+            //console.log(page)
             page.imgLoaded++
             if(page.imgLoaded == page.imgCount && page.pass === true){
                 page.pageChange()
@@ -214,7 +216,7 @@ function loader(page1){
                 console.log('yes')
                 loader.style.display = 'none'
                 page1.start()
-            
+
 
     }
 }
