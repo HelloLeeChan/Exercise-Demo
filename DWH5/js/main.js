@@ -227,22 +227,20 @@ console.log(sh)*/
 
 function loader(page1){
     var loader = document.getElementById('loadwrap')
+    var wrap = document.getElementsByClassName('wrap')[0]
     var page1 = page1
     page1.getReady()
     window.onload = function(){
-        console.log('windowp')
-                console.log('yes')
-                loader.style.display = 'none'
-                document.getElementsByClassName('wrap')[0].style.display = 'block'
-                page1.start()
+        setTimeout(function(){
+            loader.style.display = 'none'
+            wrap.style.display = 'block'
+            page1.start()
+        },400)
+
     }
 }
 loader(sh)
 
-document.addEventListener('onload',function(e){
-    console.log(e)
-    console.log('onload event')
-})
 
 /*var sh2wl = document.getElementsByClassName('sh2wl')[0].getElementsByTagName('img')
 var wl2sw = document.getElementsByClassName('wl2sw')[0].getElementsByTagName('img')
