@@ -13,11 +13,14 @@
 </head>
 <body>
 
-<div id="loader">
-    <img src="imgs/dw-logo.svg">
-    <svg class="spinner" viewBox="0 0 50 50">
-        <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
-    </svg>
+
+<div id="loadwrap">
+    <div class="loadbg">
+        <div class="loading">
+            <span class="title">自动编辑中...</span>
+            <span class="loadtext">机器人Dreamwriter</span>
+        </div>
+    </div>
 </div>
 
 <div class="words" style="display: none">
@@ -30,10 +33,8 @@
         <div id="TT">北京时间X，里约奥运会乒乓球男单/女单决赛结束较量。最终，XX选手A以S1-S2战胜队友B，登顶乒乓球女单冠军宝座，B获得亚军。    </div>
 </div>
 
-<div class="wrap">
-
-
-    <div  id="container" style="transform: rotateY(0deg)" >
+<div class="wrap" style="display: none">
+    <div  id="container" style="transform: rotateY(0deg)" style="display: none">
         <div class="trans">
         </div>
         <div class="page" style="display: none">
@@ -660,6 +661,7 @@
 
 
 </div>
+
 </body>
 <script src="js/main.js"></script>
 </html>

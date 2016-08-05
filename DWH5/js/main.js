@@ -67,7 +67,6 @@ Page.prototype.start = function(){
             }
 
 
-            //contain.style.transform = 'rotateY('+String(Number((/\d+/.exec(contain.style.transform))[0]) +180)+'deg)'
         } //完成打印后的回调事件
     });
 
@@ -227,18 +226,15 @@ sh.start()
 console.log(sh)*/
 
 function loader(page1){
-    var loader = document.getElementById('loader')
+    var loader = document.getElementById('loadwrap')
     var page1 = page1
     page1.getReady()
     window.onload = function(){
         console.log('windowp')
-
-
                 console.log('yes')
                 loader.style.display = 'none'
+                document.getElementsByClassName('wrap')[0].style.display = 'block'
                 page1.start()
-
-
     }
 }
 loader(sh)
