@@ -86,7 +86,9 @@ html, body {
     -webkit-animation: screen 2s ease-in-out infinite alternate;
 }
 
-
+.out {
+    overflow: hidden;
+}
 
 .one .codescroll {
     position: absolute;
