@@ -100,11 +100,10 @@ Page.prototype.pageChange =function(){
         pngs[i].style.display = 'block'
         setTimeout(function transLoop(){
             i++
-
             if(i < len){
                 pngs[i-1].style.display = 'none'
                 pngs[i].style.display = 'block'
-                //console.log(pngs[i])
+                console.log('trans')
                 setTimeout(transLoop,fps)
             }else{
                 pngs[i-1].style.display = 'none'
