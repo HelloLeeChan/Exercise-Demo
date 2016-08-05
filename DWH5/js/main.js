@@ -171,6 +171,7 @@ Page.prototype.getReady = function(){
         this.transpng = pageTrans
         document.getElementById('container').appendChild(pagedom)
 
+
 }
 
 Page.prototype.checkReady = function(page){
@@ -207,18 +208,22 @@ function loader(page1){
     var page1 = page1
     page1.getReady()
     window.onload = function(){
-        setTimeout(function(){
-            console.log(page1)
-            if(page1.imgLoaded == page1.imgCount){
+        console.log('windowp')
+
+
+                console.log('yes')
                 loader.style.display = 'none'
                 page1.start()
-            }else{
-                console.log(loader)
-            }
-        },100)
+            
+
     }
 }
 loader(sh)
+
+document.addEventListener('onload',function(e){
+    console.log(e)
+    console.log('onload event')
+})
 
 /*var sh2wl = document.getElementsByClassName('sh2wl')[0].getElementsByTagName('img')
 var wl2sw = document.getElementsByClassName('wl2sw')[0].getElementsByTagName('img')
