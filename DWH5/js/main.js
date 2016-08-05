@@ -257,7 +257,7 @@ function loader(page1) {
             loader.style.display = 'none'
             wrap.style.display = 'block'
             page1.start()
-        }, 400)
+        }, 2000)
 
     }
 }
