@@ -11,7 +11,8 @@ function Page(codeStr,codeHeight,imgs,template){
             pageDom.classList.add(codeStr)
             this.self =  pageDom
             var ele = this.self
-            this.input = ele.getElementsByClassName('word')[0]
+            this.input = document.getElementsByClassName(codeStr.toLocaleUpperCase())[0]
+            console.log(codeStr)
             /*this.input = '北京时间7月19日，2016年里约奥运会女子10米气步枪决赛落下帷幕。'+
                           '奥运会“四朝元老”杜丽以总成绩'*/
             this.output = ele.getElementsByClassName('output')[0]
