@@ -266,11 +266,13 @@ bd.next = tt
 
 
 function loader(page1) {
+    var screen = new Image()
+    screen.src = 'imgs/screen-mini.png'
     var loader = document.getElementById('loadwrap')
     var wrap = document.getElementsByClassName('wrap')[0]
     var page1 = page1
     page1.getReady()
-    window.onload = function () {
+    screen.onload = function () {
         setTimeout(function () {
             loader.style.display = 'none'
             wrap.style.display = 'block'
