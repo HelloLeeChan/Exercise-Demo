@@ -100,6 +100,40 @@ body {
     -webkit-animation: screen 2s ease-in-out infinite alternate;
 }
 
+#bottom-glow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: 139% auto;
+    width: 90%;
+    height: 20%;
+    background: url("imgs/bottom-glow.png") no-repeat;
+    background-size: contain;
+    animation: bottomFlash 2s  ease infinite alternate;
+    -webkit-animation: bottomFlash 2s  ease infinite alternate;
+}
+@keyframes bottomFlash {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+
+}
+@-webkit-keyframes bottomFlash {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
 .showPage{
     animation: showPage 1s ease 1 forwards;
     -webkit-animation: showPage 1s ease 1 forwards;;
@@ -124,6 +158,7 @@ body {
         opacity: 1;
     }
 }
+
 
 
 .out {
@@ -340,17 +375,17 @@ body {
     -webkit-transition: opacity  1s ease .2s;
     background: url("imgs/ending-logo.png") no-repeat;
     background-size: cover;
-    animation: Floating 2s infinite ease-in-out alternate;
-    -webkit-animation: Floating 2s infinite ease-in-out alternate;
+    animation: Floating 1.5s infinite ease-in-out alternate;
+    -webkit-animation: Floating 1.5s infinite ease-in-out alternate;
 }
 @-webkit-keyframes Floating{
     from {-webkit-transform:translate(0, 0px);}
-    to{-webkit-transform:translate(0, 15px);}
+    to{-webkit-transform:translate(0, 17px);}
 
 }
 @keyframes Floating{
     from {-webkit-transform:translate(0, 0px);}
-    to {-webkit-transform: translate(0, 15px); }
+    to {-webkit-transform: translate(0, 17px); }
 }
 
 #ending-glow{

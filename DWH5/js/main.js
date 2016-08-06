@@ -56,14 +56,17 @@ Page.prototype.start = function () {
         output: that.output,
         delay: 60,
         done: function () {
-            clearInterval(that.handle)
-            console.log(that.imgLoaded)
-            if (that.imgCount == that.imgLoaded) {
-               // that.self.style.display = 'none'
-                that.pageChange()
-            } else {
-                that.pass = true
-            }
+            setTimeout(function(){
+                clearInterval(that.handle)
+                console.log(that.imgLoaded)
+                if (that.imgCount == that.imgLoaded) {
+                    // that.self.style.display = 'none'
+                    that.pageChange()
+                } else {
+                    that.pass = true
+                }
+            },2000)
+
 
 
         } //完成打印后的回调事件
@@ -258,11 +261,11 @@ var bd = new Page('two', 'BD', bdImgs, template)
 var tt = new Page('three', 'TT', ttImgs, template)
 
 sh.next = wl
-wl.next = sw
+/*wl.next = sw
 sw.next = dp
 dp.next = ga
 ga.next = bd
-bd.next = tt
+bd.next = tt*/
 
 
 function loader(page1) {
