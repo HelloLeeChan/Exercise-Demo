@@ -170,8 +170,8 @@ body {
     width: 20%;
     float: left;
     height: 0;
-    margin-top: 62%;
-    /*height: 49%;*/
+    margin-top: 61%;
+    /* height: 49%; */
     overflow: hidden;
     margin-left: 3%;
     color: #6bcdf1;
@@ -180,31 +180,34 @@ body {
     -webkit-transition: height 1s linear 1s;
 }
 .one .out {
+    position: absolute;
     float: left;
     /* margin-left: 3%; */
     margin-left: 5%;
     width: 90%;
-    height: 280px;
-    margin-top: 300px;
+    height: 19.2%;
+    margin-top: 28%;
     font-size: 45px;
     color: #6bcdf1;
 }
 .one .gif-frame {
+    position: absolute;
     width: 600px;
     height: 426px;
     float: left;
-    /* margin-top: 30%; */
+    margin-top: 61%;
     margin-left: 28%;
     background: url("imgs/gif-frame.png") no-repeat;
     background-size: cover;
     overflow: hidden;
 }
 .one .keyboard {
+    position: absolute;
     width: 650px;
     height: 260px;
     float: left;
     margin-left: 26%;
-    margin-top: 5px;
+    margin-top: 109%;
 }
 .one img {
     margin-left: 45px;
@@ -332,7 +335,7 @@ body {
     margin-left: 5%;
     width: 20%;
     height: 70%;
-    margin-top: 300px;
+    margin-top: 30%;
     font-size: 45px;
     color: #6bcdf1;
 }
