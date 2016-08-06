@@ -10,9 +10,12 @@
     <link rel="stylesheet" href="style5.css">
     <link rel="stylesheet" href="typing.css">
     <script src="js/typing.min.js"></script>
+    <script src="http://mat1.gtimg.com/finance/samuelcheng/aoboH5/share_h5.js"></script>
 </head>
 <body>
-
+<img style="position: absolute;
+	left: -1000em;
+	top: -1000em;" src="imgs/share.jpg" alt="share-img"/>
 
 <div id="loadwrap">
     <div class="loadbg">
@@ -24,10 +27,10 @@
 </div>
 
 <div class="words" style="display: none">
-        <div id="SH">北京时间8月6日，2016年里约奥运会首枚金牌花落射击。易思玲成功卫冕女子10米气步枪项目冠军，为中国军团赢得开门红。“四朝元老”杜丽获得银牌。</div>
-        <div id="SW">里约奥运会男子400米自由泳决赛结束较量。XX选手X夺冠，XX选手X获得亚军，XX选手X摘得铜牌。   </div>
-        <div id="WL">里约奥运会男子/女子举重XXKG级决赛落下帷幕。XX选手以总成绩X公斤夺得金牌。 </div>
-        <div id="DP">XX选手X在里约奥运会（项目名称）比赛中，以XX的总成绩获得了冠军。XX选手X获得银牌，成绩为（XX）。  </div>
+        <div id="SH">北京时间8月6日，2016年里约奥运会首枚金牌花落射击。易思玲成功卫冕女子10米气步枪项目冠军，为中国军团赢得开门红。“四朝元老”杜丽获得银牌。为中国军团赢得开门红。“四朝元老”杜丽获得银牌为中国军团赢得开门红。“四朝元老”杜丽获得银牌</div>
+        <div id="SW">里约奥运会男子400米自由泳决赛结束较量。XX选手X夺冠，XX选手X获得亚军，XX选手X摘得铜牌。 XX选手X摘得铜牌。 XX选手X摘得铜牌。   </div>
+        <div id="WL">里约奥运会男子/女子举重XXKG级决赛落下帷幕。XX选手以总成绩X公斤夺得金牌。XX选手以总成绩X公斤夺得金牌XX选手以总成绩X公斤夺得金牌XX选手以总成绩X公斤夺得金牌XX选手以总成绩X公斤夺得金牌 </div>
+        <div id="DP">XX选手X在里约奥运会（项目名称）比赛中，以XX的总成绩获得了冠军。XX选手X获得银牌，成绩为（XX）。 XX选手X获得银牌，成绩为（XX）。XX选手X获得银牌，成绩为（XX）。XX选手X获得银牌，成绩为（XX）。 </div>
         <div id="GA">在刚刚结束的里约奥运会（项目）决赛中，XX选手X以出色的发挥夺得该项目冠军，XX选手X收获一枚银牌，XX选手X摘得铜牌。    </div>
         <div id="BD">2016年里约奥运会羽毛球男单决赛结束较量,最终，XX选手A以X击败XX选手夺得冠军。 </div>
         <div id="TT">里约奥运会乒乓球男单决赛结束较量。最终，XX选手A以S1-S2战胜队友B，登顶乒乓球女单冠军宝座，B获得亚军。    </div>
@@ -661,20 +664,28 @@
 
 
 </div>
-<img style="position: absolute;
-	left: -1000em;
-	top: -1000em;" src="imgs/share.jpg" alt="share-img"/>
+
 </body>
 <script src="js/main.js"></script>
-<script type="text/javascript" src="http://mat1.gtimg.com/www/mobi/js/zepto.min.js" ></script>
-<script src="http://mat1.gtimg.com/news/2014/zt/mh17/you/js/weixin.js" type="text/javascript" ></script>
+
 <script>
-    var shareData = {
-        title: "决战里约，智能播报 ",
-        desc: "腾讯机器人Dreamwriter",
-        img: "imgs/share.jpg",//分享图
-        link: window.location.href
+    var WxOptions = {
+        "img_url": "http://mat1.gtimg.com/finance/cj/boao/2016boao/zhitu/shareImg.jpg",//图片,必须是完整链接
+        "img_width": "120",//图片宽度
+        "img_height": "120",//图片高度
+        "link": "http://localhost:63343/DWH5/index.html",//指向url
+        "title": "标题",//定义分享标题
+        'desc':'描述文字',
     };
+    document.addEventListener('WeixinJSBridgeReady', function() {
+        WeixinJSBridge.on('menu:share:appmessage', function(argv){
+            WeixinJSBridge.invoke('sendAppMessage', WxOptions);
+        });
+        WeixinJSBridge.on('menu:share:timeline', function(argv){
+            WeixinJSBridge.invoke('shareTimeline',WxOptions);
+        });
+
+    });
 
 </script>
 </html>

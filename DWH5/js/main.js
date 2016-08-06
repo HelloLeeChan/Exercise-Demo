@@ -261,15 +261,17 @@ var bd = new Page('two', 'BD', bdImgs, template)
 var tt = new Page('three', 'TT', ttImgs, template)
 
 sh.next = wl
-/*wl.next = sw
+wl.next = sw
 sw.next = dp
 dp.next = ga
 ga.next = bd
-bd.next = tt*/
+bd.next = tt
 
 
 function loader(page1) {
     var screen = new Image()
+    var glow = new Image()
+    glow.src='imgs/bottom-glow.png'
     screen.src = 'imgs/screen-mini.png'
     var loader = document.getElementById('loadwrap')
     var wrap = document.getElementsByClassName('wrap')[0]
