@@ -134,10 +134,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38291138">
+            <state vertical-scroll-proportion="0.0">
               <caret line="273" column="35" selection-start-line="273" selection-start-column="35" selection-end-line="273" selection-end-column="35" />
               <folding>
                 <element signature="n#!!doc;n#Page#0" expanded="false" />
@@ -179,6 +179,16 @@
                 <element signature="e#9126#9610#0" expanded="false" />
                 <element signature="e#9616#11378#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testClientHeight.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testClientHeight.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.24671052">
+              <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -234,6 +244,7 @@
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/build/styleOnline.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/testClientHeight.html" />
       </list>
     </option>
   </component>
@@ -2705,7 +2716,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38291138">
+        <state vertical-scroll-proportion="0.0">
           <caret line="273" column="35" selection-start-line="273" selection-start-column="35" selection-end-line="273" selection-end-column="35" />
           <folding>
             <element signature="n#!!doc;n#Page#0" expanded="false" />
@@ -2747,6 +2758,14 @@
             <element signature="e#9126#9610#0" expanded="false" />
             <element signature="e#9616#11378#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testClientHeight.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24671052">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
