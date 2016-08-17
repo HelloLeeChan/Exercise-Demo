@@ -281,7 +281,7 @@ function loader(page1) {
     var wrap = document.getElementsByClassName('wrap')[0]
     var page1 = page1
     page1.getReady()
-  /*  screen.onload = function () {
+    screen.onload = function () {
         setTimeout(function () {
             loader.style.display = 'none'
             wrap.style.display = 'block'
@@ -290,7 +290,7 @@ function loader(page1) {
             page1.start()
         }, 3000)
 
-    }*/
+    }
 }
 loader(sh)
 
