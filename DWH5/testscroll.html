@@ -1,0 +1,33 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="滚动条, scrollbar, 页面底部, 聊天窗口, " />
+    <meta name="description" content="有些时候（如开发聊天程序），我们需要将将滚动条（scrollbar）保持在最底部，比如聊天窗口，最新发出和收到的信息要显示在最下方，如果要看到最下方的内容，就必须保证滚动条保持在最底部。" />
+    <title>将滚动条（scrollbar）保持在最底部的方法 - 滚动条, scrollbar, 页面底部, 聊天窗口, </title>
+</head>
+<body>
+<div id="example">
+    <h3 id="example_title">将滚动条（scrollbar）保持在最底部的方法</h3>
+    <div id="example_main">
+        <!--************************************* 实例代码开始 *************************************-->
+        <script>
+            function add()
+            {
+                var now = new Date();
+                var oDiv = document.getElementById('scrolldIV');
+                oDiv.innerHTML = oDiv.innerHTML + 'time_' + now.getTime() + '<br/>';
+
+                oDiv.scrollTop = oDiv.scrollHeight;
+            }
+        </script>
+        <span class="notice">请点击“插入一行”按钮，插入最新信息，当出现滚动条时，滚动条将自动保持在底部。</span><br />
+        <div id="scrolldIV" style="overflow:auto; height: 100px; width: 400px; border: 1px solid #999;">
+        </div>
+        <input type="button" value="插入一行" onclick="add();">
+        <!--************************************* 实例代码结束 *************************************-->
+    </div>
+</div>
+</body>
+</html>

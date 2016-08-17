@@ -137,9 +137,9 @@ Page.prototype.randomKey = function (letters) {
     }
 
     return setInterval(function () {
-        toggleKey(letters[parseInt(Math.random() * 74, 10) + 1])
-        toggleKey(letters[parseInt(Math.random() * 74, 10) + 1])
-        toggleKey(letters[parseInt(Math.random() * 74, 10) + 1])
+        toggleKey(letters[parseInt(Math.random() * 74, 10)])
+        toggleKey(letters[parseInt(Math.random() * 74, 10)])
+        toggleKey(letters[parseInt(Math.random() * 74, 10)])
 
     }, 200)
 
