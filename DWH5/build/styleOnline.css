@@ -20,9 +20,9 @@ html, body {
 .loadbg {
     font-size: 35px;
     /* padding: 30px 30px 30px 0;
-    background: #306f99;*/
+    background: #306f99;
     -webkit-animation: bg 1.5s linear infinite;
-    animation: bg 1.5s linear infinite;
+    animation: bg 1.5s linear infinite;*/
     box-shadow: inset 0 0 45px 30px black;
 }
 .loading {
@@ -368,6 +368,7 @@ body {
     margin: 139% auto;
     width: 90%;
     height: 20%;
+    z-index: 9;
     background: url("http://mat1.gtimg.com/finance/cj/dw/bottom-glow.png") no-repeat;
     background-size: contain;
     animation: bottomFlash 2s  ease infinite alternate;
