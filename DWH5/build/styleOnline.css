@@ -165,6 +165,7 @@ body {
 }
 
 .out {
+    line-height: 120%;
     border: none;
     overflow: hidden;
 }
