@@ -2,6 +2,10 @@
  * Created by licheng on 16/8/2.
  */
 
+document.addEventListener('touchmove',function(e){
+    e.preventDefault()
+},false)
+
 
 function Page(layoutCode, projectCode, imgs, template) {
     this.dict = {one: '49%', two: '38%', three: '71%', four: '17%'}
