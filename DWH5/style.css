@@ -503,7 +503,7 @@ body {
     cursor: pointer;
     /*transition: box-shadow 0.7s ease;*/
     color: #6bcdf1;
-    border: #6bcdf1 1px solid;
+    border: red 1px solid;
 }
 
 .key-down {
