@@ -188,7 +188,6 @@ Page.prototype.getReady = function () {
     this.transpng = pageTrans
     document.getElementById('container').appendChild(pagedom)
 
-
 }
 
 /*
@@ -228,7 +227,7 @@ Page.prototype.ending = function () {
 var template = document.getElementsByClassName('page')[0]
 
 var shImgs = {
-    main: 'imgs/SH.gif',
+    main: 'http://mat1.gtimg.com/finance/cj/dw//SH.gif',
     trans: ['imgs/d/d1.png', 'imgs/d/d2.png', 'imgs/d/d3.png', 'imgs/d/d4.png', 'imgs/d/d5.png']
 }
 var wlImgs = {
@@ -272,7 +271,7 @@ ga.next = bd
 bd.next = tt
 
 
-function loader(page1) {
+/*function loader(page1) {
     var screen = new Image()
     var glow = new Image()
     glow.src='imgs/bottom-glow.png'
@@ -292,7 +291,65 @@ function loader(page1) {
 
     }
 }
-loader(sh)
+loader(sh)*/
+
+
+function Loader(pageArr,imgSrcArr){
+    this.firstPage = null
+    this.pageQueue = pageArr
+    this.imgsCount = imgSrcArr.length
+    this.loaded = 0
+    this.loader = document.getElementById('loadwrap')
+    this.wrap = document.getElementsByClassName('wrap')[0]
+
+    var que = this.pageQueue
+
+    if(que.length > 0 ){
+        this.firstPage  = que.shift()
+        var qlen = que.length
+        var cur = this.firstPage
+        while(qlen > 0){
+            cur.next = que.shift()
+            cur = cur.next
+            qlen--
+        }
+    }
+    var imglen = this.imgsCount
+    var loadque = []
+    var that = this
+
+    for(j= 0 ; j < imglen ; j++){
+         loadque[j] = new Image()
+         loadque[j].src = imgSrcArr[j]
+         loadque[j].onload = function(){
+             that.loaded++
+             if(that.loaded === that.imgsCount){
+                 that.go()
+             }
+         }
+    }
+}
+Loader.prototype.go = function(){
+    var that = this
+    that.firstPage.getReady()
+        setTimeout(function () {
+            var first = that.firstPage
+            //loader.style.display = 'none'
+            that.loader.style.display = 'none'
+            //wrap.style.display = 'block'
+            that.wrap.style.display = 'block'
+            first.contain.classList.add('showPage')
+            //page1.contain.classList.add('showPage')
+            first.contain.style.transform ='rotateY(0deg)'
+            first.start()
+        }, 3000)
+    }
+
+var imgUrl = ['http://mat1.gtimg.com/finance/cj/dw/bottom-glow.png','http://mat1.gtimg.com/finance/cj/dw/screen.png',
+'http://mat1.gtimg.com/finance/cj/dw/bg.jpg',"http://mat1.gtimg.com/finance/cj/dw/gif-frame.png","http://mat1.gtimg.com/finance/cj/dw//SH.gif"]
+var myload = new Loader([sh,wl,sw,dp,ga,bd],imgUrl)
+
+
 
 
 /*var sh2wl = document.getElementsByClassName('sh2wl')[0].getElementsByTagName('img')
