@@ -26,7 +26,7 @@ function Page(layoutCode, projectCode, imgs, template) {
     this.codeScroll = ele.getElementsByClassName('codescroll')[0]
     //this.transpng = transPng?transPng:document.getElementsByClassName('sh2wl')[0].getElementsByTagName('img')
     this.codeRun = ele.getElementsByClassName('code')[0]
-    console.log(this.codeRun)
+    //console.log(this.codeRun)
     this.transpng = null
     this.codeHeight = this.dict[layoutCode]
     //this.next = nextObj ? nextObj : null
@@ -45,15 +45,11 @@ Page.prototype.start = function () {
     if (that.next) {
         that.next.getReady()
     }
-
-
     this.codeScroll.addEventListener('transitionend', function (e) {
         console.log('codeRun........')
         that.codeRun.classList.add('codeRun')
     })
     this.contain.dispatchEvent(new Event('pagechange'))
-
-    //this.self.classList.add('screenfloat')
 
     var typing = new Typing({
         source: that.input,
@@ -70,17 +66,11 @@ Page.prototype.start = function () {
                     that.pass = true
                 }
             },2000)
-
-
-
         } //完成打印后的回调事件
     });
 
     typing.start()
     codeScroll = this.codeScroll
-    /* codeScroll.addEventListener('transitionend',function(e){
-     e.stopPropagation()
-     })*/
 
 
     setTimeout(function () {
@@ -190,24 +180,6 @@ Page.prototype.getReady = function () {
 
 }
 
-/*
-Page.prototype.ending = function () {
-    var logo = document.getElementById('ending')
-    var ending = document.getElementById('ending-glow')
-    var self = this.self
-    console.log('ending')
-    this.contain.classList.remove('showPage')
-    self.classList.remove('screenRotate')
-    this.contain.style.transform  = 'rotateY(90deg)'
-    this.contain.addEventListener('transitionend',function(){
-        console.log('ending')
-        ending.style.display = 'block'
-        ending.classList.add('flash')
-        this.style.display = 'none'
-        logo.style.opacity = 1
-    })
-}
-*/
 Page.prototype.ending = function () {
     var logo = document.getElementById('ending')
     var ending = document.getElementById('ending-glow')
@@ -263,35 +235,7 @@ var ga = new Page('one', 'GA', gaImgs, template)
 var bd = new Page('two', 'BD', bdImgs, template)
 var tt = new Page('three', 'TT', ttImgs, template)
 
-sh.next = wl
-wl.next = sw
-sw.next = dp
-dp.next = ga
-ga.next = bd
-bd.next = tt
 
-
-/*function loader(page1) {
-    var screen = new Image()
-    var glow = new Image()
-    glow.src='imgs/bottom-glow.png'
-    screen.src = 'imgs/screen-mini.png'
-    var loader = document.getElementById('loadwrap')
-    var wrap = document.getElementsByClassName('wrap')[0]
-    var page1 = page1
-    page1.getReady()
-    screen.onload = function () {
-        setTimeout(function () {
-            loader.style.display = 'none'
-            wrap.style.display = 'block'
-            page1.contain.classList.add('showPage')
-            page1.contain.style.transform ='rotateY(0deg)'
-            page1.start()
-        }, 3000)
-
-    }
-}
-loader(sh)*/
 
 
 function Loader(pageArr,imgSrcArr){
@@ -321,7 +265,7 @@ function Loader(pageArr,imgSrcArr){
     for(j= 0 ; j < imglen ; j++){
          loadque[j] = new Image()
          loadque[j].src = imgSrcArr[j]
-         loadque[j].onload = function(){
+         loadque[j].onload = function(e){
              that.loaded++
              if(that.loaded === that.imgsCount){
                  that.go()
@@ -329,6 +273,7 @@ function Loader(pageArr,imgSrcArr){
          }
     }
 }
+
 Loader.prototype.go = function(){
     var that = this
     that.firstPage.getReady()
@@ -347,151 +292,11 @@ Loader.prototype.go = function(){
 
 var imgUrl = ['http://mat1.gtimg.com/finance/cj/dw/bottom-glow.png','http://mat1.gtimg.com/finance/cj/dw/screen.png',
 'http://mat1.gtimg.com/finance/cj/dw/bg.jpg',"http://mat1.gtimg.com/finance/cj/dw/gif-frame.png","http://mat1.gtimg.com/finance/cj/dw//SH.gif"]
-var myload = new Loader([sh,wl,sw,dp,ga,bd],imgUrl)
+var myload = new Loader([sh,wl,sw,dp,ga,bd,tt],imgUrl)
 
 
 
 
-/*var sh2wl = document.getElementsByClassName('sh2wl')[0].getElementsByTagName('img')
- var wl2sw = document.getElementsByClassName('wl2sw')[0].getElementsByTagName('img')
-
-
- //var  sw = new Page(document.getElementsByClassName('sw')[0],'68%')
-
- var sh = new Page(document.getElementsByClassName('sh')[0],'49%',sh2wl)
-
- var wl = new Page(document.getElementsByClassName('wl')[0],'38%')
-
- sh.next = wl
- //wl.next = sw
- sh.start()
- lazyloader(sh)
-
-
- function lazyloader(page){
- var template = document.getElementsByClassName('wl')[0].cloneNode(true)
- template.classList.remove('wl')
- template.classList.add('sw')
- var sw = new Page(template,'68%')
- console.log(sw)
- var changeCount = 0
- var conatianer = page.contain
- conatianer.addEventListener('pagechange',function(){
- changeCount++
- if (changeCount%2 !== 0){
- conatianer.appendChild(template)
- page.next.next = sw
- }
- })
- }*/
-
-
-/*function PageSwap(pagesObj){
-
- var  container = document.getElementsByClassName('container')[0],
- j = 1
-
- container.addEventListener('pagechange',function(e){
- console.log(e.target)
- if(j < pagesObj.length ){
- console.log(j)
- console.log(e)
- pagesObj[j].start()
-
- if(j < pagesObj.length -1){
- pagesObj[j+1].show()
- }
-
- pagesObj[j-1].clear()
-
- j++
-
- }
-
- })
- // container.dispatchEvent(new Event('pagechange'))
-
- }
-
- var pages = new PageSwap(document.getElementsByClassName('page'))*/
-
-
-
-
-
-/*window.onload = function(){
-
-
-
- console.log(document.getElementsByClassName('word')[0])
- var typing = new Typing({
- startFun:  function(){
- var mask = document.getElementsByClassName('codescroll')[0]
- mask.classList.add('showCode')
- typeAni =  ranKey(document.getElementsByClassName('key'))
- },
- source: document.getElementsByClassName('word')[0],
- output: document.getElementsByClassName('output')[0],
- delay: 80,
- done: function() {
-
- var con = document.getElementsByClassName('container')[0]
- con.style.transform = 'rotateY('+String(Number((/\d+/.exec(con.style.transform))[0]) +180)+'deg)'
-
- } //完成打印后的回调事件
- });
- typing.start();
- var page2 =  document.getElementsByClassName('container')[0]
- console.log(page2)
- page2.addEventListener('transitionend',function(e){
- console.log(e)
- })
-
-
-
-
-
-
-
- function ranKey(letters){
-
- var letters
- function toggleKey(key){
- key.classList.add('key-down')
- setTimeout(function(){
- key.classList.remove('key-down')
- },300)
- }
- var typeAni= setInterval(function(){
- toggleKey(letters[parseInt(Math.random()*74,10)+1])
- toggleKey(letters[parseInt(Math.random()*74,10)+1])
- toggleKey(letters[parseInt(Math.random()*74,10)+1])
-
- },200)
- return typeAni
-
- }
-
-
- setTimeout(function(){
- var mask = document.getElementsByClassName('codescroll')[0]
- mask.classList.add('showCode')
- code1 = document.getElementsByClassName('code1')[0]
- code2 = document.getElementsByClassName('code2')[0]
- mask.addEventListener('transitionend',function(e){
- code1.classList.add('codeRun')
- })
- },100)
- setInterval(function(){
-
- var con = document.getElementsByClassName('container')[0]
- con.style.transform = 'rotateY('+String(Number((/\d+/.exec(con.style.transform))[0]) +180)+'deg)'
- console.log((/\d+/.exec(con.style.transform))[0])
- },2000)
-
-
-
- }*/
 
 
 

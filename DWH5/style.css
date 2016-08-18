@@ -401,6 +401,7 @@ body {
 }
 
 #ending-glow{
+    z-index: 999;
     display: none;
     position: absolute;
     width: 100%;
