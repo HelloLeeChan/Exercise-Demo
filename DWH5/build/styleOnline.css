@@ -652,6 +652,8 @@ body {
 
 #ending-glow{
     display: none;
+    perspective: 2000px;
+    -webkit-perspective: 2000px;
     z-index: 999;
     position: absolute;
     width: 100%;
@@ -790,7 +792,7 @@ body {
     cursor: pointer;
     /*transition: box-shadow 0.7s ease;*/
     color: #6bcdf1;
-    border: red 1px solid;
+    border: green 1px solid;
 }
 
 .key-down {
