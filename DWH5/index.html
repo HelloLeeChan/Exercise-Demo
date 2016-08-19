@@ -46,373 +46,353 @@
             </div>
             <div class="codescroll" >
                 <div class="code">
-                    count(allModule,getAllSum(document.body.getElementsByTagName('sup')))
 
-                    function count(obj,sum){
+    def timetofloat(self,stime):
+        tscore = stime.split(".")
+        mscore = tscore[0].split(":")
+        total = 0.0
+        for item in mscore:
+            total = int(total) * 60 + int(item)
+        total = total + float(int(tscore[1])) / 100
 
-                    for(var x in obj){
-                    getSup(x,sum)
-                    }
-                    }
+        return total
 
-                    function getSup(module, sumPV) {
-                    var modObj
+    def byteify(self, input, t="k"):
+        if isinstance(input, dict):
+            tdict = {}
+            for k, v in input.items():
+                tk = k.lower()
+                if tk.find("name") >= 0:
+                    tk = self.byteify(k)
+                    tdict[tk] = v
+                else:
+                    tk = self.byteify(k)
+                    tdict[tk] = self.byteify(v)
+            return tdict
+            # return {self.byteify(key):self.byteify(value,"v") for key,value in input.iteritems()}
+        elif isinstance(input, list):
+            tlist = []
+            for item in input:
+                titem = self.byteify(item)
+                tlist.append(titem)
+            return tlist
+            # return [self.byteify(element) for element in input]
+        elif isinstance(input, unicode) and t == "k":
+            return input.encode('utf-8')
+        else:
+            return input
 
-                    if (module === 'NewsFocus') {
-                    var allDivs = document.getElementsByTagName('div')
-                    for (var i = 0; i < allDivs.length; i++) {
-                    if (allDivs[i].getAttribute('bosszone') === 'NewsFocus1') {
-                    modObj = allDivs[i].parentElement.parentElement.parentElement
-                    var maskBox = document.createElement('div')
-                    maskBox.style.cssText = "position:absolute;top:0;left0;" +
-                    "border:3px solid #25dedc;" +
-                    "width:100% ;height:100%;background:white;opacity:0.4;z-index:2"
-                    //modObj = allDivs[i]
-                    modObj.style.position = 'relative'
-                    modObj.appendChild(maskBox)
-                    }
-                    }
+         def timetofloat(self,stime):
+        tscore = stime.split(".")
+        mscore = tscore[0].split(":")
+        total = 0.0
+        for item in mscore:
+            total = int(total) * 60 + int(item)
+        total = total + float(int(tscore[1])) / 100
 
+        return total
 
-                    } else {
-                    var allDivs = document.getElementsByTagName('div')
-                    for (var i = 0; i < allDivs.length; i++) {
-                    if (allDivs[i].getAttribute('bosszone') === module) {
-                    var maskBox = document.createElement('div')
-                    //console.log(maskBox)
-                    maskBox.style.cssText = "position:absolute;top:0;left0;" +
-                    "border:3px solid #25dedc;" +
-                    "width:100% ;height:100%;background:white;opacity:0.4;z-index:2"
-                    modObj = allDivs[i]
-                    modObj.style.position = 'relative'
-                    modObj.appendChild(maskBox)
-                    }
-                    }
-                    }
-                    var allSups = modObj.getElementsByTagName('sup')
+    def byteify(self, input, t="k"):
+        if isinstance(input, dict):
+            tdict = {}
+            for k, v in input.items():
+                tk = k.lower()
+                if tk.find("name") >= 0:
+                    tk = self.byteify(k)
+                    tdict[tk] = v
+                else:
+                    tk = self.byteify(k)
+                    tdict[tk] = self.byteify(v)
+            return tdict
+            # return {self.byteify(key):self.byteify(value,"v") for key,value in input.iteritems()}
+        elif isinstance(input, list):
+            tlist = []
+            for item in input:
+                titem = self.byteify(item)
+                tlist.append(titem)
+            return tlist
+            # return [self.byteify(element) for element in input]
+        elif isinstance(input, unicode) and t == "k":
+            return input.encode('utf-8')
+        else:
+            return input
+         def timetofloat(self,stime):
+        tscore = stime.split(".")
+        mscore = tscore[0].split(":")
+        total = 0.0
+        for item in mscore:
+            total = int(total) * 60 + int(item)
+        total = total + float(int(tscore[1])) / 100
 
-                    function getSum(obj) {
-                    var sum = 0
-                    var hash = {}
-                    for (var i = 0; i < obj.length; i++) {
-                    if (!hash[obj[i].textContent]) {
-                    hash[obj[i].textContent] = obj[i].previousElementSibling.children[0].href
-                    } else if (hash[obj[i].textContent] === obj[i].previousElementSibling.children[0].href) {
-                    obj[i].textContent = ''
-                    }
-                    /* if(!!obj[i+1] && obj[i].textContent === obj[i+1].textContent && obj[i].previousElementSibling.children[0].href ===
-                    obj[i+1].previousElementSibling.children[0].href){
-                    obj[i].textContent  = ''
-                    }*/
+        return total
 
-                    sum = sum + Number(obj[i].textContent)
-                    }
-                    return sum
-                    }
+    def byteify(self, input, t="k"):
+        if isinstance(input, dict):
+            tdict = {}
+            for k, v in input.items():
+                tk = k.lower()
+                if tk.find("name") >= 0:
+                    tk = self.byteify(k)
+                    tdict[tk] = v
+                else:
+                    tk = self.byteify(k)
+                    tdict[tk] = self.byteify(v)
+            return tdict
+            # return {self.byteify(key):self.byteify(value,"v") for key,value in input.iteritems()}
+        elif isinstance(input, list):
+            tlist = []
+            for item in input:
+                titem = self.byteify(item)
+                tlist.append(titem)
+            return tlist
+            # return [self.byteify(element) for element in input]
+        elif isinstance(input, unicode) and t == "k":
+            return input.encode('utf-8')
+        else:
+            return input
+         def timetofloat(self,stime):
+        tscore = stime.split(".")
+        mscore = tscore[0].split(":")
+        total = 0.0
+        for item in mscore:
+            total = int(total) * 60 + int(item)
+        total = total + float(int(tscore[1])) / 100
 
+        return total
 
-                    var sum = getSum(allSups)
-                    if (typeof  sumPV === "number") {
-                    var ratio = ((sum / sumPV) * 100).toFixed(2) + "%"
-                    }
+    def byteify(self, input, t="k"):
+        if isinstance(input, dict):
+            tdict = {}
+            for k, v in input.items():
+                tk = k.lower()
+                if tk.find("name") >= 0:
+                    tk = self.byteify(k)
+                    tdict[tk] = v
+                else:
+                    tk = self.byteify(k)
+                    tdict[tk] = self.byteify(v)
+            return tdict
+            # return {self.byteify(key):self.byteify(value,"v") for key,value in input.iteritems()}
+        elif isinstance(input, list):
+            tlist = []
+            for item in input:
+                titem = self.byteify(item)
+                tlist.append(titem)
+            return tlist
+            # return [self.byteify(element) for element in input]
+        elif isinstance(input, unicode) and t == "k":
+            return input.encode('utf-8')
+        else:
+            return input
+        def timetofloat(self,stime):
+        tscore = stime.split(".")
+        mscore = tscore[0].split(":")
+        total = 0.0
+        for item in mscore:
+            total = int(total) * 60 + int(item)
+        total = total + float(int(tscore[1])) / 100
 
-                    // console.log("区块点击量:"+sum+"  占比:"+ratio )
-                    var textBox = document.createElement('div')
+        return total
 
-                    var noteText = document.createTextNode(allModule[module]+"点击量:" + sum + "  占比:" + ratio)
-                    textBox.appendChild(noteText)
-                    textBox.style.cssText = "position:absolute; margin:auto;" +
-                    "width:50% ; height:50%;" +
-                    "top:0;right:0;bottom:0;left:0;" +
-                    "font-size:30px;font-weight:bolder;color:black;opacity:1;z-index:2;line-height:1.3;"
+    def byteify(self, input, t="k"):
+        if isinstance(input, dict):
+            tdict = {}
+            for k, v in input.items():
+                tk = k.lower()
+                if tk.find("name") >= 0:
+                    tk = self.byteify(k)
+                    tdict[tk] = v
+                else:
+                    tk = self.byteify(k)
+                    tdict[tk] = self.byteify(v)
+            return tdict
+            # return {self.byteify(key):self.byteify(value,"v") for key,value in input.iteritems()}
+        elif isinstance(input, list):
+            tlist = []
+            for item in input:
+                titem = self.byteify(item)
+                tlist.append(titem)
+            return tlist
+            # return [self.byteify(element) for element in input]
+        elif isinstance(input, unicode) and t == "k":
+            return input.encode('utf-8')
+        else:
+            return input
+        def byteify(self, input, t="k"):
+        if isinstance(input, dict):
+            tdict = {}
+            for k, v in input.items():
+                tk = k.lower()
+                if tk.find("name") >= 0:
+                    tk = self.byteify(k)
+                    tdict[tk] = v
+                else:
+                    tk = self.byteify(k)
+                    tdict[tk] = self.byteify(v)
+            return tdict
+            # return {self.byteify(key):self.byteify(value,"v") for key,value in input.iteritems()}
+        elif isinstance(input, list):
+            tlist = []
+            for item in input:
+                titem = self.byteify(item)
+                tlist.append(titem)
+            return tlist
+            # return [self.byteify(element) for element in input]
+        elif isinstance(input, unicode) and t == "k":
+            return input.encode('utf-8')
+        else:
+            return input
+        def timetofloat(self,stime):
+        tscore = stime.split(".")
+        mscore = tscore[0].split(":")
+        total = 0.0
+        for item in mscore:
+            total = int(total) * 60 + int(item)
+        total = total + float(int(tscore[1])) / 100
 
-                    modObj.appendChild(textBox)
-                    }
+        return total
 
+    def byteify(self, input, t="k"):
+        if isinstance(input, dict):
+            tdict = {}
+            for k, v in input.items():
+                tk = k.lower()
+                if tk.find("name") >= 0:
+                    tk = self.byteify(k)
+                    tdict[tk] = v
+                else:
+                    tk = self.byteify(k)
+                    tdict[tk] = self.byteify(v)
+            return tdict
+            # return {self.byteify(key):self.byteify(value,"v") for key,value in input.iteritems()}
+        elif isinstance(input, list):
+            tlist = []
+            for item in input:
+                titem = self.byteify(item)
+                tlist.append(titem)
+            return tlist
+            # return [self.byteify(element) for element in input]
+        elif isinstance(input, unicode) and t == "k":
+            return input.encode('utf-8')
+        else:
+            return input
+          def byteify(self, input, t="k"):
+        if isinstance(input, dict):
+            tdict = {}
+            for k, v in input.items():
+                tk = k.lower()
+                if tk.find("name") >= 0:
+                    tk = self.byteify(k)
+                    tdict[tk] = v
+                else:
+                    tk = self.byteify(k)
+                    tdict[tk] = self.byteify(v)
+            return tdict
+            # return {self.byteify(key):self.byteify(value,"v") for key,value in input.iteritems()}
+        elif isinstance(input, list):
+            tlist = []
+            for item in input:
+                titem = self.byteify(item)
+                tlist.append(titem)
+            return tlist
+            # return [self.byteify(element) for element in input]
+        elif isinstance(input, unicode) and t == "k":
+            return input.encode('utf-8')
+        else:
+            return input
+        def timetofloat(self,stime):
+        tscore = stime.split(".")
+        mscore = tscore[0].split(":")
+        total = 0.0
+        for item in mscore:
+            total = int(total) * 60 + int(item)
+        total = total + float(int(tscore[1])) / 100
 
-                    function getAllSum(obj) {
-                    var sum = 0
-                    var hash = {}
-                    for (var i = 0; i < obj.length; i++) {
-                    if (!hash[obj[i].textContent]) {
-                    hash[obj[i].textContent] = obj[i].previousElementSibling.children[0].href
-                    } else if (hash[obj[i].textContent] === obj[i].previousElementSibling.children[0].href) {
-                    obj[i].textContent = ''
-                    }
-                    /* if(!!obj[i+1] && obj[i].textContent === obj[i+1].textContent && obj[i].previousElementSibling.children[0].href ===
-                    obj[i+1].previousElementSibling.children[0].href){
-                    obj[i].textContent  = ''
-                    }*/
-                    // console.log('clickNum:' + obj[i].textContent + '  ' + obj[i].previousElementSibling.children[0].href)
-                    sum = sum + Number(obj[i].textContent)
-                    }
-                    console.log(sum)
-                    var sumx = 0
-                    for (x in hash) {
-                    sumx = sumx + Number(x)
+        return total
 
-                    }
-                    console.log(sumx)
-                    return sum
-                    }
-                    function getSup(module, sumPV) {
-                    var modObj
+    def byteify(self, input, t="k"):
+        if isinstance(input, dict):
+            tdict = {}
+            for k, v in input.items():
+                tk = k.lower()
+                if tk.find("name") >= 0:
+                    tk = self.byteify(k)
+                    tdict[tk] = v
+                else:
+                    tk = self.byteify(k)
+                    tdict[tk] = self.byteify(v)
+            return tdict
+            # return {self.byteify(key):self.byteify(value,"v") for key,value in input.iteritems()}
+        elif isinstance(input, list):
+            tlist = []
+            for item in input:
+                titem = self.byteify(item)
+                tlist.append(titem)
+            return tlist
+            # return [self.byteify(element) for element in input]
+        elif isinstance(input, unicode) and t == "k":
+            return input.encode('utf-8')
+        else:
+            return input
+         def byteify(self, input, t="k"):
+        if isinstance(input, dict):
+            tdict = {}
+            for k, v in input.items():
+                tk = k.lower()
+                if tk.find("name") >= 0:
+                    tk = self.byteify(k)
+                    tdict[tk] = v
+                else:
+                    tk = self.byteify(k)
+                    tdict[tk] = self.byteify(v)
+            return tdict
+            # return {self.byteify(key):self.byteify(value,"v") for key,value in input.iteritems()}
+        elif isinstance(input, list):
+            tlist = []
+            for item in input:
+                titem = self.byteify(item)
+                tlist.append(titem)
+            return tlist
+            # return [self.byteify(element) for element in input]
+        elif isinstance(input, unicode) and t == "k":
+            return input.encode('utf-8')
+        else:
+            return input
+        def timetofloat(self,stime):
+        tscore = stime.split(".")
+        mscore = tscore[0].split(":")
+        total = 0.0
+        for item in mscore:
+            total = int(total) * 60 + int(item)
+        total = total + float(int(tscore[1])) / 100
 
-                    if (module === 'NewsFocus') {
-                    var allDivs = document.getElementsByTagName('div')
-                    for (var i = 0; i < allDivs.length; i++) {
-                    if (allDivs[i].getAttribute('bosszone') === 'NewsFocus1') {
-                    modObj = allDivs[i].parentElement.parentElement.parentElement
-                    var maskBox = document.createElement('div')
-                    maskBox.style.cssText = "position:absolute;top:0;left0;" +
-                    "border:3px solid #25dedc;" +
-                    "width:100% ;height:100%;background:white;opacity:0.4;z-index:2"
-                    //modObj = allDivs[i]
-                    modObj.style.position = 'relative'
-                    modObj.appendChild(maskBox)
-                    }
-                    }
+        return total
 
+    def byteify(self, input, t="k"):
+        if isinstance(input, dict):
+            tdict = {}
+            for k, v in input.items():
+                tk = k.lower()
+                if tk.find("name") >= 0:
+                    tk = self.byteify(k)
+                    tdict[tk] = v
+                else:
+                    tk = self.byteify(k)
+                    tdict[tk] = self.byteify(v)
+            return tdict
+            # return {self.byteify(key):self.byteify(value,"v") for key,value in input.iteritems()}
+        elif isinstance(input, list):
+            tlist = []
+            for item in input:
+                titem = self.byteify(item)
+                tlist.append(titem)
+            return tlist
+            # return [self.byteify(element) for element in input]
+        elif isinstance(input, unicode) and t == "k":
+            return input.encode('utf-8')
+        else:
+            return input
 
-                    } else {
-                    var allDivs = document.getElementsByTagName('div')
-                    for (var i = 0; i < allDivs.length; i++) {
-                    if (allDivs[i].getAttribute('bosszone') === module) {
-                    var maskBox = document.createElement('div')
-                    //console.log(maskBox)
-                    maskBox.style.cssText = "position:absolute;top:0;left0;" +
-                    "border:3px solid #25dedc;" +
-                    "width:100% ;height:100%;background:white;opacity:0.4;z-index:2"
-                    modObj = allDivs[i]
-                    modObj.style.position = 'relative'
-                    modObj.appendChild(maskBox)
-                    }
-                    }
-                    }
-                    var allSups = modObj.getElementsByTagName('sup')
-
-                    function getSum(obj) {
-                    var sum = 0
-                    var hash = {}
-                    for (var i = 0; i < obj.length; i++) {
-                    if (!hash[obj[i].textContent]) {
-                    hash[obj[i].textContent] = obj[i].previousElementSibling.children[0].href
-                    } else if (hash[obj[i].textContent] === obj[i].previousElementSibling.children[0].href) {
-                    obj[i].textContent = ''
-                    }
-                    /* if(!!obj[i+1] && obj[i].textContent === obj[i+1].textContent && obj[i].previousElementSibling.children[0].href ===
-                    obj[i+1].previousElementSibling.children[0].href){
-                    obj[i].textContent  = ''
-                    }*/
-
-                    sum = sum + Number(obj[i].textContent)
-                    }
-                    return sum
-                    }
-
-
-                    var sum = getSum(allSups)
-                    if (typeof  sumPV === "number") {
-                    var ratio = ((sum / sumPV) * 100).toFixed(2) + "%"
-                    }
-
-                    // console.log("区块点击量:"+sum+"  占比:"+ratio )
-                    var textBox = document.createElement('div')
-
-                    var noteText = document.createTextNode(allModule[module]+"点击量:" + sum + "  占比:" + ratio)
-                    textBox.appendChild(noteText)
-                    textBox.style.cssText = "position:absolute; margin:auto;" +
-                    "width:50% ; height:50%;" +
-                    "top:0;right:0;bottom:0;left:0;" +
-                    "font-size:30px;font-weight:bolder;color:black;opacity:1;z-index:2;line-height:1.3;"
-
-                    modObj.appendChild(textBox)
-                    }
-                    function getSup(module, sumPV) {
-                    var modObj
-
-                    if (module === 'NewsFocus') {
-                    var allDivs = document.getElementsByTagName('div')
-                    for (var i = 0; i < allDivs.length; i++) {
-                    if (allDivs[i].getAttribute('bosszone') === 'NewsFocus1') {
-                    modObj = allDivs[i].parentElement.parentElement.parentElement
-                    var maskBox = document.createElement('div')
-                    maskBox.style.cssText = "position:absolute;top:0;left0;" +
-                    "border:3px solid #25dedc;" +
-                    "width:100% ;height:100%;background:white;opacity:0.4;z-index:2"
-                    //modObj = allDivs[i]
-                    modObj.style.position = 'relative'
-                    modObj.appendChild(maskBox)
-                    }
-                    }
-
-
-                    } else {
-                    var allDivs = document.getElementsByTagName('div')
-                    for (var i = 0; i < allDivs.length; i++) {
-                    if (allDivs[i].getAttribute('bosszone') === module) {
-                    var maskBox = document.createElement('div')
-                    //console.log(maskBox)
-                    maskBox.style.cssText = "position:absolute;top:0;left0;" +
-                    "border:3px solid #25dedc;" +
-                    "width:100% ;height:100%;background:white;opacity:0.4;z-index:2"
-                    modObj = allDivs[i]
-                    modObj.style.position = 'relative'
-                    modObj.appendChild(maskBox)
-                    }
-                    }
-                    }
-                    var allSups = modObj.getElementsByTagName('sup')
-
-                    function getSum(obj) {
-                    var sum = 0
-                    var hash = {}
-                    for (var i = 0; i < obj.length; i++) {
-                    if (!hash[obj[i].textContent]) {
-                    hash[obj[i].textContent] = obj[i].previousElementSibling.children[0].href
-                    } else if (hash[obj[i].textContent] === obj[i].previousElementSibling.children[0].href) {
-                    obj[i].textContent = ''
-                    }
-                    /* if(!!obj[i+1] && obj[i].textContent === obj[i+1].textContent && obj[i].previousElementSibling.children[0].href ===
-                    obj[i+1].previousElementSibling.children[0].href){
-                    obj[i].textContent  = ''
-                    }*/
-
-                    sum = sum + Number(obj[i].textContent)
-                    }
-                    return sum
-                    }
-
-
-                    var sum = getSum(allSups)
-                    if (typeof  sumPV === "number") {
-                    var ratio = ((sum / sumPV) * 100).toFixed(2) + "%"
-                    }
-
-                    // console.log("区块点击量:"+sum+"  占比:"+ratio )
-                    var textBox = document.createElement('div')
-
-                    var noteText = document.createTextNode(allModule[module]+"点击量:" + sum + "  占比:" + ratio)
-                    textBox.appendChild(noteText)
-                    textBox.style.cssText = "position:absolute; margin:auto;" +
-                    "width:50% ; height:50%;" +
-                    "top:0;right:0;bottom:0;left:0;" +
-                    "font-size:30px;font-weight:bolder;color:black;opacity:1;z-index:2;line-height:1.3;"
-
-                    modObj.appendChild(textBox)
-                    }
-                    function getSup(module, sumPV) {
-                    var modObj
-
-                    if (module === 'NewsFocus') {
-                    var allDivs = document.getElementsByTagName('div')
-                    for (var i = 0; i < allDivs.length; i++) {
-                    if (allDivs[i].getAttribute('bosszone') === 'NewsFocus1') {
-                    modObj = allDivs[i].parentElement.parentElement.parentElement
-                    var maskBox = document.createElement('div')
-                    maskBox.style.cssText = "position:absolute;top:0;left0;" +
-                    "border:3px solid #25dedc;" +
-                    "width:100% ;height:100%;background:white;opacity:0.4;z-index:2"
-                    //modObj = allDivs[i]
-                    modObj.style.position = 'relative'
-                    modObj.appendChild(maskBox)
-                    }
-                    }
-
-
-                    } else {
-                    var allDivs = document.getElementsByTagName('div')
-                    for (var i = 0; i < allDivs.length; i++) {
-                    if (allDivs[i].getAttribute('bosszone') === module) {
-                    var maskBox = document.createElement('div')
-                    //console.log(maskBox)
-                    maskBox.style.cssText = "position:absolute;top:0;left0;" +
-                    "border:3px solid #25dedc;" +
-                    "width:100% ;height:100%;background:white;opacity:0.4;z-index:2"
-                    modObj = allDivs[i]
-                    modObj.style.position = 'relative'
-                    modObj.appendChild(maskBox)
-                    }
-                    }
-                    }
-                    var allSups = modObj.getElementsByTagName('sup')
-
-                    function getSum(obj) {
-                    var sum = 0
-                    var hash = {}
-                    for (var i = 0; i < obj.length; i++) {
-                    if (!hash[obj[i].textContent]) {
-                    hash[obj[i].textContent] = obj[i].previousElementSibling.children[0].href
-                    } else if (hash[obj[i].textContent] === obj[i].previousElementSibling.children[0].href) {
-                    obj[i].textContent = ''
-                    }
-                    /* if(!!obj[i+1] && obj[i].textContent === obj[i+1].textContent && obj[i].previousElementSibling.children[0].href ===
-                    obj[i+1].previousElementSibling.children[0].href){
-                    obj[i].textContent  = ''
-                    }*/
-
-                    sum = sum + Number(obj[i].textContent)
-                    }
-                    return sum
-                    }
-
-
-                    var sum = getSum(allSups)
-                    if (typeof  sumPV === "number") {
-                    var ratio = ((sum / sumPV) * 100).toFixed(2) + "%"
-                    }
-
-                    // console.log("区块点击量:"+sum+"  占比:"+ratio )
-                    var textBox = document.createElement('div')
-
-                    var noteText = document.createTextNode(allModule[module]+"点击量:" + sum + "  占比:" + ratio)
-                    textBox.appendChild(noteText)
-                    textBox.style.cssText = "position:absolute; margin:auto;" +
-                    "width:50% ; height:50%;" +
-                    "top:0;right:0;bottom:0;left:0;" +
-                    "font-size:30px;font-weight:bolder;color:black;opacity:1;z-index:2;line-height:1.3;"
-
-                    modObj.appendChild(textBox)
-                    }
-                    var allSups = modObj.getElementsByTagName('sup')
-
-                    function getSum(obj) {
-                    var sum = 0
-                    var hash = {}
-                    for (var i = 0; i < obj.length; i++) {
-                    if (!hash[obj[i].textContent]) {
-                    hash[obj[i].textContent] = obj[i].previousElementSibling.children[0].href
-                    } else if (hash[obj[i].textContent] === obj[i].previousElementSibling.children[0].href) {
-                    obj[i].textContent = ''
-                    }
-                    /* if(!!obj[i+1] && obj[i].textContent === obj[i+1].textContent && obj[i].previousElementSibling.children[0].href ===
-                    obj[i+1].previousElementSibling.children[0].href){
-                    obj[i].textContent  = ''
-                    }*/
-
-                    sum = sum + Number(obj[i].textContent)
-                    }
-                    return sum
-                    }
-
-
-                    var sum = getSum(allSups)
-                    if (typeof  sumPV === "number") {
-                    var ratio = ((sum / sumPV) * 100).toFixed(2) + "%"
-                    }
-
-                    // console.log("区块点击量:"+sum+"  占比:"+ratio )
-                    var textBox = document.createElement('div')
-
-                    var noteText = document.createTextNode(allModule[module]+"点击量:" + sum + "  占比:" + ratio)
-                    textBox.appendChild(noteText)
-                    textBox.style.cssText = "position:absolute; margin:auto;" +
-                    "width:50% ; height:50%;" +
-                    "top:0;right:0;bottom:0;left:0;" +
-                    "font-size:30px;font-weight:bolder;color:black;opacity:1;z-index:2;line-height:1.3;"
-
-                    modObj.appendChild(textBox)
-                    }
                 </div>
             </div>
 

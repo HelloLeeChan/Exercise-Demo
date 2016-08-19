@@ -8,6 +8,7 @@ html, body {
     background-color: #000;
     */
 }
+
 #loadwrap {
     position: absolute;
     top: 50%;
@@ -25,6 +26,7 @@ html, body {
     animation: bg 1.5s linear infinite;*/
     box-shadow: inset 0 0 45px 30px black;
 }
+
 .loading {
     position: relative;
     text-align: right;
@@ -32,6 +34,7 @@ html, body {
     height: 20px;
     width: 150px;
 }
+
 .loading span {
     display: block;
     text-transform: uppercase;
@@ -41,6 +44,7 @@ html, body {
     width: 400px;
     line-height: 20px;
 }
+
 .loading span:after {
     content: "";
     display: block;
@@ -54,16 +58,19 @@ html, body {
     -webkit-animation: blink 3.4s infinite;
     animation: blink 3.4s infinite;
 }
+
 .loading span.title {
     -webkit-animation: title 3.4s linear infinite;
     animation: title 3.4s linear infinite;
     /* opacity: 0; */
 }
+
 .loading span.loadtext {
     -webkit-animation: title 3.4s linear 1.7s infinite;
     animation: title 3.4s linear 1.7s infinite;
     /* opacity: 0; */
 }
+
 @-webkit-keyframes title {
     0% {
         opacity: 0;
@@ -86,6 +93,7 @@ html, body {
         right: 30px;
     }
 }
+
 @keyframes title {
     0% {
         opacity: 0;
@@ -186,6 +194,7 @@ html, body {
         right: -21px;
     }
 }
+
 @keyframes blink {
     0% {
         opacity: 0;
@@ -264,8 +273,10 @@ html, body {
     }
 }
 
+
+
 body {
-    font-family: Purista,sans-serif, arial;
+    font-family: Purista, sans-serif, arial;
     background: black;
     color: #7fd1ec;
 }
@@ -274,8 +285,8 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    perspective: 2000px;
-    -webkit-perspective: 2000px;
+    perspective: 3000px;
+    -webkit-perspective: 3000px;
     background: url(http://mat1.gtimg.com/finance/cj/dw/bg.jpg) no-repeat;
     background-size: cover;
 
@@ -349,17 +360,16 @@ body {
     height: 100%;
     background: url("http://mat1.gtimg.com/finance/cj/dw/screen.png") no-repeat;
     background-size: cover;
-    /* backface-visibility: hidden;
-     -webkit-backface-visibility: hidden;*/
-    /* animation: screen 2s ease-in-out infinite alternate;
-     -webkit-animation: screen 2s ease-in-out infinite alternate;*/
 }
+
 .screenRotate {
     animation: screen 2s ease-in-out infinite alternate;
     -webkit-animation: screen 2s ease-in-out infinite alternate;
 }
 
 #bottom-glow {
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
     position: absolute;
     top: 0;
     right: 0;
@@ -369,51 +379,55 @@ body {
     width: 90%;
     height: 20%;
     z-index: 9;
-    background: url("http://mat1.gtimg.com/finance/cj/dw/bottom-glow.png") no-repeat;
+    background: url("../imgs/bottom-glow2.png") no-repeat;
     background-size: contain;
-    animation: bottomFlash 2s  ease infinite alternate;
-    -webkit-animation: bottomFlash 2s  ease infinite alternate;
+    animation: bottomFlash 2s ease infinite alternate;
+    -webkit-animation: bottomFlash 2s ease infinite alternate;
 }
+
 @keyframes bottomFlash {
-    0%{
+    0% {
         opacity: .3;
     }
-    100%{
+    100% {
         opacity: 1;
     }
 
 }
+
 @-webkit-keyframes bottomFlash {
-    0%{
+    0% {
         opacity: 0;
     }
-    100%{
+    100% {
         opacity: 1;
     }
 }
 
-.showPage{
+.showPage {
     animation: showPage 1s ease 1 forwards;
     -webkit-animation: showPage 1s ease 1 forwards;;
 }
+
 @keyframes showPage {
-    0%{
+    0% {
         -webkit-transform: rotateY(30deg);
         transform: rotateY(30deg);
         opacity: 0;
     }
-    100%{
+    100% {
         -webkit-transform: rotateY(0deg);
         transform: rotateY(0deg);
         opacity: 1;
     }
 }
+
 @-webkit-keyframes showPage {
-    0%{
+    0% {
         -webkit-transform: rotateY(-30deg);
         opacity: 0;
     }
-    100%{
+    100% {
         -webkit-transform: rotateY(0deg);
         opacity: 1;
     }
@@ -439,6 +453,7 @@ body {
     transition: height 1s linear 1s;
     -webkit-transition: height 1s linear 1s;
 }
+
 .one .out {
     position: absolute;
     float: left;
@@ -450,6 +465,7 @@ body {
     font-size: 45px;
     color: #6bcdf1;
 }
+
 .one .gif-frame {
     position: absolute;
     width: 600px;
@@ -461,6 +477,7 @@ body {
     background-size: cover;
     overflow: hidden;
 }
+
 .one .keyboard {
     position: absolute;
     width: 650px;
@@ -469,13 +486,13 @@ body {
     margin-left: 26%;
     margin-top: 109%;
 }
+
 .one img {
     margin-left: 45px;
     margin-top: 6px;
     width: 500px;
     height: 400px;
 }
-
 
 .two .codescroll {
     position: absolute;
@@ -491,6 +508,7 @@ body {
     transition: height 1s linear 1s;
     -webkit-transition: height 1s linear 1s;
 }
+
 .two .out {
     position: absolute;
     margin-left: 28%;
@@ -500,9 +518,10 @@ body {
     font-size: 45px;
     color: #6bcdf1;
 }
+
 .two .gif-frame {
     position: absolute;
-    width: 90%;
+    width: 92%;
     height: 32%;
     margin-top: 30%;
     margin-left: 3%;
@@ -510,14 +529,16 @@ body {
     background-size: cover;
     overflow: hidden;
 }
+
 .two .keyboard {
     position: absolute;
     width: 650px;
     height: 260px;
     float: left;
     margin-left: 26%;
-    margin-top: 108%;
+    margin-top: 109%;
 }
+
 .two img {
     margin-left: 45px;
     margin-top: 8px;
@@ -526,8 +547,8 @@ body {
 }
 
 .three .gif-frame {
-    width: 595px;
-    height: 426px;
+    width: 630px;
+    height: 440px;
     margin-top: 30%;
     margin-left: 3%;
     background: url("http://mat1.gtimg.com/finance/cj/dw/gif-frame.png") no-repeat;
@@ -535,21 +556,24 @@ body {
     overflow: hidden;
     position: absolute;
 }
+
 .three img {
-    margin-left: 45px;
-    margin-top: 6px;
+    margin-left: 66px;
+    margin-top: 20px;
     width: 500px;
     height: 400px;
 }
+
 .three .out {
     position: absolute;
     margin-left: 3%;
-    width: 595px;
+    width: 68%;
     height: 19%;
     margin-top: 77%;
     font-size: 45px;
     color: #6bcdf1;
 }
+
 .three .codescroll {
     position: absolute;
     width: 20%;
@@ -562,6 +586,7 @@ body {
     transition: height 1s linear 1s;
     -webkit-transition: height 1s linear 1s;
 }
+
 .three .keyboard {
     position: absolute;
     width: 650px;
@@ -570,7 +595,6 @@ body {
     margin-left: 3%;
     margin-top: 108%;
 }
-
 
 .four .codescroll {
     position: absolute;
@@ -586,6 +610,7 @@ body {
     transition: height 1s linear 1s;
     -webkit-transition: height 1s linear 1s;
 }
+
 .four .out {
     position: absolute;
     /* float: left; */
@@ -597,6 +622,7 @@ body {
     font-size: 45px;
     color: #6bcdf1;
 }
+
 .four .gif-frame {
     width: 600px;
     height: 426px;
@@ -607,6 +633,7 @@ body {
     background-size: cover;
     overflow: hidden;
 }
+
 .four .keyboard {
     position: absolute;
     width: 650px;
@@ -615,6 +642,7 @@ body {
     margin-left: 26%;
     margin-top: 107%;
 }
+
 .four img {
     margin-left: 45px;
     margin-top: 6px;
@@ -634,65 +662,77 @@ body {
     opacity: 0;
     -webkit-transition: opacity 1s ease .2s;
     transition: opacity 1s ease .2s;
-    -webkit-transition: opacity  1s ease .2s;
+    -webkit-transition: opacity 1s ease .2s;
     background: url("http://mat1.gtimg.com/finance/cj/dw/ending-logo.png") no-repeat;
-    background-size: cover;
+    background-size: contain;
     animation: Floating 1.5s infinite ease-in-out alternate;
     -webkit-animation: Floating 1.5s infinite ease-in-out alternate;
 }
-@-webkit-keyframes Floating{
-    from {-webkit-transform:translate(0, 0px);}
-    to{-webkit-transform:translate(0, 17px);}
+
+@-webkit-keyframes Floating {
+    from {
+        -webkit-transform: translate(0, 0px);
+    }
+    to {
+        -webkit-transform: translate(0, 17px);
+    }
 
 }
-@keyframes Floating{
-    from {-webkit-transform:translate(0, 0px);}
-    to {-webkit-transform: translate(0, 17px); }
+
+@keyframes Floating {
+    from {
+        -webkit-transform: translate(0, 0px);
+    }
+    to {
+        -webkit-transform: translate(0, 17px);
+    }
 }
 
-#ending-glow{
+#ending-glow {
     display: none;
-    perspective: 2000px;
-    -webkit-perspective: 2000px;
+
     z-index: 999;
     position: absolute;
     width: 100%;
     height: 100%;
 }
+
 #ending-glow img {
     width: 100%;
     height: 100%;
 }
+
 .flash {
     animation: flash-halo .3s ease-in forwards;
     -webkit-animation: flash-halo .3s ease-in forwards;
 }
+
 @-webkit-keyframes flash-halo {
-    0%{
+    0% {
         opacity: 0;
     }
-    10%{
+    10% {
         opacity: 0.1;
     }
-    20%{
+    20% {
         opacity: 0.3;
     }
-    50%{
+    50% {
         opacity: 0.7;
     }
-    60%{
+    60% {
         opacity: 0.9;
     }
-    70%{
+    70% {
         opacity: 1;
     }
-    80%{
+    80% {
         opacity: 0.7;
     }
-    90%{
+    90% {
         opacity: 0.4;
     }
-    100%{
+    100% {
         opacity: 0;
     }
 }
@@ -705,57 +745,60 @@ body {
     animation: endingRotate .7s ease 1 forwards;
     -webkit-animation: endingRotate .7s ease 1 forwards;
 }
+
 @-webkit-keyframes endingRotate {
-    0%{
+    0% {
         opacity: 1;
         -webkit-transform: rotateY(0deg);
         transform: rotateY(0deg);
     }
-    100%{
+    100% {
         opacity: .2;
         -webkit-transform: rotateY(90deg);
         transform: rotateY(90deg);
     }
 }
+
 @keyframes endingRotate {
-    0%{
+    0% {
         opacity: 1;
         -webkit-transform: rotateY(0deg);
         transform: rotateY(0deg);
     }
-    100%{
+    100% {
         opacity: .2;
         -webkit-transform: rotateY(90deg);
         transform: rotateY(90deg);
     }
 }
-@keyframes  endingRotate {
-    0%{
+
+@keyframes endingRotate {
+    0% {
         opacity: 1;
         -webkit-transform: rotateY(0deg);
     }
-    100%{
+    100% {
         opacity: .2;
         -webkit-transform: rotateY(90deg);
     }
 }
 
 .codeRun {
-    animation: moveUp 7s linear infinite   ;
-    -webkit-animation: moveUp 7s linear  infinite ;
+    animation: moveUp 7s linear infinite;
+    -webkit-animation: moveUp 7s linear infinite;
 }
 
 @keyframes moveUp {
     100% {
-        transform: translate3d(0, -5000px, 0);
-        -webkit-transform: translate3d(0, -5000px, 0);
+        transform: translate3d(0, -4000px, 0);
+        -webkit-transform: translate3d(0, -4000px, 0);
     }
 }
 
 @-webkit-keyframes moveUp {
     100% {
-        transform: translate3d(0, -5000px, 0);
-        -webkit-transform: translate3d(0, -5000px, 0);
+        transform: translate3d(0, -4000px, 0);
+        -webkit-transform: translate3d(0, -4000px, 0);
     }
 }
 
@@ -773,10 +816,6 @@ body {
     }
 }
 
-
-
-
-
 .key {
     width: 40px;
     height: 40px;
@@ -792,7 +831,7 @@ body {
     cursor: pointer;
     /*transition: box-shadow 0.7s ease;*/
     color: #6bcdf1;
-    border: green 1px solid;
+    border: #6bcdf1 1px solid;
 }
 
 .key-down {
@@ -802,8 +841,6 @@ body {
     background-color: rgba(107, 205, 241, 0.3);
 
 }
-
-
 
 .function {
     font-size: 12px;
@@ -918,7 +955,6 @@ body {
 
 /*loader*/
 
-
 @-webkit-keyframes fade {
     0% {
         opacity: 1;
@@ -927,6 +963,7 @@ body {
         opacity: 0;
     }
 }
+
 @-webkit-keyframes bg {
     0% {
         background-color: #97e7f5;
@@ -939,22 +976,29 @@ body {
     }
 }
 
-
-
-
-
-
 /*typing style*/
 @keyframes tyblink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @-webkit-keyframes tyblink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .typing-cursor, .typing-cursor-black, .typing-cursor-white {
@@ -972,4 +1016,32 @@ body {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     color: #6bcdf1;
-}/*  |xGv00|43c1ac764676fcc9776a2956cc8d31d9 */
+}
+
+/*iphone5 */
+
+@media only screen and (max-height: 505px)  {
+
+    .two .gif-frame{
+        height:33%
+    }
+
+}
+/*iphone6 */
+/*
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px)
+and (orientation : portrait) { .two .gif-frame{
+    height:32%
+}
+}*/
+/*iphone5 */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 374px){/* 兼容iphone5 */
+    .two .gif-frame{
+        height:33%
+    }
+
+}

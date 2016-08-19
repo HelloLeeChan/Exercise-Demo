@@ -1,6 +1,9 @@
 /**
  * Created by licheng on 16/8/2.
  */
+console.log(document.documentElement.clientHeight)
+console.log(screen.width)
+
 
 document.addEventListener('touchmove',function(e){
     e.preventDefault()
@@ -8,7 +11,7 @@ document.addEventListener('touchmove',function(e){
 
 
 function Page(layoutCode, projectCode, imgs, template) {
-    this.dict = {one: '49%', two: '38%', three: '71%', four: '17%'}
+    this.dict = {one: '49%', two: '38%', three: '71%', four: '18%'}
     this.pass = false
     this.imgLoaded = 0
     var pageDom = template.cloneNode(true)
@@ -230,8 +233,8 @@ var ttImgs = {
 var sh = new Page('one', 'SH', shImgs, template)
 var wl = new Page('two', 'WL', wlImgs, template)
 var sw = new Page('three', 'SW', swImgs, template)
-var dp = new Page('four', 'DP', dpImgs, template)
-var ga = new Page('one', 'GA', gaImgs, template)
+var dp = new Page('one', 'DP', dpImgs, template)
+var ga = new Page('three', 'GA', gaImgs, template)
 var bd = new Page('two', 'BD', bdImgs, template)
 var tt = new Page('three', 'TT', ttImgs, template)
 
