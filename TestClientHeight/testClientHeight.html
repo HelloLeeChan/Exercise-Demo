@@ -11,13 +11,28 @@
 </body>
 <script>
     //console.log(document.documentElement.clientHeight)
+    var weixin
+    if(is_weixn()){
+        weixin = 'yes'
+    }else{
+        weixin = 'no'
+    }
+
     alert("documentElementclientWidth：" +document.documentElement.clientWidth  +   "     documentElementclientWidth"+document.documentElement.clientHeight+"     "+
 
     	"screenavailHeight:  "+  window.screen.availWidth   +"      screenavailHeight:"+window.screen.availHeight+"     "+
 
     	"screenWidth: "+ window.screen.width +  "screenHeight:  "+window.screen.height  +
-    	"windowOrientation： "+ window.orientation  + "screenOrientation :"+ window.screen.orientation)
+    	"windowOrientation： "+ window.orientation  + "screenOrientation :"+ window.screen.orientation  +
+    "isWeixin:    "+ weixin)
 
-    //console.log(window.screen.availHeight)
+    function is_weixn(){
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i)=="micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    }
 </script>
 </html>
