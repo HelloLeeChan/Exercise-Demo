@@ -271,7 +271,17 @@ function Loader(pageArr,imgSrcArr){
          loadque[j].onload = function(e){
              that.loaded++
              if(that.loaded === that.imgsCount){
-                 that.go()
+                 if(window.orientation){
+                     if( window.orientation === 0 ||  window.orientation === 180){
+                         that.go()
+                     }
+                     else{
+                         /*do nothing*/
+                     }
+                 }else{
+                     that.go()
+                 }
+
              }
          }
     }
@@ -295,6 +305,7 @@ Loader.prototype.go = function(){
 
 var imgUrl = ['http://mat1.gtimg.com/finance/cj/dw/bottom-glow.png','http://mat1.gtimg.com/finance/cj/dw/screen.png',
 'http://mat1.gtimg.com/finance/cj/dw/bg.jpg',"http://mat1.gtimg.com/finance/cj/dw/gif-frame.png","http://mat1.gtimg.com/finance/cj/dw//SH.gif"]
+
 var myload = new Loader([sh,wl,sw,dp,ga,bd,tt],imgUrl)
 
 
