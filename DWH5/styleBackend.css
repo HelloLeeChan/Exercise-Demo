@@ -1,15 +1,14 @@
-@media screen and (orientation: portrait) {
+@media screen and (orientation:portrait) {
     .lock_wrp {
-        display: none !important
+        display: none!important
     }
 }
 
-@media screen and (orientation: landscape) {
+@media screen and (orientation:landscape) {
     #content {
-        display: none !important
+        display: none!important
     }
 }
-
 .lock_wrp {
     position: absolute;
     width: 100%;
@@ -18,10 +17,9 @@
     left: 0;
     top: 0;
     background-color: #142236;
-    color: rgba(255, 255, 255, .8);
+    color: rgba(255,255,255,.8);
     z-index: 9999
 }
-
 .lock {
     position: absolute;
     left: 50%;
@@ -31,13 +29,12 @@
     margin: -75px 0 0 -125px;
     text-align: center
 }
-
 .lock i {
     position: relative;
     display: block;
     width: 74px;
     height: 110px;
-    background: url(http://mat1.gtimg.com/finance/cj/boao/2016boao/zhitu/iphone.svg) 0 0 no-repeat;
+    background: url(http://mat1.gtimg.com/finance/cj/boao/2016boao/zhit) 0 0 no-repeat;
     background-size: 100%;
     margin: 0 auto;
     -webkit-transform: rotate(-90deg);
@@ -45,48 +42,45 @@
     -webkit-animation: iphone 1.6s ease-in infinite;
     animation: iphone 1.6s ease-in infinite
 }
-
 @-webkit-keyframes iphone {
     0% {
-        -webkit-transform: rotate(-90deg)
+        -webkit-transform:rotate(-90deg)
     }
     25% {
-        -webkit-transform: rotate(0deg)
+        -webkit-transform:rotate(0deg)
     }
     50% {
-        -webkit-transform: rotate(0deg)
+        -webkit-transform:rotate(0deg)
     }
     75% {
-        -webkit-transform: rotate(-90deg)
+        -webkit-transform:rotate(-90deg)
     }
     100% {
-        -webkit-transform: rotate(-90deg)
+        -webkit-transform:rotate(-90deg)
     }
 }
-
 @keyframes iphone {
     0% {
-        transform: rotate(-90deg)
+        transform:rotate(-90deg)
     }
     25% {
-        transform: rotate(0deg)
+        transform:rotate(0deg)
     }
     50% {
-        transform: rotate(0deg)
+        transform:rotate(0deg)
     }
     75% {
-        transform: rotate(-90deg)
+        transform:rotate(-90deg)
     }
     100% {
-        transform: rotate(-90deg)
+        transform:rotate(-90deg)
     }
 }
+#content{position: absolute;width:100%;height:100%;}
 
-#content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
+
+
+
 
 html, body {
     width: 100%;
@@ -234,15 +228,18 @@ html, body {
     }
     40% {
         opacity: 0;
+        right: -21px;
     }
     45% {
         opacity: 1;
+        right: 80px;
     }
     50% {
         opacity: 0;
+        right: -21px;
     }
     51% {
-        opacity: 0;
+        right: -21px;
     }
     55% {
         opacity: 1;
@@ -267,15 +264,18 @@ html, body {
     }
     90% {
         opacity: 0;
+        right: -21px;
     }
     95% {
         opacity: 1;
+        right: 80px;
     }
     96% {
-        opacity: 1;
+        right: -21px;
     }
     100% {
         opacity: 0;
+        right: -21px;
     }
 }
 
@@ -306,15 +306,18 @@ html, body {
     }
     40% {
         opacity: 0;
+        right: -21px;
     }
     45% {
         opacity: 1;
+        right: 80px;
     }
     50% {
         opacity: 0;
+        right: -21px;
     }
     51% {
-        opacity: 0;
+        right: -21px;
     }
     55% {
         opacity: 1;
@@ -339,20 +342,23 @@ html, body {
     }
     90% {
         opacity: 0;
+        right: -21px;
     }
     95% {
         opacity: 1;
+        right: 80px;
     }
     96% {
-        opacity: 1;
+        right: -21px;
     }
     100% {
         opacity: 0;
+        right: -21px;
     }
 }
 
 body {
-    font-family: Purista, sans-serif, arial;
+    font-family: Microsoft YaHei, sans-serif, arial;
     background: black;
     color: #7fd1ec;
 }
@@ -361,19 +367,18 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    perspective: 3000px;
-    -webkit-perspective: 3000px;
-    background: url(http://mat1.gtimg.com/finance/cj/dw/bg.jpg) no-repeat;
+    perspective: 2000px;
+    -webkit-perspective: 2000px;
+    background: url(../imgs/bg.jpg) no-repeat;
     background-size: cover;
 
 }
-
 .bg-bottom {
     position: absolute;
     top: 89%;
     width: 100%;
     height: 10%;
-    background: url("http://mat1.gtimg.com/finance/cj/dw/bg-bottom.png") no-repeat;
+    background: url("../imgs/bg-bottom.png") no-repeat;
     background-size: cover;
 }
 
@@ -464,7 +469,7 @@ body {
     width: 90%;
     height: 20%;
     z-index: 9;
-    background: url("http://mat1.gtimg.com/finance/cj/dw/bottom-glow.png") no-repeat;
+    background: url("../imgs/bottom-glow2.png") no-repeat;
     background-size: contain;
     animation: bottomFlash 2s ease infinite alternate;
     -webkit-animation: bottomFlash 2s ease infinite alternate;
@@ -1103,45 +1108,47 @@ body {
     color: #6bcdf1;
 }
 
-/* ����iphone5 */
+
+
+/*
+
+
+/!* 兼容iphone5 *!/
 @media only screen
 and (min-device-width: 320px)
 and (max-device-width: 374px)
-and (min-device-height: 500px) {
+and (min-device-height: 500px){
 
     .two .gif-frame {
         height: 33%
     }
-
     .bg-bottom {
         top: 90%;
     }
-
-    #bottom-glow {
+    #bottom-glow{
         top: 88%;
     }
 }
-
-/* ����iphone6 plus */
+/!* 兼容iphone6 plus *!/
 @media only screen
 and (min-device-width: 414px)
 and (max-device-width: 736px) {
     #bottom-glow {
-        /*
+        /!*
         margin: 141% auto;
-        */
+        *!/
     }
 
-    .one .out, .two .out, .three .out {
+     .one .out,.two .out,.three .out {
         font-size: 46px;
     }
 }
-
-/*���߱�0.67-0.7*/
+/!*兼容宽高比大于0.67小雨0.7的的屏幕*!/
 @media only screen and (min-aspect-ratio: 360/532)
-and  (max-aspect-ratio: 7/10) {
+and  (max-aspect-ratio: 7/10){
 
-    .page {
+
+    .page{
         width: 93%;
         top: 0;
         right: 0;
@@ -1149,35 +1156,28 @@ and  (max-aspect-ratio: 7/10) {
         left: 0;
         margin: 0 auto;
     }
-
     .keyboard {
         width: 630px;
     }
-
     .one .out {
         font-size: 40px;
     }
-
     .one .codescroll {
         margin-top: 58%;
     }
-
     .one .gif-frame {
         margin-top: 58%;
         margin-left: 25%;
     }
-
     .one .keyboard {
         margin-top: 108%;
         margin-left: 24%;
     }
-
-    /*???ģ??*/
+    /!*二号模板*!/
     .two .keyboard {
         margin-left: 24%;
         margin-top: 107%;
     }
-
     .two .out {
         font-size: 2.4rem;
         width: 71%;
@@ -1185,62 +1185,53 @@ and  (max-aspect-ratio: 7/10) {
         margin-left: 24%;
     }
 
-    /*???ģ??*/
+
+    /!*三号模板*!/
     .three .out {
         width: 68%;
         height: 19%;
         margin-top: 78%;
         font-size: 2.4rem;
     }
-
     .three .gif-frame {
         margin-top: 29%;
         width: 590px;
         height: 415px;
     }
-
     .three img {
         margin-left: 60px;
         margin-top: 15px;
         width: 480px;
         height: 384px;
     }
-
     .three .codescroll {
         margin-left: 76%;
     }
-
     .three .keyboard {
         margin-top: 105%;
     }
 
-    .key {
+    .key{
         width: 39px;
         height: 38px;
     }
-
     .enter {
         width: 88px;
     }
-
     .keyboard .function {
         width: 29px;
         height: 29px;
         margin-bottom: 15px;
     }
-
     .space1 {
         margin-right: 41px !important;
     }
-
     .space2 {
         margin-right: 24px !important;
     }
-
     .backspace {
         width: 78px;
     }
-
     .dual {
         line-height: 20px;
         width: 29px;
@@ -1249,152 +1240,26 @@ and  (max-aspect-ratio: 7/10) {
     .tab {
         width: 46px;
     }
-
     .letter {
         width: 29px;
     }
-
     .slash {
         width: 62px;
     }
-
     .caps {
         width: 68px;
     }
-
     .shift.left {
         width: 88px;
     }
-
     .shift.right {
         width: 100px;
     }
-
     .ctrl {
         width: 48px;
     }
-
     .space {
         width: 233px;
     }
-}
-
-/*aspectratio >= 0.73 */
-@media only screen and (min-aspect-ratio: 384/519) and (max-aspect-ratio: 8/10) {
-    .page {
-        width: 83%;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        margin: 0 auto;
-    }
-
-    .one .gif-frame {
-        width: 525px;
-        height: 373px;
-    }
-
-    .one img {
-        width: 438px;
-        height: 350px;
-    }
-
-    .one .keyboard {
-        width: 540px;
-        height: 217px;
-    }
-
-    .two .keyboard {
-        width: 540px;
-        height: 217px;
-        margin-top: 112%;
-    }
-    .two .out {
-        font-size: 47px;
-    }
-    .three .keyboard {
-        width: 540px;
-        height: 217px;
-        margin-top: 112%;
-    }
-    .three .gif-frame {
-        width: 517px;
-        height: 364px;
-    }
-    .three img {
-        margin-left: 54px;
-        margin-top: 9px;
-        width: 420px;
-        height: 370px;
-    }
-    .three .out {
-        margin-top: 81%;
-        font-size: 47px;
-    }
-
-    .key {
-        width: 29px;
-        height: 29px;
-    }
-
-    .function {
-        width: 22px;
-        height: 22px;
-    }
-
-    .dual {
-        font-size: 7px;
-        line-height: 12px;
-        width: 23px;
-    }
-
-    .space1 {
-        margin-right: 36px !important;
-    }
-
-    .letter {
-        width: 23px;
-    }
-
-    .tab {
-        width: 40px;
-        line-height: 30px;
-        font-size: 10px;
-    }
-
-    .backspace {
-        width: 70px;
-    }
-
-    .slash {
-        width: 52px;
-    }
-
-    .enter {
-        width: 84px;
-    }
-
-    .caps {
-        width: 50px;
-        font-size: 10px;
-        line-height: 14px;
-    }
-
-    .shift.left {
-        width: 80px;
-    }
-    .shift.right {
-        width: 80px;
-    }
-    .ctrl {
-        width: 40px;
-    }
-
-    .space {
-        width: 212px;
-    }
-
-}
-
-/*  |xGv00|a0266677843f09b818ae0cf285a95357 */
+    
+}*/

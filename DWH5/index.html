@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <title>决战里约 智能播报</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="viewport" content="width=980 minimal-ui">
+    <meta name="viewport" content="width=980">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
 
     <link rel="stylesheet" href="build/styleOnline.css">
     <link rel="stylesheet" href="typing.css">
@@ -36,17 +38,17 @@
 
 <div class="words" style="display: none">
         <div id="SH">北京时间8月7日晚，中国代表团里约奥运首金诞生！济南籍选手张梦雪成为本届女子10米气手枪项目最大黑马，她以总成绩199.4环夺得冠军。俄罗斯选手巴萨华舒奇纳摘得银牌，希腊选手高拉卡琪获得铜牌。</div>
-        <div id="SW">北京时间8月7日晚，中国代表团里约奥运首金诞生！济南籍选手张梦雪成为本届女子10米气手枪项目最大黑马，她以总成绩199.4环夺得冠军。俄罗斯选手巴萨华舒奇纳摘得银牌，希腊选手高拉卡琪获得铜牌。 </div>
+        <div id="SW">里约奥运会男子200米自由泳决赛落下帷幕。中国选手孙杨以1分44秒65勇夺金牌。南非选手莱恩-库切以1分45秒20收获银牌，美国选手德怀尔以1分45秒23获得季军。 </div>
         <div id="WL">北京时间8月8日，里约奥运会男子举重56KG级决赛落下帷幕。中国选手龙清泉以总成绩307公斤夺得金牌。朝鲜选手欧云哲以总成绩303公斤获得亚军，泰国选手库拉瞳以总成绩289公斤获得季军。 </div>
         <div id="DP">中国组合施廷懋/吴敏霞在女子双人3米板决赛中，以345.60分的总成绩获得了冠军。意大利组合卡尼奥托/达拉佩获得银牌，成绩为313.83分。澳大利亚组合基宁/史密斯摘得铜牌，成绩为299.19分。 </div>
-        <div id="GA">在刚刚结束的里约奥运会（项目）决赛中，XX选手X以出色的发挥夺得该项目冠军，XX选手X收获一枚银牌，XX选手X摘得铜牌。  目冠军，XX选手X收获一枚银牌，XX选手X摘得铜牌。目冠军，XX选手X收获一枚银牌，XX选手X摘得铜牌。目冠军，XX选手X收获一枚银牌，XX选手X摘得铜牌。目冠军，XX选手X收获一枚银牌，XX选手X摘得铜牌。  </div>
-        <div id="BD">2016年里约奥运会羽毛球男单决赛结束较量,最终，XX选手A以X击败XX选手夺得冠军。 </div>
+        <div id="GA">北京时间8月10日，中国队在女子体操团体决赛表现稳定，最终以176.003分收获一枚宝贵的铜牌。美国队发挥出色，以184.897分夺得金牌，俄罗斯176.688分摘得银牌。  </div>
+        <div id="BD">第23金！首次进入奥运决赛的中国选手谌龙，以2-0的完美战绩击败马来西亚名将李宗伟获得羽毛球男单冠军，为中国羽毛球队再夺一金。 </div>
         <div id="TT">里约奥运会乒乓球男单决赛结束较量。最终，中国选手马龙以4-0战胜队友张继科，登顶乒乓球男单冠军宝座，张继科获得亚军。  </div>
 </div>
 
 <div class="wrap" style="display: none" >
+    <div class="bg-bottom"></div>
     <div  id="container" style="transform: rotateY(0deg) display: none">
-
         <div class="trans"></div>
         <div class="page screenRotate" style="display: none">
             <div class="out" >
@@ -55,7 +57,6 @@
             </div>
             <div class="codescroll" >
                 <div class="code">
-
     def timetofloat(self,stime):
         tscore = stime.split(".")
         mscore = tscore[0].split(":")

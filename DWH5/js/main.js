@@ -1,17 +1,9 @@
 /**
  * Created by licheng on 16/8/2.
  */
-console.log(document.documentElement.clientHeight)
-console.log(screen.width)
-
-
-document.addEventListener('touchmove',function(e){
-    e.preventDefault()
-},false)
-
-
+//console.log(Page.start)
 function Page(layoutCode, projectCode, imgs, template) {
-    this.dict = {one: '49%', two: '38%', three: '71%', four: '18%'}
+    this.dict = {one: '49%', two: '38%', three: '71%', four: '17%'}
     this.pass = false
     this.imgLoaded = 0
     var pageDom = template.cloneNode(true)
@@ -19,17 +11,12 @@ function Page(layoutCode, projectCode, imgs, template) {
     this.self = pageDom
     var ele = this.self
     this.input = document.getElementById(projectCode)
-    //  console.log(codeStr)
-    /*this.input = '北京时间7月19日，2016年里约奥运会女子10米气步枪决赛落下帷幕。'+
-     '奥运会“四朝元老”杜丽以总成绩'*/
     this.output = ele.getElementsByClassName('output')[0]
     this.letters = ele.getElementsByClassName('keyboard')[0].getElementsByClassName('key')
     this.contain = document.getElementById('container')
     this.imgs = imgs
     this.codeScroll = ele.getElementsByClassName('codescroll')[0]
-    //this.transpng = transPng?transPng:document.getElementsByClassName('sh2wl')[0].getElementsByTagName('img')
     this.codeRun = ele.getElementsByClassName('code')[0]
-    //console.log(this.codeRun)
     this.transpng = null
     this.codeHeight = this.dict[layoutCode]
     //this.next = nextObj ? nextObj : null
@@ -48,8 +35,9 @@ Page.prototype.start = function () {
     if (that.next) {
         that.next.getReady()
     }
+
+
     this.codeScroll.addEventListener('transitionend', function (e) {
-        console.log('codeRun........')
         that.codeRun.classList.add('codeRun')
     })
     this.contain.dispatchEvent(new Event('pagechange'))
@@ -59,28 +47,23 @@ Page.prototype.start = function () {
         output: that.output,
         delay: 60,
         done: function () {
+            clearInterval(that.handle)
             setTimeout(function(){
-                clearInterval(that.handle)
-                console.log(that.imgLoaded)
                 if (that.imgCount == that.imgLoaded) {
-                    // that.self.style.display = 'none'
                     that.pageChange()
                 } else {
                     that.pass = true
                 }
-            },2000)
-        } //完成打印后的回调事件
+            },1200)
+        } //打字结束调用callback
     });
 
     typing.start()
     codeScroll = this.codeScroll
 
-
     setTimeout(function () {
         codeScroll.style.height = that.codeHeight
-        console.log(that)
         that.handle = that.randomKey(that.letters)
-        //console.log(that.handle)
     }, 70)
 }
 
@@ -104,18 +87,18 @@ Page.prototype.pageChange = function () {
     this.contain.classList.remove('showPage')
 
     if(next !== null){
+        self.style.display = 'none'
         pngs[i].style.display = 'block'
         setTimeout(function transLoop() {
             i++
             if (i < len) {
                 pngs[i - 1].style.display = 'none'
                 pngs[i].style.display = 'block'
-                console.log('trans')
                 setTimeout(transLoop, fps)
             } else {
                 pngs[i - 1].style.display = 'none'
-                    self.style.display = 'none'
-                    next.start()
+
+                next.start()
             }
         }, fps)
     }else{
@@ -148,13 +131,10 @@ Page.prototype.getReady = function () {
     var page = this
 
     function _countLoad() {
-        // console.log(imgLoaded)
-        //console.log(page)
         page.imgLoaded++
         if (page.imgLoaded == page.imgCount && page.pass === true) {
             page.pageChange()
         }
-
     }
 
     var pagedom = this.self
@@ -175,23 +155,29 @@ Page.prototype.getReady = function () {
         temp.onload = _countLoad
         pageTrans.push(temp)
         transBox.appendChild(temp)
-
     }
-    console.log(pageTrans)
     this.transpng = pageTrans
     document.getElementById('container').appendChild(pagedom)
 
+
 }
+
 
 Page.prototype.ending = function () {
     var logo = document.getElementById('ending')
     var ending = document.getElementById('ending-glow')
     var self = this.self
-    console.log(self)
     self.classList.remove('screenRotate')
-    console.log(this.contain)
-    this.contain.style.transform  = 'rotateY(90deg)'
-    this.contain.addEventListener('transitionend',function(){
+    /*  this.contain.style.transform  = 'rotateY(90deg)'
+     this.contain.style.webkitTransform = 'rotateY(90deg)'*/
+    this.contain.classList.add('endingRotate')
+    this.contain.addEventListener('animationend',function(){
+        ending.style.display = 'block'
+        ending.classList.add('flash')
+        this.style.display = 'none'
+        logo.style.opacity = 1
+    })
+    this.contain.addEventListener('webkitAnimationEnd',function(){
         ending.style.display = 'block'
         ending.classList.add('flash')
         this.style.display = 'none'
@@ -199,51 +185,13 @@ Page.prototype.ending = function () {
     })
 }
 
-var template = document.getElementsByClassName('page')[0]
-
-var shImgs = {
-    main: 'http://mat1.gtimg.com/finance/cj/dw//SH.gif',
-    trans: ['imgs/d/d1.png', 'imgs/d/d2.png', 'imgs/d/d3.png', 'imgs/d/d4.png', 'imgs/d/d5.png']
-}
-var wlImgs = {
-    main: 'imgs/WL.gif',
-    trans: ['imgs/c/c1.png', 'imgs/c/c2.png', 'imgs/c/c3.png', 'imgs/c/c4.png', 'imgs/c/c5.png']
-}
-var swImgs = {
-    main: 'imgs/SW.gif',
-    trans: ['imgs/b/b1.png', 'imgs/b/b2.png', 'imgs/b/b3.png', 'imgs/b/b4.png', 'imgs/b/b5.png']
-}
-var dpImgs = {
-    main: 'imgs/DP.gif',
-    trans: ['imgs/b/b1.png', 'imgs/b/b2.png', 'imgs/b/b3.png', 'imgs/b/b4.png', 'imgs/b/b5.png']
-}
-var gaImgs = {
-    main: 'imgs/GA.gif',
-    trans: ['imgs/d/d1.png', 'imgs/d/d2.png', 'imgs/d/d3.png', 'imgs/d/d4.png', 'imgs/d/d5.png']
-}
-var bdImgs = {
-    main: 'imgs/BD.gif',
-    trans: ['imgs/c/c1.png', 'imgs/c/c2.png', 'imgs/c/c3.png', 'imgs/c/c4.png', 'imgs/c/c5.png']
-}
-var ttImgs = {
-    main: 'imgs/TT.gif',
-    trans: ['imgs/b/b1.png', 'imgs/b/b2.png', 'imgs/b/b3.png', 'imgs/b/b4.png', 'imgs/b/b5.png']
-}
-
-var sh = new Page('one', 'SH', shImgs, template)
-var wl = new Page('two', 'WL', wlImgs, template)
-var sw = new Page('three', 'SW', swImgs, template)
-var dp = new Page('one', 'DP', dpImgs, template)
-var ga = new Page('three', 'GA', gaImgs, template)
-var bd = new Page('two', 'BD', bdImgs, template)
-var tt = new Page('three', 'TT', ttImgs, template)
-
 
 
 
 function Loader(pageArr,imgSrcArr){
     this.firstPage = null
     this.pageQueue = pageArr
+    this.imgSrcArr = imgSrcArr
     this.imgsCount = imgSrcArr.length
     this.loaded = 0
     this.loader = document.getElementById('loadwrap')
@@ -261,56 +209,122 @@ function Loader(pageArr,imgSrcArr){
             qlen--
         }
     }
+}
+Loader.prototype.go = function(){
     var imglen = this.imgsCount
     var loadque = []
+    var imgSrcArr = this.imgSrcArr
     var that = this
 
     for(j= 0 ; j < imglen ; j++){
-         loadque[j] = new Image()
-         loadque[j].src = imgSrcArr[j]
-         loadque[j].onload = function(e){
-             that.loaded++
-             if(that.loaded === that.imgsCount){
-                 if(window.orientation){
-                     if( window.orientation === 0 ||  window.orientation === 180){
-                         that.go()
-                     }
-                     else{
-                         /*do nothing*/
-                     }
-                 }else{
-                     that.go()
-                 }
-
-             }
-         }
+        loadque[j] = new Image()
+        loadque[j].src = imgSrcArr[j]
+        function start() {
+            console.log(that)
+            that.firstPage.getReady()
+            setTimeout(function () {
+                var first = that.firstPage
+                that.loader.style.display = 'none'
+                that.wrap.style.display = 'block'
+                first.contain.classList.add('showPage')
+                first.contain.style.transform ='rotateY(0deg)'
+                first.start()
+            }, 3000)
+        }
+        loadque[j].onload = function(){
+            that.loaded++
+            if(that.loaded === that.imgsCount){
+                if(window.orientation){
+                    if( window.orientation === 0 ||  window.orientation === 180){
+                        start()
+                    }
+                    else{
+                        /*do nothing*/
+                    }
+                }else{
+                    start()
+                }
+            }
+        }
     }
 }
 
-Loader.prototype.go = function(){
-    var that = this
-    that.firstPage.getReady()
-        setTimeout(function () {
-            var first = that.firstPage
-            //loader.style.display = 'none'
-            that.loader.style.display = 'none'
-            //wrap.style.display = 'block'
-            that.wrap.style.display = 'block'
-            first.contain.classList.add('showPage')
-            //page1.contain.classList.add('showPage')
-            first.contain.style.transform ='rotateY(0deg)'
-            first.start()
-        }, 3000)
+Loader.prototype.uaJudge = function (uaRegArr,redirectUrl) {
+    var userAgent = navigator.userAgent.toLowerCase()
+    var len = uaRegArr.length
+    for(var i =0 ; i < len ; i++ ){
+        if(uaRegArr[i].test(userAgent)){
+            console.log(uaRegArr[i])
+            return
+        }
+    }
+    window.location.href = redirectUrl
+} ;
+
+
+
+
+
+(function(){
+    document.addEventListener('touchmove',function (e) {
+        e.preventDefault()
+    })
+    document.addEventListener('touchstart',function (e) {
+        e.preventDefault()
+    })
+
+    var template = document.getElementsByClassName('page')[0]
+
+    var shImgs = {
+        main: 'http://mat1.gtimg.com/finance/cj/dw//SH.gif',
+        trans: ['imgs/trans/SH-1.png', 'imgs/trans/SH-2.png', 'imgs/trans/WL-2.png', 'imgs/trans/WL-1.png']
+    }
+    var wlImgs = {
+        main: 'http://mat1.gtimg.com/finance/cj/dw//WL.gif',
+        trans: ['imgs/trans/WL-1.png', 'imgs/trans/WL-2.png', 'imgs/trans/SW-2.png', 'imgs/trans/SW-1.png' ]
     }
 
-var imgUrl = ['http://mat1.gtimg.com/finance/cj/dw/bottom-glow.png','http://mat1.gtimg.com/finance/cj/dw/screen.png',
-'http://mat1.gtimg.com/finance/cj/dw/bg.jpg',"http://mat1.gtimg.com/finance/cj/dw/gif-frame.png","http://mat1.gtimg.com/finance/cj/dw//SH.gif"]
+    var swImgs = {
+        main: 'http://mat1.gtimg.com/finance/cj/dw/SW.gif',
+        trans: ['imgs/trans/SW-1.png', 'imgs/trans/SW-2.png' , 'imgs/trans/GA-2.png', 'imgs/trans/GA-1.png']
+    }
 
-var myload = new Loader([sh,wl,sw,dp,ga,bd,tt],imgUrl)
+    var gaImgs = {
+        main: 'http://mat1.gtimg.com/finance/cj/dw//GA.gif',
+        trans: ['imgs/trans/GA-1.png', 'imgs/trans/GA-2.png', 'imgs/trans/BD-2.png', 'imgs/trans/BD-1.png']
+    }
+    var bdImgs = {
+        main: 'imgs/BD.gif',
+        trans: ['imgs/trans/BD-1.png', 'imgs/trans/BD-2.png', 'imgs/trans/TT-2.png', 'imgs/trans/TT-1.png']
+    }
+    var ttImgs = {
+        main: 'http://mat1.gtimg.com/finance/cj/dw//TT.gif',
+        trans: ['imgs/trans/TT-1.png', 'imgs/trans/TT-2.png', 'imgs/trans/DP-2.png', 'imgs/trans/DP-1.png' ]
+    }
+    var dpImgs = {
+        main: 'http://mat1.gtimg.com/finance/cj/dw//DP.gif',
+        trans: ['imgs/trans/DP-1.png']
+    }
+
+    var sh = new Page('one', 'SH', shImgs, template)
+    var wl = new Page('two', 'WL', wlImgs, template)
+    var sw = new Page('three', 'SW', swImgs, template)
+
+    var ga = new Page('one', 'GA', gaImgs, template)
+    var bd = new Page('two', 'BD', bdImgs, template)
+    var tt = new Page('three', 'TT', ttImgs, template)
+    var dp = new Page('one', 'DP', dpImgs, template)
+
+
+    var imgUrl = ['http://mat1.gtimg.com/finance/cj/dw/bottom-glow.png','http://mat1.gtimg.com/finance/cj/dw/screen.png','http://mat1.gtimg.com/finance/cj/dw/gif-frame-wl.png',
+        'http://mat1.gtimg.com/finance/cj/dw/bg.jpg',"http://mat1.gtimg.com/finance/cj/dw/gif-frame.png","http://mat1.gtimg.com/finance/cj/dw//SH.gif"]
+    var myload = new Loader([sh,wl,sw,ga,bd,tt,dp],imgUrl)
+//myload.uaJudge([/micromessenger/,/qqnews/i],'http://finance.qq.com/zt2016/Dreamwriter/redirect.htm')
+    myload.go()
+
+}())
 
 
 
 
-
-
-
+/*  |xGv00|d3a98bbd2ce0f81c8288e67a2d990bb0 */

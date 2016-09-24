@@ -1,0 +1,1355 @@
+@media screen and (orientation:portrait) {
+  .lock_wrp {
+    display: none!important;
+  }
+}
+
+@media screen and (orientation:landscape) {
+  #content {
+    display: none!important;
+  }
+}
+
+.lock_wrp {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  background-color: #142236;
+  color: rgba(255,255,255,.8);
+  z-index: 9999;
+}
+
+.lock {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 3.333333rem;
+  height: 2rem;
+  margin: -1rem 0 0 -1.666667rem;
+  text-align: center;
+}
+
+.lock i {
+  position: relative;
+  display: block;
+  width: 0.986667rem;
+  height: 1.466667rem;
+  background: url(http://mat1.gtimg.com/finance/cj/boao/2016boao/zhit) 0 0 no-repeat;
+  background-size: 100%;
+  margin: 0 auto;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-animation: iphone 1.6s ease-in infinite;
+  animation: iphone 1.6s ease-in infinite;
+}
+
+@-webkit-keyframes iphone {
+  0% {
+    -webkit-transform: rotate(-90deg);
+  }
+
+  25% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(-90deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(-90deg);
+  }
+}
+
+@keyframes iphone {
+  0% {
+    transform: rotate(-90deg);
+  }
+
+  25% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-90deg);
+  }
+
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+#content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /*
+  background-color: #000;
+  */
+}
+
+#loadwrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -1.066667rem;
+  margin-top: -0.533333rem;
+  border: none;
+}
+
+.loadbg {
+  font-size: 0.466667rem;
+  /* padding: 30px 30px 30px 0;
+  background: #306f99;
+  -webkit-animation: bg 1.5s linear infinite;
+  animation: bg 1.5s linear infinite;*/
+  box-shadow: inset 0 0 0.6rem 0.4rem black;
+}
+
+.loading {
+  position: relative;
+  text-align: right;
+  text-shadow: 0 0 0.08rem #94e7f2;
+  height: 0.266667rem;
+  width: 2rem;
+}
+
+.loading span {
+  display: block;
+  text-transform: uppercase;
+  position: absolute;
+  right: 0.4rem;
+  height: 0.266667rem;
+  width: 5.333333rem;
+  line-height: 0.266667rem;
+}
+
+.loading span:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -0.026667rem;
+  right: -0.28rem;
+  height: 0.266667rem;
+  width: 0.213333rem;
+  background: #7fd1ec;
+  box-shadow: 0 0 0.2rem #94e7f2;
+  -webkit-animation: blink 3.4s infinite;
+  animation: blink 3.4s infinite;
+}
+
+.loading span.title {
+  -webkit-animation: title 3.4s linear infinite;
+  animation: title 3.4s linear infinite;
+  /* opacity: 0; */
+}
+
+.loading span.loadtext {
+  -webkit-animation: title 3.4s linear 1.7s infinite;
+  animation: title 3.4s linear 1.7s infinite;
+  /* opacity: 0; */
+}
+
+@-webkit-keyframes title {
+  0% {
+    opacity: 0;
+    right: 1.733333rem;
+  }
+
+  48% {
+    opacity: 0;
+    right: 1.733333rem;
+  }
+
+  52% {
+    opacity: 1;
+    right: 0.4rem;
+  }
+
+  70% {
+    opacity: 1;
+    right: 0.4rem;
+  }
+
+  100% {
+    opacity: 0;
+    right: 0.4rem;
+  }
+}
+
+@keyframes title {
+  0% {
+    opacity: 0;
+    right: 1.733333rem;
+  }
+
+  48% {
+    opacity: 0;
+    right: 1.733333rem;
+  }
+
+  52% {
+    opacity: 1;
+    right: 0.4rem;
+  }
+
+  70% {
+    opacity: 1;
+    right: 0.4rem;
+  }
+
+  100% {
+    opacity: 0;
+    right: 0.4rem;
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  10% {
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  35% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+    right: -0.28rem;
+  }
+
+  45% {
+    opacity: 1;
+    right: 1.066667rem;
+  }
+
+  50% {
+    opacity: 0;
+    right: -0.28rem;
+  }
+
+  51% {
+    right: -0.28rem;
+  }
+
+  55% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  65% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0;
+    right: -0.28rem;
+  }
+
+  95% {
+    opacity: 1;
+    right: 1.066667rem;
+  }
+
+  96% {
+    right: -0.28rem;
+  }
+
+  100% {
+    opacity: 0;
+    right: -0.28rem;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  10% {
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  35% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+    right: -0.28rem;
+  }
+
+  45% {
+    opacity: 1;
+    right: 1.066667rem;
+  }
+
+  50% {
+    opacity: 0;
+    right: -0.28rem;
+  }
+
+  51% {
+    right: -0.28rem;
+  }
+
+  55% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  65% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0;
+    right: -0.28rem;
+  }
+
+  95% {
+    opacity: 1;
+    right: 1.066667rem;
+  }
+
+  96% {
+    right: -0.28rem;
+  }
+
+  100% {
+    opacity: 0;
+    right: -0.28rem;
+  }
+}
+
+body {
+  font-family: Microsoft YaHei, sans-serif, arial;
+  background: black;
+  color: #7fd1ec;
+}
+
+.wrap {
+  position: relative;
+  width: 13.066667rem;
+  height: 20.573333rem;
+  perspective: 26.666667rem;
+  -webkit-perspective: 26.666667rem;
+  background: url(../imgs/bg.jpg) no-repeat;
+  background-size: cover;
+}
+
+.bg-bottom {
+  position: absolute;
+  top: 89%;
+  width: 100%;
+  height: 10%;
+  background: url("../imgs/bg-bottom.png") no-repeat;
+  background-size: cover;
+}
+
+#container {
+  position: absolute;
+  margin: 5% auto;
+  width: 12.413333rem;
+  height: 18.72rem;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /*overflow: hidden;*/
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+  -webkit-transition: transform .5s;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  background-size: cover;
+}
+
+@keyframes screen {
+  0% {
+    -webkit-transform: rotateY(2.5deg);
+    transform: rotateY(2.5deg);
+  }
+
+  100% {
+    -webkit-transform: rotateY(-1.5deg);
+    transform: rotateY(-1.5deg);
+  }
+}
+
+@-webkit-keyframes screen {
+  0% {
+    -webkit-transform: rotateY(4deg);
+  }
+
+  100% {
+    -webkit-transform: rotateY(-2deg);
+  }
+}
+
+.trans {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+
+.trans img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: none;
+  z-index: 2;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("http://mat1.gtimg.com/finance/cj/dw/screen.png") no-repeat;
+  background-size: cover;
+}
+
+.screenRotate {
+  animation: screen 2s ease-in-out infinite alternate;
+  -webkit-animation: screen 2s ease-in-out infinite alternate;
+}
+
+#bottom-glow {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  position: absolute;
+  top: 87%;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: 0 auto;
+  width: 90%;
+  height: 20%;
+  z-index: 9;
+  background: url("../imgs/bottom-glow2.png") no-repeat;
+  background-size: contain;
+  animation: bottomFlash 2s ease infinite alternate;
+  -webkit-animation: bottomFlash 2s ease infinite alternate;
+}
+
+@keyframes bottomFlash {
+  0% {
+    opacity: .3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes bottomFlash {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.showPage {
+  animation: showPage 1s ease 1 forwards;
+  -webkit-animation: showPage 1s ease 1 forwards;
+}
+
+@keyframes showPage {
+  0% {
+    -webkit-transform: rotateY(30deg);
+    transform: rotateY(30deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes showPage {
+  0% {
+    -webkit-transform: rotateY(-30deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+.out {
+  line-height: 120%;
+  border: none;
+  overflow: hidden;
+}
+
+.one .codescroll {
+  position: absolute;
+  width: 2.482533rem;
+  float: left;
+  height: 0;
+  margin-top: 61%;
+  /* height: 49%; */
+  overflow: hidden;
+  margin-left: 3%;
+  color: #6bcdf1;
+  word-wrap: break-word;
+  transition: height 1s linear 1s;
+  -webkit-transition: height 1s linear 1s;
+}
+
+.one .out {
+  position: absolute;
+  float: left;
+  /* margin-left: 3%; */
+  margin-left: 5%;
+  width: 11.171867rem;
+  height: 3.556667rem;
+  margin-top: 28%;
+  font-size: 0.6rem;
+  color: #6bcdf1;
+}
+
+.one .gif-frame {
+  position: absolute;
+  width: 8rem;
+  height: 5.68rem;
+  float: left;
+  margin-top: 61%;
+  margin-left: 28%;
+  background: url("http://mat1.gtimg.com/finance/cj/dw/gif-frame.png") no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.one .keyboard {
+  position: absolute;
+  width: 8.666667rem;
+  height: 3.466667rem;
+  float: left;
+  margin-left: 3.226667rem;
+  margin-top: 13.5304rem;
+}
+
+.one img {
+  margin-left: 0.6rem;
+  margin-top: 0.08rem;
+  width: 6.666667rem;
+  height: 5.333333rem;
+}
+
+.two .codescroll {
+  position: absolute;
+  height: 0;
+  width: 20%;
+  float: left;
+  /*height: 38%;*/
+  margin-top: 80%;
+  overflow: hidden;
+  margin-left: 3%;
+  color: #6bcdf1;
+  word-wrap: break-word;
+  transition: height 1s linear 1s;
+  -webkit-transition: height 1s linear 1s;
+}
+
+.two .out {
+  position: absolute;
+  margin-left: 28%;
+  width: 67%;
+  height: 19%;
+  margin-top: 79%;
+  font-size: 0.6rem;
+  color: #6bcdf1;
+}
+
+.two .gif-frame {
+  position: absolute;
+  width: 92%;
+  height: 32%;
+  margin-top: 28%;
+  margin-left: 3%;
+  background: url("http://mat1.gtimg.com/finance/cj/dw/gif-frame-wl.png") no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.two .keyboard {
+  position: absolute;
+  width: 8.666667rem;
+  height: 3.466667rem;
+  float: left;
+  margin-left: 26%;
+  margin-top: 109%;
+}
+
+.two img {
+  margin-left: 0.6rem;
+  margin-top: 0.106667rem;
+  width: 89%;
+  height: 94%;
+}
+
+.three .gif-frame {
+  width: 8.4rem;
+  height: 5.866667rem;
+  margin-top: 30%;
+  margin-left: 3%;
+  background: url("http://mat1.gtimg.com/finance/cj/dw/gif-frame.png") no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  position: absolute;
+}
+
+.three img {
+  margin-left: 0.88rem;
+  margin-top: 0.266667rem;
+  width: 6.666667rem;
+  height: 5.333333rem;
+}
+
+.three .out {
+  position: absolute;
+  margin-left: 3%;
+  width: 68%;
+  height: 19%;
+  margin-top: 77%;
+  font-size: 0.6rem;
+  color: #6bcdf1;
+}
+
+.three .codescroll {
+  position: absolute;
+  width: 20%;
+  height: 0;
+  overflow: hidden;
+  margin-left: 73%;
+  margin-top: 29%;
+  color: #6bcdf1;
+  word-wrap: break-word;
+  transition: height 1s linear 1s;
+  -webkit-transition: height 1s linear 1s;
+}
+
+.three .keyboard {
+  position: absolute;
+  width: 8.666667rem;
+  height: 3.466667rem;
+  float: left;
+  margin-left: 3%;
+  margin-top: 108%;
+}
+
+.four .codescroll {
+  position: absolute;
+  width: 65%;
+  float: left;
+  height: 0;
+  margin-top: 77%;
+  /* height: 49%; */
+  overflow: hidden;
+  margin-left: 26%;
+  color: #6bcdf1;
+  word-wrap: break-word;
+  transition: height 1s linear 1s;
+  -webkit-transition: height 1s linear 1s;
+}
+
+.four .out {
+  position: absolute;
+  /* float: left; */
+  /* margin-left: 3%; */
+  margin-left: 5%;
+  width: 20%;
+  height: 69%;
+  margin-top: 30%;
+  font-size: 0.6rem;
+  color: #6bcdf1;
+}
+
+.four .gif-frame {
+  width: 8rem;
+  height: 5.68rem;
+  float: left;
+  margin-top: 30%;
+  margin-left: 26%;
+  background: url("http://mat1.gtimg.com/finance/cj/dw/gif-frame.png") no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.four .keyboard {
+  position: absolute;
+  width: 8.666667rem;
+  height: 3.466667rem;
+  float: left;
+  margin-left: 26%;
+  margin-top: 107%;
+}
+
+.four img {
+  margin-left: 0.6rem;
+  margin-top: 0.08rem;
+  width: 6.666667rem;
+  height: 5.333333rem;
+}
+
+#ending {
+  width: 34%;
+  height: 23%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 55% auto;
+  opacity: 0;
+  -webkit-transition: opacity 1s ease .2s;
+  transition: opacity 1s ease .2s;
+  -webkit-transition: opacity 1s ease .2s;
+  background: url("http://mat1.gtimg.com/finance/cj/dw/ending-logo.png") no-repeat;
+  background-size: contain;
+  animation: Floating 1.5s infinite ease-in-out alternate;
+  -webkit-animation: Floating 1.5s infinite ease-in-out alternate;
+}
+
+@-webkit-keyframes Floating {
+  from {
+    -webkit-transform: translate(0, 0);
+  }
+
+  to {
+    -webkit-transform: translate(0, 0.226667rem);
+  }
+}
+
+@keyframes Floating {
+  from {
+    -webkit-transform: translate(0, 0);
+  }
+
+  to {
+    -webkit-transform: translate(0, 0.226667rem);
+  }
+}
+
+#ending-glow {
+  display: none;
+  z-index: 999;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#ending-glow img {
+  width: 100%;
+  height: 100%;
+}
+
+.flash {
+  animation: flash-halo .3s ease-in forwards;
+  -webkit-animation: flash-halo .3s ease-in forwards;
+}
+
+@-webkit-keyframes flash-halo {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.1;
+  }
+
+  20% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+
+  60% {
+    opacity: 0.9;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0.7;
+  }
+
+  90% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.word {
+  display: none;
+}
+
+.endingRotate {
+  animation: endingRotate .7s ease 1 forwards;
+  -webkit-animation: endingRotate .7s ease 1 forwards;
+}
+
+@-webkit-keyframes endingRotate {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    opacity: .2;
+    -webkit-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+  }
+}
+
+@keyframes endingRotate {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    opacity: .2;
+    -webkit-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+  }
+}
+
+@keyframes endingRotate {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+  }
+
+  100% {
+    opacity: .2;
+    -webkit-transform: rotateY(90deg);
+  }
+}
+
+.codeRun {
+  animation: moveUp 7s linear infinite;
+  -webkit-animation: moveUp 7s linear infinite;
+}
+
+@keyframes moveUp {
+  100% {
+    transform: translate3d(0, -53.333333rem, 0);
+    -webkit-transform: translate3d(0, -53.333333rem, 0);
+  }
+}
+
+@-webkit-keyframes moveUp {
+  100% {
+    transform: translate3d(0, -53.333333rem, 0);
+    -webkit-transform: translate3d(0, -53.333333rem, 0);
+  }
+}
+
+@-webkit-keyframes moveDown {
+  100% {
+    transform: translate3d(0, 13.333333rem, 0);
+    -webkit-transform: translate3d(0, 13.333333rem, 0);
+  }
+}
+
+@keyframes moveDown {
+  100% {
+    transform: translate3d(0, 13.333333rem, 0);
+    -webkit-transform: translate3d(0, 13.333333rem, 0);
+  }
+}
+
+.key {
+  width: 0.533333rem;
+  height: 0.533333rem;
+  display: block;
+  background-color: transparent;
+  text-align: left;
+  padding-left: 0.106667rem;
+  line-height: 0.386667rem;
+  border-radius: 0.026667rem;
+  float: left;
+  margin-left: 0.026667rem;
+  margin-bottom: 0.026667rem;
+  cursor: pointer;
+  /*transition: box-shadow 0.7s ease;*/
+  color: #6bcdf1;
+  border: #6bcdf1 0.013333rem solid;
+}
+
+.key-down {
+  /*
+  background-color: rgba(107,205,241,0.3);
+  */
+  background-color: rgba(107, 205, 241, 0.3);
+}
+
+.function {
+  font-size: 0.16rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-bottom: 0.2rem;
+}
+
+.small {
+  font-size: 0.133333rem;
+  line-height: 0.173333rem;
+  text-align: center;
+  padding: 0 0.066667rem;
+  padding-top: 0.026667rem;
+  height: 0.373333rem !important;
+}
+
+.space1 {
+  margin-right: 0.573333rem !important;
+}
+
+.space2 {
+  margin-right: 0.333333rem !important;
+}
+
+.dual {
+  font-size: 0.186667rem;
+  line-height: 0.266667rem;
+  width: 0.4rem;
+}
+
+.backspace {
+  width: 1.12rem;
+  font-size: 0.16rem;
+}
+
+.tab {
+  width: 0.666667rem;
+  line-height: 0.533333rem;
+  font-size: 0.173333rem;
+}
+
+.letter {
+  width: 0.4rem;
+}
+
+.slash {
+  width: 0.853333rem;
+}
+
+.caps {
+  width: 0.933333rem;
+  font-size: 0.16rem;
+  line-height: 0.24rem;
+}
+
+.enter {
+  width: 1.226667rem;
+  line-height: 0.533333rem;
+  text-align: center;
+  padding-left: 0;
+}
+
+.shift.left {
+  width: 1.2rem;
+  line-height: 0.533333rem;
+  font-size: 0.173333rem;
+}
+
+.shift.right {
+  width: 1.386667rem;
+  line-height: 0.533333rem;
+  font-size: 0.173333rem;
+}
+
+.ctrl {
+  width: 0.666667rem;
+  line-height: 0.533333rem;
+  font-size: 0.173333rem;
+}
+
+.space {
+  width: 3.226667rem;
+}
+
+.arrows {
+  position: relative;
+  top: 0.56rem;
+}
+
+.sec-func .key {
+  width: 0.426667rem;
+  font-size: 0.133333rem;
+  text-align: left;
+  line-height: 0.533333rem;
+  float: left;
+}
+
+.sec-func div.dual {
+  line-height: 0.266667rem;
+}
+
+.arrows .key {
+  text-align: center;
+  padding-left: 0.093333rem;
+  margin-left: 0.026667rem;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+/*loader*/
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes bg {
+  0% {
+    background-color: #97e7f5;
+  }
+
+  50% {
+    background-color: #5cbacb;
+  }
+
+  90% {
+    background-color: #7fd1ec;
+  }
+}
+
+/*typing style*/
+
+@keyframes tyblink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes tyblink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.typing-cursor,
+.typing-cursor-black,
+.typing-cursor-white {
+  opacity: 1;
+  font-weight: bold;
+  -webkit-animation: tyblink 0.7s infinite;
+  animation: tyblink 0.7s infinite;
+}
+
+.typing-cursor,
+.typing-cursor-black {
+  color: #000;
+}
+
+.typing-cursor-white {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  color: #6bcdf1;
+}
+
+/*
+
+
+/!* 兼容iphone5 *!/
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 374px)
+and (min-device-height: 500px){
+
+    .two .gif-frame {
+        height: 33%
+    }
+    .bg-bottom {
+        top: 90%;
+    }
+    #bottom-glow{
+        top: 88%;
+    }
+}
+/!* 兼容iphone6 plus *!/
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px) {
+    #bottom-glow {
+        /!*
+        margin: 141% auto;
+        *!/
+    }
+
+     .one .out,.two .out,.three .out {
+        font-size: 46px;
+    }
+}
+/!*兼容宽高比大于0.67小雨0.7的的屏幕*!/
+@media only screen and (min-aspect-ratio: 360/532)
+and  (max-aspect-ratio: 7/10){
+
+
+    .page{
+        width: 93%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: 0 auto;
+    }
+    .keyboard {
+        width: 630px;
+    }
+    .one .out {
+        font-size: 40px;
+    }
+    .one .codescroll {
+        margin-top: 58%;
+    }
+    .one .gif-frame {
+        margin-top: 58%;
+        margin-left: 25%;
+    }
+    .one .keyboard {
+        margin-top: 108%;
+        margin-left: 24%;
+    }
+    /!*二号模板*!/
+    .two .keyboard {
+        margin-left: 24%;
+        margin-top: 107%;
+    }
+    .two .out {
+        font-size: 2.4rem;
+        width: 71%;
+        height: 17%;
+        margin-left: 24%;
+    }
+
+
+    /!*三号模板*!/
+    .three .out {
+        width: 68%;
+        height: 19%;
+        margin-top: 78%;
+        font-size: 2.4rem;
+    }
+    .three .gif-frame {
+        margin-top: 29%;
+        width: 590px;
+        height: 415px;
+    }
+    .three img {
+        margin-left: 60px;
+        margin-top: 15px;
+        width: 480px;
+        height: 384px;
+    }
+    .three .codescroll {
+        margin-left: 76%;
+    }
+    .three .keyboard {
+        margin-top: 105%;
+    }
+
+    .key{
+        width: 39px;
+        height: 38px;
+    }
+    .enter {
+        width: 88px;
+    }
+    .keyboard .function {
+        width: 29px;
+        height: 29px;
+        margin-bottom: 15px;
+    }
+    .space1 {
+        margin-right: 41px !important;
+    }
+    .space2 {
+        margin-right: 24px !important;
+    }
+    .backspace {
+        width: 78px;
+    }
+    .dual {
+        line-height: 20px;
+        width: 29px;
+    }
+
+    .tab {
+        width: 46px;
+    }
+    .letter {
+        width: 29px;
+    }
+    .slash {
+        width: 62px;
+    }
+    .caps {
+        width: 68px;
+    }
+    .shift.left {
+        width: 88px;
+    }
+    .shift.right {
+        width: 100px;
+    }
+    .ctrl {
+        width: 48px;
+    }
+    .space {
+        width: 233px;
+    }
+    
+}*/
