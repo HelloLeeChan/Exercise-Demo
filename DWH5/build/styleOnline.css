@@ -19,7 +19,7 @@
     top: 0;
     background-color: #142236;
     color: rgba(255, 255, 255, .8);
-    z-index: 9999
+    z-index: 9;
 }
 
 .lock {
@@ -147,17 +147,20 @@ html, body {
     box-shadow: 0 0 15px #94e7f2;
     -webkit-animation: blink 3.4s infinite;
     animation: blink 3.4s infinite;
+    z-index: 1;
 }
 
 .loading span.title {
     -webkit-animation: title 3.4s linear infinite;
     animation: title 3.4s linear infinite;
+    z-index: 1;
     /* opacity: 0; */
 }
 
 .loading span.loadtext {
     -webkit-animation: title 3.4s linear 1.7s infinite;
     animation: title 3.4s linear 1.7s infinite;
+    z-index: 1;
     /* opacity: 0; */
 }
 
@@ -361,6 +364,8 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     perspective: 3000px;
     -webkit-perspective: 3000px;
     background: url(http://mat1.gtimg.com/finance/cj/dw/bg.jpg) no-repeat;
@@ -456,7 +461,8 @@ body {
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
     position: absolute;
-    top: 87%;
+    transform: translateZ(1000px);  
+    -webkit-transform:-webkit-translateZ(1000px);  
     right: 0;
     left: 0;
     bottom: 0;
