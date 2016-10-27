@@ -2,6 +2,7 @@
  * Created by licheng on 16/8/2.
  */
 
+
 /*typing*/
 (function (root, factory) {
     if (typeof exports === "object") {
@@ -121,6 +122,7 @@
     return Typing
 });
 
+
 /*page*/
 function Page(layoutCode, projectCode, imgs, template) {
     this.dict = {one: '49%', two: '38%', three: '71%', four: '17%'};
@@ -188,7 +190,7 @@ Page.prototype = {
                         that.pass = true
                     }
                 },1200)
-            } //鎵撳瓧缁撴潫璋冪敤callback
+            } //打字结束调用callback
         });
 
         typing.start();
@@ -400,65 +402,51 @@ Loader.prototype = {
 
 /*main*/
 (function(){
-    document.addEventListener('touchmove',function (e) {
-        e.preventDefault()
-    });
-    document.addEventListener('touchstart',function (e) {
-        e.preventDefault()
-    });
 
-    var template = document.getElementsByClassName('page')[0];
+    var template = document.getElementsByClassName('page')[0]
 
     var shImgs = {
         main: 'http://mat1.gtimg.com/finance/cj/dw//SH.gif',
-        trans: ['imgs/trans/SH-1.png', 'imgs/trans/SH-2.png', 'imgs/trans/WL-2.png', 'imgs/trans/WL-1.png']
-    };
+        trans: ['http://mat1.gtimg.com/finance/cj/dw/SH-1.png', 'http://mat1.gtimg.com/finance/cj/dw/SH-2.png', 'http://mat1.gtimg.com/finance/cj/dw/WL-2.png', 'http://mat1.gtimg.com/finance/cj/dw/WL-1.png']
+    }
     var wlImgs = {
         main: 'http://mat1.gtimg.com/finance/cj/dw//WL.gif',
-        trans: ['imgs/trans/WL-1.png', 'imgs/trans/WL-2.png', 'imgs/trans/SW-2.png', 'imgs/trans/SW-1.png' ]
-    };
+        trans: ['http://mat1.gtimg.com/finance/cj/dw/WL-1.png', 'http://mat1.gtimg.com/finance/cj/dw/WL-2.png', 'http://mat1.gtimg.com/finance/cj/dw/SW-2.png', 'http://mat1.gtimg.com/finance/cj/dw/SW-1.png']
+    }
 
     var swImgs = {
         main: 'http://mat1.gtimg.com/finance/cj/dw/SW.gif',
-        trans: ['imgs/trans/SW-1.png', 'imgs/trans/SW-2.png' , 'imgs/trans/GA-2.png', 'imgs/trans/GA-1.png']
-    };
-
-    var gaImgs = {
-        main: 'http://mat1.gtimg.com/finance/cj/dw//GA.gif',
-        trans: ['imgs/trans/GA-1.png', 'imgs/trans/GA-2.png', 'imgs/trans/BD-2.png', 'imgs/trans/BD-1.png']
-    };
-    var bdImgs = {
-        main: 'imgs/BD.gif',
-        trans: ['imgs/trans/BD-1.png', 'imgs/trans/BD-2.png', 'imgs/trans/TT-2.png', 'imgs/trans/TT-1.png']
-    };
-    var ttImgs = {
-        main: 'http://mat1.gtimg.com/finance/cj/dw//TT.gif',
-        trans: ['imgs/trans/TT-1.png', 'imgs/trans/TT-2.png', 'imgs/trans/DP-2.png', 'imgs/trans/DP-1.png' ]
-    };
+        trans: ['http://mat1.gtimg.com/finance/cj/dw/SW-1.png', 'http://mat1.gtimg.com/finance/cj/dw/SW-2.png', 'http://mat1.gtimg.com/finance/cj/dw/GA-2.png', 'http://mat1.gtimg.com/finance/cj/dw/GA-1.png']
+    }
     var dpImgs = {
         main: 'http://mat1.gtimg.com/finance/cj/dw//DP.gif',
-        trans: ['imgs/trans/DP-1.png']
-    };
+        trans: ['http://mat1.gtimg.com/finance/cj/dw/DP-1.png']
+    }
+    var gaImgs = {
+        main: 'http://mat1.gtimg.com/finance/cj/dw//GA.gif',
+        trans: ['http://mat1.gtimg.com/finance/cj/dw/GA-1.png', 'http://mat1.gtimg.com/finance/cj/dw/GA-2.png', 'http://mat1.gtimg.com/finance/cj/dw/BD-2.png', 'http://mat1.gtimg.com/finance/cj/dw/BD-1.png']
+    }
+    var bdImgs = {
+        main: 'http://mat1.gtimg.com/finance/cj/dw/BD.gif',
+        trans: ['http://mat1.gtimg.com/finance/cj/dw/BD-1.png', 'http://mat1.gtimg.com/finance/cj/dw/BD-2.png', 'http://mat1.gtimg.com/finance/cj/dw/TT-2.png', 'http://mat1.gtimg.com/finance/cj/dw/TT-1.png']
+    }
+    var ttImgs = {
+        main: 'http://mat1.gtimg.com/finance/cj/dw//TT.gif',
+        trans: ['http://mat1.gtimg.com/finance/cj/dw/TT-1.png','http://mat1.gtimg.com/finance/cj/dw/TT-2.png', 'http://mat1.gtimg.com/finance/cj/dw/DP-2.png', 'http://mat1.gtimg.com/finance/cj/dw/DP-1.png']
+    }
 
-    var sh = new Page('one', 'SH', shImgs, template);
-    var wl = new Page('two', 'WL', wlImgs, template);
-    var sw = new Page('three', 'SW', swImgs, template);
+    var sh = new Page('one', 'SH', shImgs, template)
+    var wl = new Page('two', 'WL', wlImgs, template)
+    var sw = new Page('three', 'SW', swImgs, template)
 
-    var ga = new Page('one', 'GA', gaImgs, template);
-    var bd = new Page('two', 'BD', bdImgs, template);
-    var tt = new Page('three', 'TT', ttImgs, template);
-    var dp = new Page('one', 'DP', dpImgs, template);
+    var ga = new Page('one', 'GA', gaImgs, template)
+    var bd = new Page('two', 'BD', bdImgs, template)
+    var tt = new Page('three', 'TT', ttImgs, template)
+    var dp = new Page('one', 'DP', dpImgs, template)
 
-
-    var imgUrl = ['http://mat1.gtimg.com/finance/cj/dw/bottom-glow.png','http://mat1.gtimg.com/finance/cj/dw/screen.png','http://mat1.gtimg.com/finance/cj/dw/gif-frame-wl.png',
-        'http://mat1.gtimg.com/finance/cj/dw/bg.jpg',"http://mat1.gtimg.com/finance/cj/dw/gif-frame.png","http://mat1.gtimg.com/finance/cj/dw//SH.gif"];
-    var myload = new Loader([sh,wl,sw,ga,bd,tt,dp],imgUrl);
-//myload.uaJudge([/micromessenger/,/qqnews/i],'http://finance.qq.com/zt2016/Dreamwriter/redirect.htm')
+    var imgUrl = ['http://mat1.gtimg.com/finance/cj/dw/bottom-glow.png','http://mat1.gtimg.com/finance/cj/dw/bg-bottom.png','http://mat1.gtimg.com/finance/cj/dw/screen.png','http://mat1.gtimg.com/finance/cj/dw/gif-frame-wl.png',
+        'http://mat1.gtimg.com/finance/cj/dw/bg.jpg',"http://mat1.gtimg.com/finance/cj/dw/gif-frame.png","http://mat1.gtimg.com/finance/cj/dw//SH.gif"]
+    var myload = new Loader([sh,wl,sw,ga,bd,tt,dp],imgUrl)
+    myload.uaJudge([/micromessenger/,/qqnews/i],'http://finance.qq.com/zt2016/Dreamwriter/redirect.htm')
     myload.go()
-
-}());
-
-
-
-
-/*  |xGv00|d3a98bbd2ce0f81c8288e67a2d990bb0 */
+}())
