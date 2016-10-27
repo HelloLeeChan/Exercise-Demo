@@ -458,8 +458,6 @@ body {
 }
 
 #bottom-glow {
-    transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
     position: absolute;
     transform: translateZ(1000px);  
     -webkit-transform:-webkit-translateZ(1000px);  
