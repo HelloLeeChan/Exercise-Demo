@@ -459,8 +459,8 @@ body {
 
 #bottom-glow {
     position: absolute;
-    transform: translateZ(1000px);  
-    -webkit-transform:-webkit-translateZ(1000px);  
+    transform: translateZ(5px);  
+    -webkit-transform:-webkit-translateZ(5px);  
     right: 0;
     left: 0;
     bottom: 0;
